@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     //A partir de aquí se pueden poner las variables. NO ANTES.
 
     //Public permite que la variable sea accedida desde el editor de unity.
-    
+    private int totalCoins = 0;
     //"RigidBody2D" es un componente de objeto de unity que proporciona físicas al objeto y se puede declarar en el editor para modificar
     //sus atributos.
     public Rigidbody2D rb;
@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         verticalMove = Input.GetAxisRaw("Vertical");
         
         //Detecta si hemos pulsado espacio para alternar entre point and click o movimiento WASD.
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             if (pointAndClickMovement == false)
             {
@@ -112,6 +112,15 @@ public class PlayerMovement : MonoBehaviour
             moving = false;
         }
 
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            totalCoins++;
+            Debug.Log("Monedas totales: " + totalCoins);
+        }
 
     }
 }
