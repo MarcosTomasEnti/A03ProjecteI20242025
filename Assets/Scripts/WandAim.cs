@@ -14,7 +14,10 @@ public class WandAim : MonoBehaviour
     //Public permite que la variable sea accedida desde el editor de unity.
     //SpriteRenderer es el elemento que contiene el sprite y sus valores. Podemos alterarlo con código.
     public SpriteRenderer sprite;
-    
+    public Transform firePoint;
+    public GameObject bulletPrefab;
+    public Vector2 mousePos;
+    public Vector3 direction;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,15 +30,18 @@ public class WandAim : MonoBehaviour
     void Update()
     {
         //se guarda en esta variable, que es un vector de 3 dimensiones, la posición del mouse en la pantalla
-        Vector3 mousePos = Input.mousePosition;
+        mousePos = Input.mousePosition;
         //se usa como referencia la posición del mouse en la pantalla para obtener sus coordenadas dentro de la escena
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-
+     
         //Calculamos el ángulo al que debe apuntar diciéndole que mire en dirección a las coordenadas que le proporcionamos
-        Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
+        direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
         //Aplicamos el ángulo a las propiedades del objeto
         transform.up = direction;
-        
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            Shoot();
+        }
         //Con esto calculamos que el punto 0 del mouse sea el medio de la pantalla y así podemos determinar si mira adelante o atrás para girar la
         //varita
         if (mousePos.x - transform.parent.position.x < 0)
@@ -52,5 +58,16 @@ public class WandAim : MonoBehaviour
             //le damos la vuelta al sprite en el eje x
             sprite.flipX = true;
         }
+
+    }
+    void Shoot()
+    {
+        GameObject fireball = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        Rigidbody2D firerb = fireball.GetComponent<Rigidbody2D>();
+        if (fireball != null)
+        {
+            firerb.velocity = direction.normalized * 10f;
+        }
+        // Instantiate(bulletPrefab, mousePos, direction);
     }
 }
