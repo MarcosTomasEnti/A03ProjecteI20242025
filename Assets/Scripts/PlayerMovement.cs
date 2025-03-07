@@ -1,32 +1,34 @@
-//Librerías: si en algún momento necesitas usar elementos que pertenezcan a una y no la has puesto se pondrá automáticamente
-//           si es parte de la colección base de unity y no sacadas de internet
+//Librerï¿½as: si en algï¿½n momento necesitas usar elementos que pertenezcan a una y no la has puesto se pondrï¿½ automï¿½ticamente
+//           si es parte de la colecciï¿½n base de unity y no sacadas de internet
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-//La clase sirve para declarar qué uso tendrá el script. En este caso es para dar instrucciones a un objeto en escena. Pero no es algo importante al 
-//   inicio y si es necesario ya se verá mas adelante. Por ahora al crear un script siempre aparecerá por defecto como se ve
+//La clase sirve para declarar quï¿½ uso tendrï¿½ el script. En este caso es para dar instrucciones a un objeto en escena. Pero no es algo importante al 
+//   inicio y si es necesario ya se verï¿½ mas adelante. Por ahora al crear un script siempre aparecerï¿½ por defecto como se ve
 public class PlayerMovement : MonoBehaviour
 {
-    //A partir de aquí se pueden poner las variables. NO ANTES.
+
+   
+    //A partir de aquï¿½ se pueden poner las variables. NO ANTES.
 
     //Public permite que la variable sea accedida desde el editor de unity.
     private int totalCoins = 0;
-    //"RigidBody2D" es un componente de objeto de unity que proporciona físicas al objeto y se puede declarar en el editor para modificar
+    //"RigidBody2D" es un componente de objeto de unity que proporciona fï¿½sicas al objeto y se puede declarar en el editor para modificar
     //sus atributos.
     public Rigidbody2D rb;
-    //Este boolean sirve para que el movimiento del jugador esté en modo "point and click" o que se mueva con WASD y apunte con ratón.
+    //Este boolean sirve para que el movimiento del jugador estï¿½ en modo "point and click" o que se mueva con WASD y apunte con ratï¿½n.
     public bool pointAndClickMovement = false;
-    //Para el modo point and click, muestra si el jugador sigue intentando llegar al punto o no para seguir moviendose hacia él.
+    //Para el modo point and click, muestra si el jugador sigue intentando llegar al punto o no para seguir moviendose hacia ï¿½l.
     bool moving = false;
-    //Coordenadas del último click a donde ir en modo point and click
+    //Coordenadas del ï¿½ltimo click a donde ir en modo point and click
     Vector2 lastClickPos;
-    //Este float nos servirá para recibir la dirección en la que el jugador se mueve horizontalmente con teclas y su intensidad en caso de mando.
+    //Este float nos servirï¿½ para recibir la direcciï¿½n en la que el jugador se mueve horizontalmente con teclas y su intensidad en caso de mando.
     float horizontalMove = 0f;
-    //Este float nos servirá para recibir la dirección en la que el jugador se mueve verticalmente con teclas y su intensidad en caso de mando.
+    //Este float nos servirï¿½ para recibir la direcciï¿½n en la que el jugador se mueve verticalmente con teclas y su intensidad en caso de mando.
     float verticalMove = 0f;
-    //Velocidad del jugador. Si se altera puede proporcionar una velocidad diferente. En negativo le hará ir al revés.
+    //Velocidad del jugador. Si se altera puede proporcionar una velocidad diferente. En negativo le harï¿½ ir al revï¿½s.
     public float speed = 15;
 
     // Start is called before the first frame update
@@ -38,12 +40,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //asignamos el input de movimiento físico usando los ejes de movimiento vertical y horizontal a los floats anteriormente declarados.
+        //asignamos el input de movimiento fï¿½sico usando los ejes de movimiento vertical y horizontal a los floats anteriormente declarados.
         horizontalMove = Input.GetAxisRaw("Horizontal");
         verticalMove = Input.GetAxisRaw("Vertical");
-        
+
         //Detecta si hemos pulsado espacio para alternar entre point and click o movimiento WASD.
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (pointAndClickMovement == false)
             {
@@ -58,15 +60,15 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    //actúa igual al void update, pero va ligado al motor de físicas y no a los frames de la pantalla.
+    //actï¿½a igual al void update, pero va ligado al motor de fï¿½sicas y no a los frames de la pantalla.
     private void FixedUpdate()
     {
-        //se guarda en esta variable, que es un vector de 3 dimensiones, la posición del mouse en la pantalla
+        //se guarda en esta variable, que es un vector de 3 dimensiones, la posiciï¿½n del mouse en la pantalla
         Vector3 mousePos = Input.mousePosition;
-        //se usa como referencia la posición del mouse en la pantalla para obtener sus coordenadas dentro de la escena
+        //se usa como referencia la posiciï¿½n del mouse en la pantalla para obtener sus coordenadas dentro de la escena
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
-        //si le restamos la posición del mouse en el eje x la posición del jugador nos da como punto 0 el centro de la pantalla.
+        //si le restamos la posiciï¿½n del mouse en el eje x la posiciï¿½n del jugador nos da como punto 0 el centro de la pantalla.
         //con esto podemos tener referencia para que el sprite se gire si apuntamos a su espalda.
         if (mousePos.x - transform.position.x < 0)
         {
@@ -79,26 +81,26 @@ public class PlayerMovement : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = false;
         }
 
-        //en caso de que el movimiento point and click esté desactivado:
+        //en caso de que el movimiento point and click estï¿½ desactivado:
         if (pointAndClickMovement == false)
         {
             //se usa un parametro que pertenece al componente "RigidBody2D" que permite calcular movimiento haciendo uso de valores que le
             //proporcionemos. Se hace uso de un vector de 2 dimensiones y es imprescindible multiplicarlo por DeltaTime. esto sirve para que la velocidad 
             //se calcule de manera estable en cualquier dispositivo en caso de un framerate variable.
-            //el nuevo vector 2d declarado que contiene horizontalMove y verticalMove sirve para anular o permitir movimiento según la dirección que
+            //el nuevo vector 2d declarado que contiene horizontalMove y verticalMove sirve para anular o permitir movimiento segï¿½n la direcciï¿½n que
             //hayamos tomado con las teclas.
             rb.MovePosition(rb.position + new Vector2(horizontalMove, verticalMove) * Time.fixedDeltaTime * speed);
 
         }
-        //en caso de que sí que esté activo el movimiento point and click Y se haga click derecho en algún punto:
+        //en caso de que sï¿½ que estï¿½ activo el movimiento point and click Y se haga click derecho en algï¿½n punto:
         else if(Input.GetMouseButton(1))
         {
-            //obtenemos las coordenadas del último punto donde se ha hecho click para que el jugador sepa a donde ir
+            //obtenemos las coordenadas del ï¿½ltimo punto donde se ha hecho click para que el jugador sepa a donde ir
             lastClickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //Damos luz verde a que el jugador vaya al punto
             moving = true;
         }
-        //en caso de que el jugador no esté en el punto y siga en movimiento hacia este:
+        //en caso de que el jugador no estï¿½ en el punto y siga en movimiento hacia este:
         if(moving && (Vector2)transform.position != lastClickPos)
         {
             //declaramos una variable para calcular la velocidad a la que se mueve
@@ -106,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
             //se mueve el jugador hacia las coordenadas dadas haciendo uso de las variables declaradas y usadas anteriormente
             transform.position = Vector2.MoveTowards(transform.position, lastClickPos, step);
         }
-        //en caso de que sí que esté en el punto o no se esté moviendo:
+        //en caso de que sï¿½ que estï¿½ en el punto o no se estï¿½ moviendo:
         else
         {
             moving = false;
