@@ -25,7 +25,16 @@ public class Enemigos : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            vida -= 40;
+            if (collision.gameObject.name == "FireBall(Clone)")
+            {
+                vida -= 40;
+            }
+            else if(collision.gameObject.name == "Bounch ball Variant(Clone)")
+            {
+                vida -= 25;
+            }
+
+            
             Debug.Log("Vida restante: " + vida);
         }
         if (vida <= 0)

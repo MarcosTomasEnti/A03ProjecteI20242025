@@ -19,6 +19,8 @@ public class WandAim : MonoBehaviour
     public GameObject BounchBall;
     public Vector2 mousePos;
     public Vector3 direction;
+    public float redBallSpeed = 20;
+    public float greenBallSpeed = 40;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +49,7 @@ public class WandAim : MonoBehaviour
             Rigidbody2D firerb = fireball.GetComponent<Rigidbody2D>();
             if (fireball != null)
             {
-                firerb.velocity = direction.normalized * 30f;
+                firerb.velocity = direction.normalized * redBallSpeed;
             }
             // Instantiate(bulletPrefab, mousePos, direction);
         }
@@ -57,7 +59,7 @@ public class WandAim : MonoBehaviour
             Rigidbody2D bounchrb = bounchBall.GetComponent<Rigidbody2D>();
             if (bounchBall != null)
             {
-                bounchrb.velocity = direction.normalized * 30f;
+                bounchrb.velocity = direction.normalized * greenBallSpeed;
             }
         }
         //Con esto calculamos que el punto 0 del mouse sea el medio de la pantalla y así podemos determinar si mira adelante o atrás para girar la
