@@ -14,10 +14,11 @@ public class Enemigos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (vida <= 0)
-        {
-            Destroy(gameObject);
-        }
+        
+<<<<<<< Updated upstream
+
+
+>>>>>>> Stashed changes
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,6 +26,10 @@ public class Enemigos : MonoBehaviour
         {
             vida -= 40;
             Debug.Log("Vida restante: " + vida);
+        }
+        if (vida <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }

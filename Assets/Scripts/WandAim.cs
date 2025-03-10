@@ -66,7 +66,7 @@ public class WandAim : MonoBehaviour
         Rigidbody2D firerb = fireball.GetComponent<Rigidbody2D>();
         if (fireball != null)
         {
-            firerb.velocity = direction.normalized * 10f;
+            firerb.velocity = direction.normalized * 30f;
         }
         // Instantiate(bulletPrefab, mousePos, direction);
     }
