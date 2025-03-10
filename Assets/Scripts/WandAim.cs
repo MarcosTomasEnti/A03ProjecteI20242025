@@ -16,6 +16,7 @@ public class WandAim : MonoBehaviour
     public SpriteRenderer sprite;
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public GameObject BounchBall;
     public Vector2 mousePos;
     public Vector3 direction;
     // Start is called before the first frame update
@@ -40,7 +41,11 @@ public class WandAim : MonoBehaviour
         transform.up = direction;
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            Shoot();
+            ShootFireBall();
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ShootBounchBall();
         }
         //Con esto calculamos que el punto 0 del mouse sea el medio de la pantalla y así podemos determinar si mira adelante o atrás para girar la
         //varita
@@ -60,7 +65,7 @@ public class WandAim : MonoBehaviour
         }
 
     }
-    void Shoot()
+    void ShootFireBall()
     {
         GameObject fireball = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         Rigidbody2D firerb = fireball.GetComponent<Rigidbody2D>();
@@ -70,4 +75,15 @@ public class WandAim : MonoBehaviour
         }
         // Instantiate(bulletPrefab, mousePos, direction);
     }
+    void ShootBounchBall()
+    {
+        GameObject bounchBall = Instantiate(BounchBall, firePoint.position, Quaternion.identity);
+        Rigidbody2D bounchrb = bounchBall.GetComponent<Rigidbody2D>();
+        if (bounchBall != null)
+        {
+            bounchrb.velocity = direction.normalized * 30f;
+        }
+      
+    }
+
 }
