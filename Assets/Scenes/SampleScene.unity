@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 255094128}
   - component: {fileID: 255094127}
   - component: {fileID: 255094126}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TestWall (2)
   m_TagString: Suelo
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 407770747}
   - component: {fileID: 407770746}
   - component: {fileID: 407770751}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Magician
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.05, y: 4.75}
+    oldSize: {x: 3.38, y: 4.78}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -664,7 +664,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 873354932}
   - component: {fileID: 873354931}
   - component: {fileID: 873354930}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TestWall (1)
   m_TagString: Suelo
   m_Icon: {fileID: 0}
@@ -913,7 +913,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1445330685}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,7 +982,7 @@ GameObject:
   - component: {fileID: 1826493470}
   - component: {fileID: 1826493469}
   - component: {fileID: 1826493468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TestWall (3)
   m_TagString: Suelo
   m_Icon: {fileID: 0}
@@ -1140,7 +1140,7 @@ GameObject:
   - component: {fileID: 1909601087}
   - component: {fileID: 1909601086}
   - component: {fileID: 1909601085}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TestWall
   m_TagString: Suelo
   m_Icon: {fileID: 0}

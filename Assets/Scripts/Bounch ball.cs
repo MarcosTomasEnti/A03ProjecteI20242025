@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Bounchball : MonoBehaviour
 {
-    private int Rebotes = 0;
+    public int Rebotes = 2;
     private bool hitEnemy = false;
     // Start is called before the first frame update
     void Start()
     {
-
+        Destroy(gameObject, 10);
     }
 
     // Update is called once per frame
@@ -19,11 +19,11 @@ public class Bounchball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((collision.gameObject.CompareTag("Suelo") && Rebotes == 0))
+        if ((collision.gameObject.CompareTag("Suelo") && Rebotes > 0))
         {
-            Rebotes++;
+            Rebotes--;
         }
-        else if(collision.gameObject.CompareTag("Enemigo")|| (collision.gameObject.CompareTag("Suelo") && Rebotes == 1))
+        else if(collision.gameObject.CompareTag("Enemigo") || (collision.gameObject.CompareTag("Suelo") && Rebotes == 0))
         {
             Destroy(gameObject);
         }
