@@ -35,17 +35,30 @@ public class WandAim : MonoBehaviour
         //se usa como referencia la posición del mouse en la pantalla para obtener sus coordenadas dentro de la escena
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
      
+        
+
         //Calculamos el ángulo al que debe apuntar diciéndole que mire en dirección a las coordenadas que le proporcionamos
         direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
         //Aplicamos el ángulo a las propiedades del objeto
         transform.up = direction;
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            ShootFireBall();
+            GameObject fireball = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            Rigidbody2D firerb = fireball.GetComponent<Rigidbody2D>();
+            if (fireball != null)
+            {
+                firerb.velocity = direction.normalized * 30f;
+            }
+            // Instantiate(bulletPrefab, mousePos, direction);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ShootBounchBall();
+            GameObject bounchBall = Instantiate(BounchBall, transform.position, Quaternion.identity);
+            Rigidbody2D bounchrb = bounchBall.GetComponent<Rigidbody2D>();
+            if (bounchBall != null)
+            {
+                bounchrb.velocity = direction.normalized * 30f;
+            }
         }
         //Con esto calculamos que el punto 0 del mouse sea el medio de la pantalla y así podemos determinar si mira adelante o atrás para girar la
         //varita
@@ -65,25 +78,7 @@ public class WandAim : MonoBehaviour
         }
 
     }
-    void ShootFireBall()
-    {
-        GameObject fireball = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        Rigidbody2D firerb = fireball.GetComponent<Rigidbody2D>();
-        if (fireball != null)
-        {
-            firerb.velocity = direction.normalized * 30f;
-        }
-        // Instantiate(bulletPrefab, mousePos, direction);
-    }
-    void ShootBounchBall()
-    {
-        GameObject bounchBall = Instantiate(BounchBall, firePoint.position, Quaternion.identity);
-        Rigidbody2D bounchrb = bounchBall.GetComponent<Rigidbody2D>();
-        if (bounchBall != null)
-        {
-            bounchrb.velocity = direction.normalized * 30f;
-        }
-      
-    }
+
+    
 
 }

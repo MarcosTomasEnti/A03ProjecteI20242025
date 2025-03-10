@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 32ae8b3e90c686447b65b0a54d74f454, type: 2}
+    - target: {fileID: 1841347639906046064, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 1344
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841347639906046064, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 640
+      objectReference: {fileID: 0}
     - target: {fileID: 2596843957727039938, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
       propertyPath: m_Color.b
       value: 0.08817577
@@ -26,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6378582354998957518, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6378582354998957518, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
       propertyPath: m_LocalPosition.x
