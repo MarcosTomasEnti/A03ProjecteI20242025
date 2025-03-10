@@ -15,10 +15,7 @@ public class Enemigos : MonoBehaviour
     void Update()
     {
         
-<<<<<<< Updated upstream
 
-
->>>>>>> Stashed changes
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
