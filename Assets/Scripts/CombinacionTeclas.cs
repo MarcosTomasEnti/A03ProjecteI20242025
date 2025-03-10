@@ -7,23 +7,27 @@ public class CombinacionTeclas : MonoBehaviour
     public float tiempoMaximo = 3f; // Tiempo máximo permitido por tecla
     private float tiempoRestante; // Tiempo que se irá reduciendo
     private int pasoCombo; // Seguimiento del paso en la secuencia
-    public int eleccion; // Combo seleccionado
+    public int eleccion; // Ataque seleccionado
+    private bool comboActivo; // Comrpueba que estamos elegiendo un combo
 
     void Start()
     {
-        tiempoRestante = tiempoMaximo;
-        ReiniciarCombo();
+        EleccionAtaque();
     }
 
     void Update()
     {
+        if (!comboActivo) return; // No hacer nada si el combo no está activo
+
         // Reducir el tiempo restante
         tiempoRestante -= Time.deltaTime;
 
-        // Si se acaba el tiempo antes de terminar el combo, reiniciar solo el tiempo
+        // Si el tiempo se acaba antes de terminar el combo, romperlo sin reiniciar automáticamente
         if (tiempoRestante <= 0)
         {
-            ReiniciarCombo();
+            Debug.Log("Tiempo agotado");
+            comboActivo = false;
+            return;
         }
 
         // Detectar el combo según la elección
@@ -66,30 +70,32 @@ public class CombinacionTeclas : MonoBehaviour
                     if (pasoCombo == secuencia.Length)
                     {
                         accion?.Invoke(); // Ejecutar la acción cuando el combo se complete
-                        ReiniciarCombo(); // Volver a empezar el combo
+                        comboActivo = false; // Finalizar el combo
                     }
                 }
                 else
                 {
-                    // Si la tecla presionada no es la esperada, se rompe el combo
-                    Debug.Log("¡Error! Tecla incorrecta. Combo reiniciado.");
-                    ReiniciarCombo();
+                    // Si la tecla presionada no es la esperada, el combo se rompe sin reiniciar
+                    Debug.Log("Tecla incorrecta");
+                    comboActivo = false;
                 }
             }
         }
     }
 
-    void ReiniciarCombo()
+    public void EleccionAtaque()
     {
+        // El jugador elige la acción y según lo que escoja se dará un número para cada ataque permitiendo al switch acceder al ataque elegido, ese numero lo debe recibir eleccion
         pasoCombo = 0;
         tiempoRestante = tiempoMaximo;
+        comboActivo = true; // Permite que el combo inicie
     }
 
     // Funciones de los efectos
-    void Aturdir() => Debug.Log("¡Aturdimiento activado!");
-    void AtaquePotente() => Debug.Log("¡Ataque potente realizado!");
-    void MeteoroArea() => Debug.Log("¡Meteoro en área lanzado!");
-    void Quemadura() => Debug.Log("¡Quemadura aplicada!");
-    void AturdirArea() => Debug.Log("¡Aturdimiento en área ejecutado!");
-    void Bomba() => Debug.Log("¡Bomba detonada!");
+    void Aturdir() => Debug.Log("Aturdimiento");
+    void AtaquePotente() => Debug.Log("Ataque potente");
+    void MeteoroArea() => Debug.Log("Meteoro lanzado!");
+    void Quemadura() => Debug.Log("Quemadura");
+    void AturdirArea() => Debug.Log("Aturdimiento en área");
+    void Bomba() => Debug.Log("Bomba");
 }
