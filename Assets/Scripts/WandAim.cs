@@ -21,6 +21,7 @@ public class WandAim : MonoBehaviour
     public Vector3 direction;
     public float redBallSpeed = 20;
     public float greenBallSpeed = 40;
+    
     // Start is called before the first frame update
     void Start()
     {
