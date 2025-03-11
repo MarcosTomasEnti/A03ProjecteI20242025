@@ -8,7 +8,8 @@ public class Enemigos : MonoBehaviour
     public GameObject magician;
     public Rigidbody2D rb;
     public int vida = 100;
-    public float speed = 5;
+    public float acceleration = 5;
+    public float maxSpeed = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,26 @@ public class Enemigos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, magician.transform.position, speed * Time.deltaTime);
+        Vector2 fpos = Vector2.MoveTowards(transform.position, magician.transform.position, acceleration * Time.deltaTime);
+
+        rb.velocity += fpos - (Vector2)transform.position;
+
+        if(rb.velocity.x > maxSpeed)
+        {
+            rb.velocity = new Vector2 (maxSpeed, rb.velocity.y);
+        }
+        else if(rb.velocity.x < -maxSpeed) 
+        {
+            rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
+        }
+        if (rb.velocity.y > maxSpeed)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, maxSpeed);
+        }
+        else if (rb.velocity.y < -maxSpeed)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -maxSpeed);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
