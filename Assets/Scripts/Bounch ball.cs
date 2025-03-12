@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bounchball : MonoBehaviour
 {
     public int Rebotes = 2;
-    private bool hitEnemy = false;
     // Start is called before the first frame update
     void Start()
     {

@@ -10,6 +10,7 @@ public class Enemigos : MonoBehaviour
     public int vida = 100;
     public float acceleration = 5;
     public float maxSpeed = 10;
+    public bool playerDetected = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,26 +21,11 @@ public class Enemigos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 fpos = Vector2.MoveTowards(transform.position, magician.transform.position, acceleration * Time.deltaTime);
-
-        rb.velocity += fpos - (Vector2)transform.position;
-
-        if(rb.velocity.x > maxSpeed)
+        if (playerDetected)
         {
-            rb.velocity = new Vector2 (maxSpeed, rb.velocity.y);
+            FollowPlayer();
         }
-        else if(rb.velocity.x < -maxSpeed) 
-        {
-            rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
-        }
-        if (rb.velocity.y > maxSpeed)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, maxSpeed);
-        }
-        else if (rb.velocity.y < -maxSpeed)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, -maxSpeed);
-        }
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -60,6 +46,34 @@ public class Enemigos : MonoBehaviour
         if (vida <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D Vision)
+    {
+        if (Vision.gameObject.CompareTag("Player"))
+        {
+            playerDetected = true;
+        }
+    }
+    void FollowPlayer()
+    {
+        Vector2 fpos = Vector2.MoveTowards(transform.position, magician.transform.position, acceleration * Time.deltaTime);
+        rb.velocity += fpos - (Vector2)transform.position;
+        if (rb.velocity.x > maxSpeed)
+        {
+            rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
+        }
+        else if (rb.velocity.x < -maxSpeed)
+        {
+            rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
+        }
+        if (rb.velocity.y > maxSpeed)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, maxSpeed);
+        }
+        else if (rb.velocity.y < -maxSpeed)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -maxSpeed);
         }
     }
 }

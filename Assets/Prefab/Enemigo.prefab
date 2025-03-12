@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8780717258435175835}
   - component: {fileID: 6438390482944505580}
   - component: {fileID: 667942393114546120}
+  - component: {fileID: 3178563843323252642}
   m_Layer: 8
   m_Name: Enemigo
   m_TagString: Enemigo
@@ -162,6 +163,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magician: {fileID: 0}
-  rb: {fileID: 0}
+  rb: {fileID: 8780717258435175835}
   vida: 100
-  speed: 5
+  acceleration: 5
+  maxSpeed: 10
+  playerDetected: 0
+--- !u!58 &3178563843323252642
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094590012356601616}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 10
