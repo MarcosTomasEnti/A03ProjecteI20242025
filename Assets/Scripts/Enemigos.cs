@@ -31,6 +31,7 @@ public class Enemigos : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            playerDetected = true;
             if (collision.gameObject.name == "FireBall(Clone)")
             {
                 vida -= 40;
