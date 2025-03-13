@@ -48,7 +48,7 @@ public class Enemigos : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnTriggerEnter2D(Collider2D Vision)
+    public void OnTriggerEnter2D(Collider2D Vision)
     {
         if (Vision.gameObject.CompareTag("Player"))
         {
