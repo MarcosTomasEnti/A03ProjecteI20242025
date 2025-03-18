@@ -53,7 +53,10 @@ public class MagicCombo : MonoBehaviour
 
 
 
-
+        //1 = basic
+        //2 = area
+        //3 = stun
+        //4 = special
 
 
         if (comboList[0] == 0 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
@@ -62,23 +65,39 @@ public class MagicCombo : MonoBehaviour
         }
         else if (comboList[0] == 1 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
         {
-            Debug.Log("Punch / parry");
+            Debug.Log("basic");
         }
         else if (comboList[0] == 2 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
         {
-            Debug.Log("Shoot");
+            Debug.Log("area");
         }
         else if (comboList[0] == 3 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
         {
-
+            Debug.Log("stun");
         }
         else if (comboList[0] == 4 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
         {
-
+            Debug.Log("special");
+        }
+        else if (comboList[0] == 1 && comboList[1] == 1 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
+        {
+            Debug.Log("Daño daño");
+        }
+        else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
+        {
+            Debug.Log("daño area");
+        }
+        else if (comboList[0] == 1 && comboList[1] == 3 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
+        {
+            Debug.Log("basico stun");
+        }
+        else if (comboList[0] == 1 && comboList[1] == 4 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
+        {
+            Debug.Log("basico efecto");
         }
         else
         {
-
+            Debug.Log("Null spell");
         }
 
         for (int i = 0; i < 5; i++) 
