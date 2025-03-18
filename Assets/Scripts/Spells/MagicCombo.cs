@@ -8,6 +8,10 @@ public class MagicCombo : MonoBehaviour
     int[] comboList = new int[5] {0,0,0,0,0};
     int pressedKeys = 0;
 
+    public GameObject basicPrefab;
+
+    public float basicSpeed = 20;
+
 
     // Start is called before the first frame update
     void Start()
@@ -59,41 +63,34 @@ public class MagicCombo : MonoBehaviour
         //4 = special
 
 
-        if (comboList[0] == 0 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
+        if (     comboList[0] == 0 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
         {
             Debug.Log("Null spell");
         }
         else if (comboList[0] == 1 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
         {
             Debug.Log("basic");
-        }
-        else if (comboList[0] == 2 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
-        {
-            Debug.Log("area");
-        }
-        else if (comboList[0] == 3 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
-        {
-            Debug.Log("stun");
-        }
-        else if (comboList[0] == 4 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
-        {
-            Debug.Log("special");
+            basic();
         }
         else if (comboList[0] == 1 && comboList[1] == 1 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
         {
             Debug.Log("Daño daño");
+            heavy();
         }
         else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
         {
             Debug.Log("daño area");
+            area();
         }
         else if (comboList[0] == 1 && comboList[1] == 3 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
         {
             Debug.Log("basico stun");
+            stun();
         }
         else if (comboList[0] == 1 && comboList[1] == 4 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0)
         {
             Debug.Log("basico efecto");
+            special();
         }
         else
         {
@@ -106,6 +103,36 @@ public class MagicCombo : MonoBehaviour
         }
     }
 
+    void basic()
+    {
+        Vector2 mousePos = Input.mousePosition;
+        Transform wandPos = GetComponentInChildren<WandAim>().transform;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        Vector2 direction = new Vector2(mousePos.x - wandPos.position.x, mousePos.y - wandPos.position.y);
+        
+        GameObject basicSpell = Instantiate(basicPrefab, wandPos.position, Quaternion.identity);
+        
+        basicSpell.GetComponent<Rigidbody2D>().velocity = GetComponentInChildren<WandAim>().direction.normalized * basicSpeed;
+    }
+
+    void heavy()
+    {
 
 
+    }
+
+    void area()
+    {
+
+    }
+    
+    void stun()
+    {
+
+    }
+
+    void special()
+    {
+
+    }
 }

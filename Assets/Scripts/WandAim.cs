@@ -44,16 +44,7 @@ public class WandAim : MonoBehaviour
         direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
         //Aplicamos el ángulo a las propiedades del objeto
         transform.up = direction;
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            GameObject fireball = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            Rigidbody2D firerb = fireball.GetComponent<Rigidbody2D>();
-            if (fireball != null)
-            {
-                firerb.velocity = direction.normalized * redBallSpeed;
-            }
-            // Instantiate(bulletPrefab, mousePos, direction);
-        }
+       
         if (Input.GetKeyDown(KeyCode.E))
         {
             GameObject bounchBall = Instantiate(BounchBall, transform.position, Quaternion.identity);

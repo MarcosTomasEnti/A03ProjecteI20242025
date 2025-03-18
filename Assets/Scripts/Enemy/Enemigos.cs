@@ -7,7 +7,8 @@ public class Enemigos : MonoBehaviour
 
     public GameObject magician;
     public Rigidbody2D rb;
-    public int vida = 100;
+    [SerializeField]
+    private int vida = 100;
     public float acceleration = 5;
     public float maxSpeed = 10;
     public bool playerDetected = false;
@@ -32,17 +33,13 @@ public class Enemigos : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             playerDetected = true;
-            if (collision.gameObject.name == "FireBall(Clone)")
-            {
-                vida -= 40;
-            }
-            else if(collision.gameObject.name == "Bounch ball Variant(Clone)")
+            if(collision.gameObject.name == "Bounch ball Variant(Clone)")
             {
                 vida -= 25;
             }
 
             
-            Debug.Log("Vida restante: " + vida);
+            
         }
         if (vida <= 0)
         {
@@ -76,5 +73,11 @@ public class Enemigos : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, -maxSpeed);
         }
+    }
+
+    public void DamageEnemy(int loseHP) {
+
+        vida -= loseHP;
+        Debug.Log("Vida restante: " + vida);
     }
 }
