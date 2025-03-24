@@ -16,13 +16,11 @@ public class FireBall : MonoBehaviour
     {
         
     }
-private void OnCollisionEnter2D(Collision2D collision)
-{
-    if (collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Enemigo"))
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-            
-        
-            Destroy(gameObject);
+        if (collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Enemigo"))
+        {
+                Destroy(gameObject);
+        }
     }
-}
 }
