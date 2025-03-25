@@ -24,7 +24,7 @@ public class WandAim : MonoBehaviour
     public float redBallSpeed = 20;
     public float greenBallSpeed = 40;
     public GameObject Meteoro;
-    public GameObject CanonDeMeteoritos;
+  
 
 
     // Start is called before the first frame update
