@@ -58,11 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6378582354998957518, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.38326
+      value: 35.471935
       objectReference: {fileID: 0}
     - target: {fileID: 6378582354998957518, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 45.27941
+      value: 42.205563
       objectReference: {fileID: 0}
     - target: {fileID: 6378582354998957518, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -98,7 +98,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6405078479931761309, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405078479931761309, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6405078479931761309, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
@@ -119,7 +123,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5305353691472658034, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
     - {fileID: 1841347639906046064, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
-    - {fileID: 6405078479931761309, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -145,4 +148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mousePos: {x: 0, y: 0}
-  meteor: {fileID: 0}
+  Meteoro: {fileID: 0}

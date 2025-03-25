@@ -29,7 +29,7 @@ public class Enemigos : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
+       /* if (collision.gameObject.CompareTag("Bullet"))
         {
             playerDetected = true;
             if (collision.gameObject.name == "FireBall(Clone)")
@@ -47,7 +47,7 @@ public class Enemigos : MonoBehaviour
         if (vida <= 0)
         {
             Destroy(gameObject);
-        }
+        }*/
     }
     public void OnTriggerEnter2D(Collider2D Vision)
     {
@@ -75,6 +75,16 @@ public class Enemigos : MonoBehaviour
         else if (rb.velocity.y < -maxSpeed)
         {
             rb.velocity = new Vector2(rb.velocity.x, -maxSpeed);
+        }
+    }
+
+    public void RecibirGolpe(int golpe)
+    {
+        vida -= golpe;
+        if (vida <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("Vida restante: " + vida);
         }
     }
 }

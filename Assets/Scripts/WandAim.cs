@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 //La clase sirve para declarar qué uso tendrá el script. En este caso es para dar instrucciones a un objeto en escena. Pero no es algo importante al 
 //   inicio y si es necesario ya se verá mas adelante. Por ahora al crear un script siempre aparecerá por defecto como se ve
@@ -21,7 +22,9 @@ public class WandAim : MonoBehaviour
     public Vector3 direction;
     public float redBallSpeed = 20;
     public float greenBallSpeed = 40;
-   
+    public GameObject Meteoro;
+    public GameObject CanonDeMeteoritos;
+
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +66,14 @@ public class WandAim : MonoBehaviour
             {
                 bounchrb.velocity = direction.normalized * greenBallSpeed;
             }
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            
+           
+            GameObject meteor = Instantiate(Meteoro, new Vector2(0,0), Quaternion.identity);
+
+           
         }
         //Con esto calculamos que el punto 0 del mouse sea el medio de la pantalla y así podemos determinar si mira adelante o atrás para girar la
         //varita
