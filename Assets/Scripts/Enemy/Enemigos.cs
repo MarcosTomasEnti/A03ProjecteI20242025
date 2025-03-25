@@ -27,28 +27,7 @@ public class Enemigos : MonoBehaviour
         }
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            playerDetected = true;
-            if (collision.gameObject.name == "FireBall(Clone)")
-            {
-                vida -= 40;
-            }
-            else if(collision.gameObject.name == "Bounch ball Variant(Clone)")
-            {
-                vida -= 25;
-            }
-
-            
-            Debug.Log("Vida restante: " + vida);
-        }
-        if (vida <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
+   
     public void OnTriggerEnter2D(Collider2D Vision)
     {
         if (Vision.gameObject.CompareTag("Player"))
@@ -76,5 +55,15 @@ public class Enemigos : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, -maxSpeed);
         }
+    }
+    public void RecibirGolpe(int golpe)
+    {
+        vida -= golpe;
+        if(vida <= 0)
+        {
+            Destroy(gameObject);
+           
+        }
+        Debug.Log("Vida restante: " + vida);
     }
 }
