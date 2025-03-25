@@ -77,14 +77,4 @@ public class Enemigos : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, -maxSpeed);
         }
     }
-
-    public void RecibirGolpe(int golpe)
-    {
-        vida -= golpe;
-        if (vida <= 0)
-        {
-            Destroy(gameObject);
-            Debug.Log("Vida restante: " + vida);
-        }
-    }
 }
