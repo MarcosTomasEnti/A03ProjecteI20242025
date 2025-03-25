@@ -31,7 +31,6 @@ public class Meteor : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemigo"))
         {
-            Debug.Log("tu madre tiene una polla ");
             collision.gameObject.GetComponent<Enemigos>().RecibirGolpe(golpe);
         }
     }
