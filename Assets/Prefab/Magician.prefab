@@ -143,7 +143,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6641768816853848118}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.29, y: -0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -341,10 +341,12 @@ MonoBehaviour:
   firePoint: {fileID: 4268455979698833552}
   bulletPrefab: {fileID: 8741792494347870157, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
   BounchBall: {fileID: 108389163797242813, guid: 70553640febdb9d40b2b3a3fd51ab186, type: 3}
+  GreatFireBall: {fileID: 4882991844935192865, guid: 39237c95767fc2d45bc90bfe4199078b, type: 3}
   mousePos: {x: 0, y: 0}
   direction: {x: 0, y: 0, z: 0}
   redBallSpeed: 20
   greenBallSpeed: 40
+  Meteoro: {fileID: 108389163797242813, guid: e9642962174d21a4da95741359e30f76, type: 3}
 --- !u!1 &8786090729301043882
 GameObject:
   m_ObjectHideFlags: 0
