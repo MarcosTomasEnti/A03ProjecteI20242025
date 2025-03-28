@@ -351,6 +351,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5884781723608935933, guid: d8e98c3935390744ba551a883baacf7c, type: 3}
+      propertyPath: Meteoro
+      value: 
+      objectReference: {fileID: 108389163797242813, guid: e9642962174d21a4da95741359e30f76, type: 3}
+    - target: {fileID: 5884781723608935933, guid: d8e98c3935390744ba551a883baacf7c, type: 3}
       propertyPath: GreatFireBall
       value: 
       objectReference: {fileID: 4882991844935192865, guid: 39237c95767fc2d45bc90bfe4199078b, type: 3}

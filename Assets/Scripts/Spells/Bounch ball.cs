@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bounchball : MonoBehaviour
 {
     public int Rebotes = 2;
+    int golpe = 25;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +19,26 @@ public class Bounchball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Suelo") && Rebotes > 0 || collision.gameObject.CompareTag("Enemigo") && Rebotes > 0)
+        if (collision.gameObject.CompareTag("Suelo"))
         {
-            Rebotes--;
+            if (Rebotes > 0)
+                Rebotes--;
+            else
+                Destroy(gameObject.gameObject);
         }
-        else if(collision.gameObject.CompareTag("Enemigo") && Rebotes == 0 || (collision.gameObject.CompareTag("Suelo") && Rebotes == 0))
+        else if (collision.gameObject.CompareTag("Enemigo"))
         {
-            Destroy(gameObject);
+            if (Rebotes > 0)
+            {
+                Rebotes--;
+                collision.gameObject.GetComponent<Enemigos>().RecibirGolpe(golpe);
+            }
+            else
+            {
+                collision.gameObject.GetComponent<Enemigos>().RecibirGolpe(golpe);
+                Destroy(gameObject.gameObject);
+            }
+            
         }
     }
 }

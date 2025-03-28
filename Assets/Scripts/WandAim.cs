@@ -16,14 +16,10 @@ public class WandAim : MonoBehaviour
     //SpriteRenderer es el elemento que contiene el sprite y sus valores. Podemos alterarlo con c�digo.
     public SpriteRenderer sprite;
     public Transform firePoint;
-    public GameObject bulletPrefab;
-    public GameObject BounchBall;
-    public GameObject GreatFireBall;
-    public Vector2 mousePos;
-    public Vector3 direction;
-    public float redBallSpeed = 20;
-    public float greenBallSpeed = 40;
-    public GameObject Meteoro;
+
+    Vector2 mousePos;
+    Vector3 direction;
+    
   
 
 
@@ -38,55 +34,12 @@ public class WandAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //se guarda en esta variable, que es un vector de 3 dimensiones, la posici�n del mouse en la pantalla
         mousePos = Input.mousePosition;
-        //se usa como referencia la posici�n del mouse en la pantalla para obtener sus coordenadas dentro de la escena
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-     
-        
 
-        //Calculamos el �ngulo al que debe apuntar dici�ndole que mire en direcci�n a las coordenadas que le proporcionamos
         direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
-        //Aplicamos el �ngulo a las propiedades del objeto
         transform.up = direction;
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            GameObject fireball = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            Rigidbody2D firerb = fireball.GetComponent<Rigidbody2D>();
-            if (fireball != null)
-            {
-                firerb.velocity = direction.normalized * redBallSpeed;
-            }
-            // Instantiate(bulletPrefab, mousePos, direction);
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            GameObject bounchBall = Instantiate(BounchBall, transform.position, Quaternion.identity);
-            Rigidbody2D bounchrb = bounchBall.GetComponent<Rigidbody2D>();
-            if (bounchBall != null)
-            {
-                bounchrb.velocity = direction.normalized * greenBallSpeed;
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            
-           
-            GameObject meteor = Instantiate(Meteoro, new Vector2(0,0), Quaternion.identity);
 
-           
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            GameObject greatFireBall = Instantiate(GreatFireBall, transform.position, Quaternion.identity);
-            Rigidbody2D GreatFBrb = greatFireBall.GetComponent<Rigidbody2D>();
-            if (greatFireBall != null)
-            {
-                GreatFBrb.velocity = direction.normalized * greenBallSpeed;
-            }
-        }
-        //Con esto calculamos que el punto 0 del mouse sea el medio de la pantalla y as� podemos determinar si mira adelante o atr�s para girar la
-        //varita
         if (mousePos.x - transform.parent.position.x < 0)
         {
             //Cambiamos la posici�n ligeramente para que se de la vuelta correctamente

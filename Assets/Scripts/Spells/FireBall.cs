@@ -5,6 +5,8 @@ using UnityEngine;
 public class FireBall : MonoBehaviour
 {
     public Vector3 direction;
+    int golpe = 40;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +20,15 @@ public class FireBall : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Enemigo"))
+
+        if (collision.gameObject.CompareTag("Suelo"))
         {
                 Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Enemigo"))
+        {
+            collision.gameObject.GetComponent<Enemigos>().RecibirGolpe(golpe);
+            Destroy(gameObject.gameObject);
         }
     }
 }
