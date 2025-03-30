@@ -78,7 +78,7 @@ public class Enemigos : MonoBehaviour
         }
     }
 
-    public void RecibirGolpe(int golpe)
+    public void RecibirGolpe(float golpe)
     {
         vida -= golpe;
         if (vida <= 0)

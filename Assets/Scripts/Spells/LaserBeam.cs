@@ -38,7 +38,8 @@ public class LaserBeam : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Enemigo"))
         {
-            collision.gameObject.GetComponent<Enemigos>().RecibirGolpe(golpe);
+            collision.gameObject.GetComponent<Enemigos>().RecibirGolpe(golpe * Time.deltaTime);
         }
+        
     }
 }
