@@ -11,9 +11,12 @@ public class MagicCombo : MonoBehaviour
     public GameObject BouncyBall;
     public GameObject GreatFireBall;
     public GameObject Meteoro;
+    public GameObject ThunderCaster;
+    public GameObject LaserBeam;
 
     public float redBallSpeed = 20;
     public float greenBallSpeed = 40;
+    public float thunderCasterSpeed = 10f;
 
     Vector2 mousePos;
     Vector3 direction;
@@ -86,7 +89,7 @@ public class MagicCombo : MonoBehaviour
         }
         else if (comboList[0] == 1 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0) // q fireball attack
         {
-            GameObject fireball = Instantiate(fireBall, transform.position, transform.rotation);
+            GameObject fireball = Instantiate(fireBall.gameObject, transform.position, transform.rotation);
             Rigidbody2D firerb = fireball.GetComponent<Rigidbody2D>();
             if (fireball != null)
             {
@@ -95,7 +98,7 @@ public class MagicCombo : MonoBehaviour
         }
         else if (comboList[0] == 2 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0) // e boncy ball
         {
-            GameObject bounchBall = Instantiate(BouncyBall, transform.position, Quaternion.identity);
+            GameObject bounchBall = Instantiate(BouncyBall.gameObject, transform.position, Quaternion.identity);
             Rigidbody2D bounchrb = bounchBall.GetComponent<Rigidbody2D>();
             if (bounchBall != null)
             {
@@ -112,7 +115,7 @@ public class MagicCombo : MonoBehaviour
         }
         else if (comboList[0] == 1 && comboList[1] == 1 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0) // q + q  great fireball
         {
-            GameObject greatFireBall = Instantiate(GreatFireBall, transform.position, transform.rotation);
+            GameObject greatFireBall = Instantiate(GreatFireBall.gameObject, transform.position, transform.rotation);
             Rigidbody2D GreatFBrb = greatFireBall.GetComponent<Rigidbody2D>();
             if (greatFireBall != null)
             {
@@ -121,15 +124,17 @@ public class MagicCombo : MonoBehaviour
         }
         else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0) // q + e meteor
         {
-            GameObject meteor = Instantiate(Meteoro, new Vector2(0, 0), Quaternion.identity);
+            GameObject meteor = Instantiate(Meteoro.gameObject, new Vector2(0, 0), Quaternion.identity);
         }
-        else if (comboList[0] == 4 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0) // q + e
+        else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 1 && comboList[3] == 2 && comboList[4] == 0) // q + e + q + e
         {
-
+            GameObject thunderCaster = Instantiate(ThunderCaster.gameObject, transform.position, quaternion.EulerXYZ(0,0,0));
+            Rigidbody2D thunderCasterRB = thunderCaster.GetComponent<Rigidbody2D>();
+            thunderCasterRB.velocity = direction.normalized * thunderCasterSpeed;
         }
-        else if (comboList[0] == 4 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0) // q + r
+        else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 3 && comboList[3] == 4 && comboList[4] == 0) // q + e + r + f + q
         {
-
+            GameObject laserBeam = Instantiate(LaserBeam.gameObject, transform.position, transform.rotation);
         }
         else
         {

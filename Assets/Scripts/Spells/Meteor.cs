@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Meteor : MonoBehaviour
 {
-    public Vector2 mousePos;
-    public GameObject Meteoro;
+    Vector2 mousePos;
+
     int golpe = 80;
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,8 @@ public class Meteor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemigo"))
+        float distanceto = Vector3.Distance(gameObject.transform.position, collision.gameObject.transform.position);
+        if (collision.gameObject.CompareTag("Enemigo") && distanceto <= 10)
         {
             collision.gameObject.GetComponent<Enemigos>().RecibirGolpe(golpe);
         }

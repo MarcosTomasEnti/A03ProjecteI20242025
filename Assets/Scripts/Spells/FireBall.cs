@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FireBall : MonoBehaviour
 {
-    public Vector3 direction;
     int golpe = 40;
 
     // Start is called before the first frame update

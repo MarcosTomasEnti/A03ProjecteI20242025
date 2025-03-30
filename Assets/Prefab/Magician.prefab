@@ -308,14 +308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 1355970379274232967}
   firePoint: {fileID: 0}
-  bulletPrefab: {fileID: 8741792494347870157, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
-  BounchBall: {fileID: 6641768816853848118}
-  GreatFireBall: {fileID: 4882991844935192865, guid: 39237c95767fc2d45bc90bfe4199078b, type: 3}
-  mousePos: {x: 1.4336123, y: 29.27167}
-  direction: {x: 3.0629015, y: 24.155651, z: 0}
-  redBallSpeed: 20
-  greenBallSpeed: 40
-  Meteoro: {fileID: 108389163797242813, guid: e9642962174d21a4da95741359e30f76, type: 3}
 --- !u!114 &6562601436217012621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,10 +324,11 @@ MonoBehaviour:
   BouncyBall: {fileID: 6349586281818467478, guid: 70553640febdb9d40b2b3a3fd51ab186, type: 3}
   GreatFireBall: {fileID: 4882991844935192865, guid: 39237c95767fc2d45bc90bfe4199078b, type: 3}
   Meteoro: {fileID: 4267577373172771881, guid: e9642962174d21a4da95741359e30f76, type: 3}
-  mousePos: {x: -10.165537, y: 16.13734}
-  direction: {x: -5.5362477, y: 11.021322, z: 0}
+  ThunderCaster: {fileID: 2743929431549729416, guid: 4abe490242f52d24898ea6420e021936, type: 3}
+  LaserBeam: {fileID: 5709584978494855754, guid: a0bd1d3f7c2256449a1cc7a235c07b39, type: 3}
   redBallSpeed: 20
   greenBallSpeed: 40
+  thunderCasterSpeed: 10
 --- !u!1 &8786090729301043882
 GameObject:
   m_ObjectHideFlags: 0
