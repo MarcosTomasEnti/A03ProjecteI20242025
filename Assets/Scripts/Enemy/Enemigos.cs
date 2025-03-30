@@ -25,29 +25,29 @@ public class Enemigos : MonoBehaviour
         {
             FollowPlayer();
         }
-        
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       /* if (collision.gameObject.CompareTag("Bullet"))
-        {
-            playerDetected = true;
-            if (collision.gameObject.name == "FireBall(Clone)")
-            {
-                vida -= 40;
-            }
-            else if(collision.gameObject.name == "Bounch ball Variant(Clone)")
-            {
-                vida -= 25;
-            }
+        /* if (collision.gameObject.CompareTag("Bullet"))
+         {
+             playerDetected = true;
+             if (collision.gameObject.name == "FireBall(Clone)")
+             {
+                 vida -= 40;
+             }
+             else if(collision.gameObject.name == "Bounch ball Variant(Clone)")
+             {
+                 vida -= 25;
+             }
 
-            
-            Debug.Log("Vida restante: " + vida);
-        }
-        if (vida <= 0)
-        {
-            Destroy(gameObject);
-        }*/
+
+             Debug.Log("Vida restante: " + vida);
+         }
+         if (vida <= 0)
+         {
+             Destroy(gameObject);
+         }*/
     }
     public void OnTriggerEnter2D(Collider2D Vision)
     {
@@ -87,3 +87,4 @@ public class Enemigos : MonoBehaviour
         }
         Debug.Log("Vida Restante: " + vida);
     }
+}
