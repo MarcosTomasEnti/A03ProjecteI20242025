@@ -29,8 +29,7 @@ public class Rayito : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        float distanceto = Vector3.Distance(gameObject.transform.position, collision.gameObject.transform.position);
-        if (collision.gameObject.CompareTag("Enemigo") && distanceto <=2)
+        if (collision.gameObject.CompareTag("Enemigo"))
         {
             collision.gameObject.GetComponent<Enemigos>().RecibirGolpe(golpe);
         }

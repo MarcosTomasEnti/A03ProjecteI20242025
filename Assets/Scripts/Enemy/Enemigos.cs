@@ -7,7 +7,7 @@ public class Enemigos : MonoBehaviour
 
     public GameObject magician;
     public Rigidbody2D rb;
-    public int vida = 100;
+    public float vida = 100;
     public float acceleration = 5;
     public float maxSpeed = 10;
     public bool playerDetected = false;
@@ -78,7 +78,7 @@ public class Enemigos : MonoBehaviour
         }
     }
 
-    public void RecibirGolpe(int golpe)
+    public void RecibirGolpe(float golpe)
     {
         vida -= golpe;
         if (vida <= 0)
@@ -87,4 +87,3 @@ public class Enemigos : MonoBehaviour
         }
         Debug.Log("Vida Restante: " + vida);
     }
-}
