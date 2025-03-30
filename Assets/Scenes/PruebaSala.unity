@@ -358,6 +358,14 @@ PrefabInstance:
       propertyPath: GreatFireBall
       value: 
       objectReference: {fileID: 4882991844935192865, guid: 39237c95767fc2d45bc90bfe4199078b, type: 3}
+    - target: {fileID: 6562601436217012621, guid: d8e98c3935390744ba551a883baacf7c, type: 3}
+      propertyPath: StunBall
+      value: 
+      objectReference: {fileID: 8346282766738621628, guid: 5b0a13648cc4eb346a4a57ca7b024b8e, type: 3}
+    - target: {fileID: 6562601436217012621, guid: d8e98c3935390744ba551a883baacf7c, type: 3}
+      propertyPath: StormArea
+      value: 
+      objectReference: {fileID: 875953069531693848, guid: b50b206b19924174aad84ed37050b475, type: 3}
     - target: {fileID: 6641768816853848118, guid: d8e98c3935390744ba551a883baacf7c, type: 3}
       propertyPath: m_Name
       value: Magician

@@ -87,4 +87,10 @@ public class Enemigos : MonoBehaviour
         }
         Debug.Log("Vida Restante: " + vida);
     }
+
+    public void efectoStun (float stun)
+    {
+        
+        acceleration = 0;    
+    }
 }

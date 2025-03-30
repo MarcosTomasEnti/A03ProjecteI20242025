@@ -13,8 +13,11 @@ public class MagicCombo : MonoBehaviour
     public GameObject Meteoro;
     public GameObject ThunderCaster;
     public GameObject LaserBeam;
+    public GameObject StormArea;
+    public GameObject StunBall;
 
     public float redBallSpeed = 20;
+    public float purpleBallSpeed = 20;
     public float greenBallSpeed = 40;
     public float thunderCasterSpeed = 10f;
 
@@ -109,8 +112,14 @@ public class MagicCombo : MonoBehaviour
         {
 
         }
-        else if (comboList[0] == 4 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0) // f
+        else if (comboList[0] == 1 && comboList[1] == 3 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0) // q + r
         {
+            GameObject stunBall = Instantiate(StunBall.gameObject, transform.position, transform.rotation);
+            Rigidbody2D stunB = stunBall.GetComponent<Rigidbody2D>();
+            if (stunBall != null)
+            {
+                stunB.velocity = direction.normalized * purpleBallSpeed;
+            }
 
         }
         else if (comboList[0] == 1 && comboList[1] == 1 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0) // q + q  great fireball
@@ -128,9 +137,13 @@ public class MagicCombo : MonoBehaviour
         }
         else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 1 && comboList[3] == 2 && comboList[4] == 0) // q + e + q + e
         {
-            GameObject thunderCaster = Instantiate(ThunderCaster.gameObject, transform.position, quaternion.EulerXYZ(0,0,0));
+            GameObject thunderCaster = Instantiate(ThunderCaster.gameObject, transform.position, quaternion.Euler(0,0,0));
             Rigidbody2D thunderCasterRB = thunderCaster.GetComponent<Rigidbody2D>();
             thunderCasterRB.velocity = direction.normalized * thunderCasterSpeed;
+        }
+        else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 3 && comboList[3] == 0 && comboList[4] == 0) // q + e + r  StormArea
+        {
+            GameObject DmgAreaStorm = Instantiate(StormArea.gameObject, new Vector2(0, 0), Quaternion.identity);
         }
         else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 3 && comboList[3] == 4 && comboList[4] == 0) // q + e + r + f + q
         {
