@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LaserBeam : MonoBehaviour
 {
-    int golpe = 1;
+    public float golpe = 25;
     Vector2 playerPos;
 
     // Start is called before the first frame update
