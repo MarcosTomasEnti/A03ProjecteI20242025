@@ -8,11 +8,12 @@ TagManager:
   - Coin
   - Bullet
   - Enemigo
+  - Obstaculos
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstaculos
   - Water
   - UI
   - Player
