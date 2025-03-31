@@ -36,10 +36,13 @@ public class LaserBeam : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         
-        if (collision.gameObject.CompareTag("Enemigo"))
+        if (collision.gameObject.CompareTag("MeleeEnemy"))
         {
-            collision.gameObject.GetComponent<Enemigos>().RecibirGolpe(golpe * Time.deltaTime);
+            collision.gameObject.GetComponent<MeleeEnemy>().RecibirGolpe(golpe * Time.deltaTime);
         }
-        
+        if (collision.gameObject.CompareTag("RangedEnemy"))
+        {
+            collision.gameObject.GetComponent<RangedEnemy>().RecibirGolpe(golpe * Time.deltaTime);
+        }
     }
 }

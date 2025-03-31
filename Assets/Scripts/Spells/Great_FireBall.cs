@@ -19,9 +19,14 @@ public class Great_FireBall : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ( collision.gameObject.CompareTag("Enemigo"))
+        if ( collision.gameObject.CompareTag("MeleeEnemy"))
         {
-            collision.gameObject.GetComponent<Enemigos>().RecibirGolpe(golpe);
+            collision.gameObject.GetComponent<MeleeEnemy>().RecibirGolpe(golpe);
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("RangedEnemy"))
+        {
+            collision.gameObject.GetComponent<RangedEnemy>().RecibirGolpe(golpe);
             Destroy(gameObject);
         }
         else if(collision.gameObject.CompareTag("Suelo"))
