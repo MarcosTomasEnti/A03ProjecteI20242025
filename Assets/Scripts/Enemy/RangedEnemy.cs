@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class MeleeEnemy : MonoBehaviour
+public class RangedEnemy : MonoBehaviour
 {
+    public GameObject projectile;
+    public float projectileSpeed = 15;
 
     public GameObject magician;
     public Rigidbody2D rb;
     public float vida = 100;
     public float damage = 10;
-    public float attackDelay = 2;
-    public float activeAttackTime = 0.5f;
+    public float attackDelay = 5;
+
     float attackTimer;
-    int stopOnAttack = 1;
-    
+
+
     public float acceleration = 5;
     public float maxSpeed = 10;
-    public float sightDistance = 25;
+
     bool playerDetected = false;
-    bool attacking = false;
+    bool inRange = false;
+
     CircleCollider2D hitBox;
 
     SpriteRenderer sprite;
@@ -39,47 +42,54 @@ public class MeleeEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-
-
         Vector2 playerDir = new Vector2(transform.position.x - magician.transform.position.x, transform.position.y - magician.transform.position.y).normalized;
         float playerDist = Vector2.Distance(transform.position, magician.transform.position);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -playerDir, Mathf.Infinity, ~LayerMask.GetMask("Enemy"));
 
         if (hit.collider != null)
         {
-            if(hit.collider.CompareTag("Player") && playerDist < sightDistance)
+            if (hit.collider.CompareTag("Player") && inRange)
             {
-                FollowPlayer();
+                fleeFromPlayer();
                 playerDetected = true;
             }
             else
             {
-                rb.velocity *= new Vector2(0.999f, 0.999f);
+                rb.velocity *= new Vector2(0.99f, 0.99f);
                 playerDetected = false;
             }
         }
 
-        attackTimer += Time.deltaTime;
-        if(playerDetected && playerDist < hitBox.radius && attackTimer > attackDelay)
+        if(!playerDetected && !inRange)
         {
-            attackTimer = 0;
-            attacking = true;
+            attackTimer += Time.deltaTime;
+            if (attackTimer > attackDelay)
+            {
+                attackTimer = 0;
+                GameObject Projectile = Instantiate(projectile.gameObject, transform.position, transform.rotation);
+                Vector2 shotDir = new Vector2(magician.transform.position.x - transform.position.x, magician.transform.position.y - transform.position.y).normalized;
+                Rigidbody2D shotRB = projectile.GetComponent<Rigidbody2D>();
+                shotRB.velocity = new Vector2(shotDir.x * projectileSpeed, shotDir.y * projectileSpeed);
+                Debug.Log(shotDir);
+
+            }
         }
-        if(attackTimer > activeAttackTime && attackTimer <= attackDelay)
+        else
         {
-            attacking = false;
+            attackTimer = attackDelay / 2;
         }
 
-
-
+        
+        
+        
+    
     }
 
-    void FollowPlayer()
+    void fleeFromPlayer()
     {
         Vector2 fpos = Vector2.MoveTowards(transform.position, magician.transform.position, acceleration * Time.deltaTime);
-        rb.velocity += fpos - (Vector2)transform.position;
-        rb.velocity *= stopOnAttack;
+        rb.velocity -= fpos - (Vector2)transform.position;
+
         if (rb.velocity.x > maxSpeed)
         {
             rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
@@ -115,41 +125,19 @@ public class MeleeEnemy : MonoBehaviour
     }
 
 
-
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && attacking == true)
-        {
-            {
-                attacking = false;  
-                Debug.Log("hitPlayer!");
-                stopOnAttack = 0;
-
-
-
-            }
-        }
-        else if(collision.CompareTag("Player") && attacking == false)
-        {
-
-
-        }
         if (collision.CompareTag("Player"))
         {
-            transform.rotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + (Time.deltaTime * 1500));
+            inRange = true;
         }
-        
 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") )
+        if (collision.CompareTag("Player"))
         {
-            {
-                Debug.Log("PlayerLeft");
-                stopOnAttack = 1;
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
+            inRange = false;
         }
     }
 

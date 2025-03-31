@@ -29,9 +29,13 @@ public class Rayito : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemigo"))
+        if (collision.gameObject.CompareTag("MeleeEnemy"))
         {
-            collision.gameObject.GetComponent<Enemigos>().RecibirGolpe(golpe);
+            collision.gameObject.GetComponent<MeleeEnemy>().RecibirGolpe(golpe);
+        }
+        if (collision.gameObject.CompareTag("RangedEnemy"))
+        {
+            collision.gameObject.GetComponent<RangedEnemy>().RecibirGolpe(golpe);
         }
     }
  
