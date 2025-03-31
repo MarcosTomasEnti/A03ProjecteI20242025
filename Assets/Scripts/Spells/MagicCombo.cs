@@ -21,17 +21,19 @@ public class MagicCombo : MonoBehaviour
     public float greenBallSpeed = 40;
     public float thunderCasterSpeed = 10f;
 
+    public BarraMana barraMana;
+
     Vector2 mousePos;
     Vector3 direction;
 
     //Mana de los disparos
-    float ManaFireBall = 10;
-    float ManaGreatFireBall = 40;
-    float ManaBounceBall = 5;
-    float ManaMeteor = 70;
-    float ManaThunder = 70;
-    float ManaStorm = 35;
-    float ManaStun = 25;
+    int ManaFireBall = 10;
+    int ManaGreatFireBall = 40;
+    int ManaBounceBall = 5;
+    int ManaMeteor = 70;
+    int ManaThunder = 70;
+    int ManaStorm = 35;
+    int ManaStun = 25;
 
 
 
@@ -45,7 +47,12 @@ public class MagicCombo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        barraMana = FindObjectOfType<BarraMana>();
+        if (barraMana == null)
+        {
+            Debug.LogError("No se encontró BarraMana en la escena!");
+            enabled = false; // Desactiva este script si no hay BarraMana
+        }
     }
 
     // Update is called once per frame
@@ -84,7 +91,6 @@ public class MagicCombo : MonoBehaviour
     void getSpell()
     {
 
-
         mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
@@ -97,9 +103,9 @@ public class MagicCombo : MonoBehaviour
         {
             Debug.Log("Null spell");
         }
-        else if (comboList[0] == 1 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0) // q fireball attack
+        else if (comboList[0] == 1 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0 && barraMana != null && barraMana.Mana >= ManaFireBall) // q fireball attack
         {
-            GetComponent<BarraMana>().ManaConsumida(ManaFireBall);
+            barraMana.ManaConsumida(ManaFireBall);
             GameObject fireball = Instantiate(fireBall.gameObject, transform.position, transform.rotation);
             Rigidbody2D firerb = fireball.GetComponent<Rigidbody2D>();
             if (fireball != null)
@@ -107,9 +113,9 @@ public class MagicCombo : MonoBehaviour
                 firerb.velocity = direction.normalized * redBallSpeed;
             }
         }
-        else if (comboList[0] == 2 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0) // e boncy ball
+        else if (comboList[0] == 2 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0 && barraMana != null && barraMana.Mana >= ManaBounceBall) // e boncy ball
         {
-            GetComponent<BarraMana>().ManaConsumida(ManaBounceBall);
+            barraMana.ManaConsumida(ManaBounceBall);
             GameObject bounchBall = Instantiate(BouncyBall.gameObject, transform.position, Quaternion.identity);
             Rigidbody2D bounchrb = bounchBall.GetComponent<Rigidbody2D>();
             if (bounchBall != null)
@@ -121,9 +127,9 @@ public class MagicCombo : MonoBehaviour
         {
 
         }
-        else if (comboList[0] == 1 && comboList[1] == 3 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0) // q + r
+        else if (comboList[0] == 1 && comboList[1] == 3 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0 && barraMana != null && barraMana.Mana >= ManaStun) // q + r
         {
-            GetComponent<BarraMana>().ManaConsumida(ManaStun);
+            barraMana.ManaConsumida(ManaStun);
             GameObject stunBall = Instantiate(StunBall.gameObject, transform.position, transform.rotation);
             Rigidbody2D stunB = stunBall.GetComponent<Rigidbody2D>();
             if (stunBall != null)
@@ -132,9 +138,9 @@ public class MagicCombo : MonoBehaviour
             }
 
         }
-        else if (comboList[0] == 1 && comboList[1] == 1 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0) // q + q  great fireball
+        else if (comboList[0] == 1 && comboList[1] == 1 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0 && barraMana != null && barraMana.Mana >= ManaGreatFireBall) // q + q  great fireball
         {
-            GetComponent<BarraMana>().ManaConsumida(ManaGreatFireBall);
+            barraMana.ManaConsumida(ManaGreatFireBall);
             GameObject greatFireBall = Instantiate(GreatFireBall.gameObject, transform.position, transform.rotation);
             Rigidbody2D GreatFBrb = greatFireBall.GetComponent<Rigidbody2D>();
             if (greatFireBall != null)
@@ -142,21 +148,21 @@ public class MagicCombo : MonoBehaviour
                 GreatFBrb.velocity = direction.normalized * greenBallSpeed;
             }
         }
-        else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0) // q + e meteor
+        else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0 && barraMana != null && barraMana.Mana >= ManaMeteor) // q + e meteor
         {
-            GetComponent<BarraMana>().ManaConsumida(ManaMeteor);
+            barraMana.ManaConsumida(ManaMeteor);
             GameObject meteor = Instantiate(Meteoro.gameObject, new Vector2(0, 0), Quaternion.identity);
         }
-        else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 1 && comboList[3] == 2 && comboList[4] == 0) // q + e + q + e
+        else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 1 && comboList[3] == 2 && comboList[4] == 0 && barraMana != null && barraMana.Mana >= ManaThunder) // q + e + q + e
         {
-            GetComponent<BarraMana>().ManaConsumida(ManaThunder);
+            barraMana.ManaConsumida(ManaThunder);
             GameObject thunderCaster = Instantiate(ThunderCaster.gameObject, transform.position, quaternion.Euler(0,0,0));
             Rigidbody2D thunderCasterRB = thunderCaster.GetComponent<Rigidbody2D>();
             thunderCasterRB.velocity = direction.normalized * thunderCasterSpeed;
         }
-        else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 3 && comboList[3] == 0 && comboList[4] == 0) // q + e + r  StormArea
+        else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 3 && comboList[3] == 0 && comboList[4] == 0 && barraMana != null && barraMana.Mana >= ManaStorm) // q + e + r  StormArea
         {
-            GetComponent<BarraMana>().ManaConsumida(ManaStorm);
+            barraMana.ManaConsumida(ManaStorm);
             GameObject DmgAreaStorm = Instantiate(StormArea.gameObject, new Vector2(0, 0), Quaternion.identity);
         }
         else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 3 && comboList[3] == 4 && comboList[4] == 0) // q + e + r + f + 
@@ -173,8 +179,4 @@ public class MagicCombo : MonoBehaviour
             comboList[i] = 0;
         }
     }
-
-
-
 }
-

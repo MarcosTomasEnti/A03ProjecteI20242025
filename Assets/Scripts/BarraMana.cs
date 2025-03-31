@@ -1,43 +1,67 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class BarraMana : MonoBehaviour
 {
     public Slider visualMana;
-    public float Mana;
-    public int costoMana;
+    private const float ManaMaximo = 100;
+    [SerializeField] private float mana = ManaMaximo;
+    public float velocidadRegeneracion = 10f;
+
+    public float Mana
+    {
+        get { return mana; }
+        set
+        {
+            mana = Mathf.Clamp(value, 0, ManaMaximo);
+            ActualizarBarra();
+        }
+    }
 
     private void Start()
     {
-        StartCoroutine(tiempo());
-    }
-
-    /*private void Update()
-    {
-        visualMana.GetComponent<Slider>().value = Mana;
-        if(Input.GetMouseButtonDown(1) && Mana >= costoMana)
+        if (visualMana == null)
         {
-            Mana -= costoMana;
-
-        }
-    }*/
-
-    public void ManaConsumida(float manaReducir)
-    {
-        Mana -= manaReducir;
-    }
-
-    IEnumerator tiempo()
-    {
-        while(true) 
-        {
-            yield return new WaitForSeconds(0.1f);
-            if(Mana < 100)
+            Debug.LogError("Error: visualMana no está asignado en el Inspector.");
+            visualMana = GetComponent<Slider>();
+            if (visualMana == null)
             {
-                Mana += 10f * Time.deltaTime;
+                Debug.LogError("No se encontró componente Slider en este GameObject.");
             }
         }
 
+        visualMana.maxValue = ManaMaximo;
+        visualMana.value = Mana;
+
+        StartCoroutine(RegenerarMana());
+    }
+
+    private void ActualizarBarra()
+    {
+        if (visualMana != null)
+        {
+            visualMana.value = Mana;
+        }
+    }
+
+    public void ManaConsumida(int cantidad)
+    {
+        if (Mana >= cantidad)
+        {
+            Mana -= cantidad;
+        }
+    }
+
+    IEnumerator RegenerarMana()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.1f);
+            if (Mana < ManaMaximo)
+            {
+                Mana += velocidadRegeneracion * 0.1f;
+            }
+        }
     }
 }
