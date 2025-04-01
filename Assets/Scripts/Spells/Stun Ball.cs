@@ -35,6 +35,10 @@ public class StunBall : MonoBehaviour
             collision.gameObject.GetComponent<MeleeEnemy>().efectoStun(stun);
             Destroy(gameObject.gameObject);
         }
+        else if (collision.gameObject.CompareTag("Obstaculos"))
+        {
+            Destroy(gameObject.gameObject);
+        }
     }
 
 }

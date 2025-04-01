@@ -33,5 +33,9 @@ public class Great_FireBall : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else if (collision.gameObject.CompareTag("Obstaculos"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

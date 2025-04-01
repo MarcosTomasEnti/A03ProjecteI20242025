@@ -34,5 +34,9 @@ public class FireBall : MonoBehaviour
             collision.gameObject.GetComponent<RangedEnemy>().RecibirGolpe(golpe);
             Destroy(gameObject.gameObject);
         }
+        else if (collision.gameObject.CompareTag("Obstaculos"))
+        {
+            Destroy(gameObject.gameObject);
+        }
     }
 }

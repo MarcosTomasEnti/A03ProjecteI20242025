@@ -8,13 +8,14 @@ TagManager:
   - Coin
   - Bullet
   - Enemigo
+  - Obstaculos
   - RangedEnemy
   - MeleeEnemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstaculos
   - Water
   - UI
   - Player
