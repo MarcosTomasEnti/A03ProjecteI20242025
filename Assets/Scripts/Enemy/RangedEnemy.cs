@@ -15,7 +15,7 @@ public class RangedEnemy : MonoBehaviour
     public float attackDelay = 5;
 
     float attackTimer;
-
+    float stunTimer;
 
     public float acceleration = 5;
     public float maxSpeed = 10;
@@ -120,8 +120,13 @@ public class RangedEnemy : MonoBehaviour
 
     public void efectoStun(float stun)
     {
-        maxSpeed = 0;
-        acceleration = 0;
+        stunTimer += Time.deltaTime;
+        if (stunTimer < stun)
+        {
+            maxSpeed = 0;
+            acceleration = 0;
+            stunTimer = 0;
+        }
     }
 
 

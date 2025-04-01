@@ -12,8 +12,11 @@ public class MeleeEnemy : MonoBehaviour
     public float damage = 10;
     public float attackDelay = 2;
     public float activeAttackTime = 0.5f;
+    
     float attackTimer;
-    int stopOnAttack = 1;
+    float stunTimer;
+
+int stopOnAttack = 1;
     
     public float acceleration = 5;
     public float maxSpeed = 10;
@@ -110,8 +113,14 @@ public class MeleeEnemy : MonoBehaviour
 
     public void efectoStun(float stun)
     {
-        maxSpeed = 0;
-        acceleration = 0;
+        stunTimer += Time.deltaTime;
+        if (stunTimer < stun)
+        {
+            maxSpeed = 0;
+            acceleration = 0;
+            stunTimer = 0;
+        }
+
     }
 
 
