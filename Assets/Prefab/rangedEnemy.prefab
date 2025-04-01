@@ -203,6 +203,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   vida: 100
   damage: 10
+<<<<<<< HEAD
   attackDelay: 1.5
+=======
+  attackDelay: 5
+>>>>>>> origin/features/enemigos
   acceleration: 5
   maxSpeed: 10
