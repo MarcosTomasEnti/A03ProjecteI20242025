@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class SurpriseBox : MonoBehaviour
 {
-    public GameObject Enemy;
+    public GameObject meleeEnemy;
     public GameObject Heart;
+    public GameObject rangedEnemy;
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -14,17 +15,22 @@ public class SurpriseBox : MonoBehaviour
 
          if (collision.gameObject.CompareTag("Bullet"))
         {
-            int goodLuck = Random.Range(0, 3);
+            int goodLuck = Random.Range(0, 4);
           
 
             if (goodLuck == 1)
             {
-                GameObject enemy = Instantiate(Enemy.gameObject, transform.position, transform.rotation);
+                GameObject enemy = Instantiate(meleeEnemy.gameObject, transform.position, transform.rotation);
                 Destroy(gameObject.gameObject);
             }
             else if (goodLuck == 2)
             {
                 GameObject heart = Instantiate(Heart.gameObject, transform.position, transform.rotation);
+                Destroy(gameObject.gameObject);
+            }
+            else if(goodLuck == 3)
+            {
+                GameObject enemy = Instantiate(rangedEnemy.gameObject, transform.position, transform.rotation);
                 Destroy(gameObject.gameObject);
             }
             else
@@ -44,7 +50,7 @@ public class SurpriseBox : MonoBehaviour
           
             if (goodLuck == 1)
             {
-                GameObject enemy = Instantiate(Enemy.gameObject, transform.position, transform.rotation);
+                GameObject enemy = Instantiate(meleeEnemy.gameObject, transform.position, transform.rotation);
                 Destroy(gameObject.gameObject);
             }
             else if (goodLuck == 2)

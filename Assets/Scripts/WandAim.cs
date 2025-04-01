@@ -29,7 +29,7 @@ public class WandAim : MonoBehaviour
         //accedemos al componente haciendo uso de la jerarqu�a de la escena, ya que este componente es de un hijo del objeto al que pertenece este 
         //script
         sprite = GetComponentInChildren<SpriteRenderer>();
-        magician = GetComponentInParent<GameObject>();
+
     }
 
     // Update is called once per frame

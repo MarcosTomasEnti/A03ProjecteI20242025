@@ -14,6 +14,7 @@ public class Recover_Health : MonoBehaviour
         {
             // Funcion de Curar vida
             Destroy(gameObject.gameObject);
+            FindObjectOfType<BarraVida>().VidaConsumida(-health);
         }
     }
     // Update is called once per frame
