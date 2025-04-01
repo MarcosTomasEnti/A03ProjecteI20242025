@@ -18,21 +18,21 @@ public class StunBall : MonoBehaviour
     {
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.CompareTag("Suelo"))
         {
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("Enemigo"))
+        else if (collision.gameObject.CompareTag("RangedEnemy"))
         {
-            collision.gameObject.GetComponent<Enemigos>().RecibirGolpe(golpe);
+            collision.gameObject.GetComponent<RangedEnemy>().RecibirGolpe(golpe);
             Destroy(gameObject.gameObject);
         }
-        else if (collision.gameObject.CompareTag("Enemigo"))
+        else if (collision.gameObject.CompareTag("MeleeEnemy"))
         {
-            collision.gameObject.GetComponent<Enemigos>().efectoStun(stun);
+            collision.gameObject.GetComponent<MeleeEnemy>().efectoStun(stun);
             Destroy(gameObject.gameObject);
         }
     }
