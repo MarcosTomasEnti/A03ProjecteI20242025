@@ -110,7 +110,7 @@ public class MeleeEnemy : MonoBehaviour
 
     public void efectoStun(float stun)
     {
-
+        maxSpeed = 0;
         acceleration = 0;
     }
 

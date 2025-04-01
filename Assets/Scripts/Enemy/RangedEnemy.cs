@@ -120,7 +120,7 @@ public class RangedEnemy : MonoBehaviour
 
     public void efectoStun(float stun)
     {
-
+        maxSpeed = 0;
         acceleration = 0;
     }
 

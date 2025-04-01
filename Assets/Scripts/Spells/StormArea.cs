@@ -6,7 +6,7 @@ public class StormArea : MonoBehaviour
 {
     Vector2 mousePos;
 
-    int golpe = 20;
+    int golpe = 15;
    
     void Start()
     {
