@@ -24,9 +24,14 @@ public class FireBall : MonoBehaviour
         {
                 Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("Enemigo"))
+        else if (collision.gameObject.CompareTag("MeleeEnemy"))
         {
-            collision.gameObject.GetComponent<Enemigos>().RecibirGolpe(golpe);
+            collision.gameObject.GetComponent<MeleeEnemy>().RecibirGolpe(golpe);
+            Destroy(gameObject.gameObject);
+        }
+        else if (collision.gameObject.CompareTag("RangedEnemy"))
+        {
+            collision.gameObject.GetComponent<RangedEnemy>().RecibirGolpe(golpe);
             Destroy(gameObject.gameObject);
         }
     }

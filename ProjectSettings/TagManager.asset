@@ -8,6 +8,8 @@ TagManager:
   - Coin
   - Bullet
   - Enemigo
+  - RangedEnemy
+  - MeleeEnemy
   layers:
   - Default
   - TransparentFX

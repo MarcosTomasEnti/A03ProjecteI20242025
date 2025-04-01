@@ -19,14 +19,20 @@ public class StormArea : MonoBehaviour
 
     void Update()
     {
+
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
 
-        if (collision.gameObject.CompareTag("Enemigo"))
+        if (collision.gameObject.CompareTag("MeleeEnemy"))
         {
-            collision.gameObject.GetComponent<Enemigos>().RecibirGolpe(golpe);
+            collision.gameObject.GetComponent<MeleeEnemy>().RecibirGolpe(golpe * Time.deltaTime);
+        }
+        if (collision.gameObject.CompareTag("RangedEnemy"))
+        {
+            collision.gameObject.GetComponent<RangedEnemy>().RecibirGolpe(golpe * Time.deltaTime);
         }
     }
 }
