@@ -11,9 +11,13 @@ public class Enemigos : MonoBehaviour
     public float acceleration = 5;
     public float maxSpeed = 10;
     public bool playerDetected = false;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+
         rb = GetComponent<Rigidbody2D>();
         magician = GameObject.FindGameObjectWithTag("Player");
     }

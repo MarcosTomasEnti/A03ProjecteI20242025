@@ -70,7 +70,8 @@ public class RangedEnemy : MonoBehaviour
                 Vector2 shotDir = new Vector2(magician.transform.position.x - transform.position.x, magician.transform.position.y - transform.position.y).normalized;
                 Rigidbody2D shotRB = projectile.GetComponent<Rigidbody2D>();
                 shotRB.velocity = new Vector2(shotDir.x * projectileSpeed, shotDir.y * projectileSpeed);
-                Debug.Log(shotDir);
+                
+                projectile.GetComponent<EnemyProjectile>().setDamage(damage);
 
             }
         }

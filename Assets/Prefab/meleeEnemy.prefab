@@ -200,7 +200,7 @@ MonoBehaviour:
   magician: {fileID: 0}
   rb: {fileID: 0}
   vida: 100
-  damage: 10
+  damage: 20
   attackDelay: 2
   activeAttackTime: 0.5
   acceleration: 10

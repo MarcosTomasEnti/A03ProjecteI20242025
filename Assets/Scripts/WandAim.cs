@@ -19,8 +19,8 @@ public class WandAim : MonoBehaviour
 
     Vector2 mousePos;
     Vector3 direction;
-    
-  
+    GameObject magician;
+
 
 
     // Start is called before the first frame update
@@ -29,11 +29,15 @@ public class WandAim : MonoBehaviour
         //accedemos al componente haciendo uso de la jerarqu�a de la escena, ya que este componente es de un hijo del objeto al que pertenece este 
         //script
         sprite = GetComponentInChildren<SpriteRenderer>();
+        magician = GetComponentInParent<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        
+
         mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 

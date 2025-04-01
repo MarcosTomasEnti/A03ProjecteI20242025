@@ -10,7 +10,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //A partir de aquí se pueden poner las variables. NO ANTES.
-
+    public bool alive = true;
     //Public permite que la variable sea accedida desde el editor de unity.
     private int totalCoins = 0;
     //"RigidBody2D" es un componente de objeto de unity que proporciona físicas al objeto y se puede declarar en el editor para modificar
@@ -29,37 +29,72 @@ public class PlayerMovement : MonoBehaviour
     //Velocidad del jugador. Si se altera puede proporcionar una velocidad diferente. En negativo le hará ir al revés.
     public float speed = 15;
 
+    SpriteRenderer sprite;
+    public Sprite deathSprite;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        sprite = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //asignamos el input de movimiento físico usando los ejes de movimiento vertical y horizontal a los floats anteriormente declarados.
-        horizontalMove = Input.GetAxisRaw("Horizontal");
-        verticalMove = Input.GetAxisRaw("Vertical");
-        
-        //Detecta si hemos pulsado espacio para alternar entre point and click o movimiento WASD.
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            if (pointAndClickMovement == false)
-            {
-                pointAndClickMovement = true;
-            }
-            else
-            {
-                pointAndClickMovement = false;
-            }
 
+        if (alive)
+        {
+            //asignamos el input de movimiento físico usando los ejes de movimiento vertical y horizontal a los floats anteriormente declarados.
+            horizontalMove = Input.GetAxisRaw("Horizontal");
+            verticalMove = Input.GetAxisRaw("Vertical");
+
+            //Detecta si hemos pulsado espacio para alternar entre point and click o movimiento WASD.
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                if (pointAndClickMovement == false)
+                {
+                    pointAndClickMovement = true;
+                }
+                else
+                {
+                    pointAndClickMovement = false;
+                }
+
+            }
         }
+        else
+        {
+
+            sprite.sprite = deathSprite;
+            sprite.color -= new Color(0,0,0,2*Time.deltaTime);
+        }
+        
 
     }
 
+    public void destroyChildren()
+    {
+        for(int i = 0; i< transform.childCount; i++)
+        {
+            if(gameObject.transform.GetChild(i).gameObject.tag == "Player")
+                Destroy(gameObject.transform.GetChild(i).gameObject);
+        }
+    }
+
+
     //actúa igual al void update, pero va ligado al motor de físicas y no a los frames de la pantalla.
     private void FixedUpdate()
+    {
+        if (alive)
+            move();
+
+
+    }
+
+    void move()
     {
         //se guarda en esta variable, que es un vector de 3 dimensiones, la posición del mouse en la pantalla
         Vector3 mousePos = Input.mousePosition;
@@ -91,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
         //en caso de que sí que esté activo el movimiento point and click Y se haga click derecho en algún punto:
-        else if(Input.GetMouseButton(1))
+        else if (Input.GetMouseButton(1))
         {
             //obtenemos las coordenadas del último punto donde se ha hecho click para que el jugador sepa a donde ir
             lastClickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -99,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
             moving = true;
         }
         //en caso de que el jugador no esté en el punto y siga en movimiento hacia este:
-        if(moving && (Vector2)transform.position != lastClickPos)
+        if (moving && (Vector2)transform.position != lastClickPos)
         {
             //declaramos una variable para calcular la velocidad a la que se mueve
             float step = speed * Time.fixedDeltaTime;
@@ -111,9 +146,8 @@ public class PlayerMovement : MonoBehaviour
         {
             moving = false;
         }
-
-
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Coin"))

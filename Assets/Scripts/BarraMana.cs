@@ -21,15 +21,7 @@ public class BarraMana : MonoBehaviour
 
     private void Start()
     {
-        if (visualMana == null)
-        {
-            Debug.LogError("Error: visualMana no está asignado en el Inspector.");
-            visualMana = GetComponent<Slider>();
-            if (visualMana == null)
-            {
-                Debug.LogError("No se encontró componente Slider en este GameObject.");
-            }
-        }
+    
 
         visualMana.maxValue = ManaMaximo;
         visualMana.value = Mana;
@@ -45,12 +37,9 @@ public class BarraMana : MonoBehaviour
         }
     }
 
-    public void ManaConsumida(int cantidad)
+    public void ManaConsumida(float cantidad)
     {
-        if (Mana >= cantidad)
-        {
-            Mana -= cantidad;
-        }
+        Mana -= cantidad;
     }
 
     IEnumerator RegenerarMana()
@@ -60,7 +49,7 @@ public class BarraMana : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             if (Mana < ManaMaximo)
             {
-                Mana += velocidadRegeneracion * 0.1f;
+                Mana += velocidadRegeneracion * Time.deltaTime * 50;
             }
         }
     }

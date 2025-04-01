@@ -34,6 +34,7 @@ public class MagicCombo : MonoBehaviour
     int ManaThunder = 70;
     int ManaStorm = 35;
     int ManaStun = 25;
+    float ManaLaserBeam = 20;
 
 
 
@@ -165,7 +166,7 @@ public class MagicCombo : MonoBehaviour
             barraMana.ManaConsumida(ManaStorm);
             GameObject DmgAreaStorm = Instantiate(StormArea.gameObject, new Vector2(0, 0), Quaternion.identity);
         }
-        else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 3 && comboList[3] == 4 && comboList[4] == 0) // q + e + r + f + 
+        else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 3 && comboList[3] == 4 && comboList[4] == 0 && barraMana != null && barraMana.Mana >= ManaLaserBeam) // q + e + r + f + 
         {
             GameObject laserBeam = Instantiate(LaserBeam.gameObject, transform.position, transform.rotation);
         }

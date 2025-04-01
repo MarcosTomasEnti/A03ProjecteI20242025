@@ -205,9 +205,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c30ebb8a6a7f249a16c3217a0b13b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alive: 1
   rb: {fileID: 7284844200130849231}
   pointAndClickMovement: 0
   speed: 10
+  deathSprite: {fileID: 21300000, guid: f9938174cfb404d4f9628c58c72c14ec, type: 3}
 --- !u!212 &5067774424449424601
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -326,9 +328,13 @@ MonoBehaviour:
   Meteoro: {fileID: 4267577373172771881, guid: e9642962174d21a4da95741359e30f76, type: 3}
   ThunderCaster: {fileID: 2743929431549729416, guid: 4abe490242f52d24898ea6420e021936, type: 3}
   LaserBeam: {fileID: 5709584978494855754, guid: a0bd1d3f7c2256449a1cc7a235c07b39, type: 3}
+  StormArea: {fileID: 0}
+  StunBall: {fileID: 0}
   redBallSpeed: 20
+  purpleBallSpeed: 20
   greenBallSpeed: 40
   thunderCasterSpeed: 10
+  barraMana: {fileID: 0}
 --- !u!1 &8786090729301043882
 GameObject:
   m_ObjectHideFlags: 0

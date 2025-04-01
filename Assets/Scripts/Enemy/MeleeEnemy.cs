@@ -9,7 +9,7 @@ public class MeleeEnemy : MonoBehaviour
     public GameObject magician;
     public Rigidbody2D rb;
     public float vida = 100;
-    public float damage = 10;
+    public float damage = 20;
     public float attackDelay = 2;
     public float activeAttackTime = 0.5f;
     float attackTimer;
@@ -24,9 +24,13 @@ public class MeleeEnemy : MonoBehaviour
 
     SpriteRenderer sprite;
 
+    BarraVida barraVida;
+
     // Start is called before the first frame update
     void Start()
     {
+        barraVida = FindObjectOfType<BarraVida>();
+
         attackTimer = attackDelay;
         rb = GetComponent<Rigidbody2D>();
         magician = GameObject.FindGameObjectWithTag("Player");
@@ -123,6 +127,7 @@ public class MeleeEnemy : MonoBehaviour
             {
                 attacking = false;  
                 Debug.Log("hitPlayer!");
+                barraVida.VidaConsumida(damage);
                 stopOnAttack = 0;
 
 

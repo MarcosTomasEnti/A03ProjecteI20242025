@@ -5,16 +5,24 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour
 {
     public float projectileSpeed = 15;
-    int golpe = 40;
+    float damage = 10;
     Rigidbody2D shotRB;
+
+    BarraVida barraVida;
 
     // Start is called before the first frame update
     void Start()
     {
+        barraVida = FindObjectOfType<BarraVida>();
         Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
         Vector2 shotDir = new Vector2(playerPos.x - transform.position.x, playerPos.y - transform.position.y).normalized;
         shotRB = GetComponent<Rigidbody2D>();
         shotRB.velocity = new Vector2(shotDir.x * projectileSpeed, shotDir.y * projectileSpeed);
+    }
+
+    public void setDamage(float dmg)
+    {
+        damage = dmg;
     }
 
     // Update is called once per frame
@@ -30,7 +38,8 @@ public class EnemyProjectile : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player Hit!");
+            
+            barraVida.VidaConsumida(damage);
             Destroy(gameObject.gameObject);
         }
     }
