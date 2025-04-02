@@ -13,6 +13,7 @@ public class RangedEnemy : MonoBehaviour
     public float vida = 100;
     public float damage = 10;
     public float attackDelay = 5;
+    public float visionRange = 50;
 
     float attackTimer;
 
@@ -42,16 +43,26 @@ public class RangedEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Vector2 playerDir = new Vector2(transform.position.x - magician.transform.position.x, transform.position.y - magician.transform.position.y).normalized;
         float playerDist = Vector2.Distance(transform.position, magician.transform.position);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -playerDir, Mathf.Infinity, ~LayerMask.GetMask("Enemy"));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -playerDir, visionRange, ~LayerMask.GetMask("Enemy"));
 
         if (hit.collider != null)
         {
-            if (hit.collider.CompareTag("Player") && inRange)
+            if (hit.collider.CompareTag("Player"))
             {
-                fleeFromPlayer();
                 playerDetected = true;
+
+
+                if ( inRange)
+                { 
+                    fleeFromPlayer();
+                }
+                else
+                {
+                    rb.velocity *= new Vector2(0.99f, 0.99f);
+                }
             }
             else
             {
@@ -59,9 +70,14 @@ public class RangedEnemy : MonoBehaviour
                 playerDetected = false;
             }
         }
-
-        if(!playerDetected && !inRange)
+        else
         {
+            playerDetected = false;
+        }
+
+        if(playerDetected && !inRange)
+        {
+            
             attackTimer += Time.deltaTime;
             if (attackTimer > attackDelay)
             {
@@ -75,15 +91,13 @@ public class RangedEnemy : MonoBehaviour
 
             }
         }
-        else
-        {
-            attackTimer = attackDelay / 2;
-        }
 
-        
-        
-        
-    
+
+
+
+
+
+
     }
 
     void fleeFromPlayer()

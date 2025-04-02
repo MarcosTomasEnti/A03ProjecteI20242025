@@ -16,10 +16,10 @@ public class MagicCombo : MonoBehaviour
     public GameObject StormArea;
     public GameObject StunBall;
 
-    public float redBallSpeed = 20;
-    public float purpleBallSpeed = 20;
-    public float greenBallSpeed = 40;
-    public float thunderCasterSpeed = 10f;
+    public const float redBallSpeed = 20;
+    public const float purpleBallSpeed = 20;
+    public const float greenBallSpeed = 40;
+    public const float thunderCasterSpeed = 40f;
 
     public BarraMana barraMana;
 
@@ -160,6 +160,7 @@ public class MagicCombo : MonoBehaviour
             GameObject thunderCaster = Instantiate(ThunderCaster.gameObject, transform.position, quaternion.Euler(0,0,0));
             Rigidbody2D thunderCasterRB = thunderCaster.GetComponent<Rigidbody2D>();
             thunderCasterRB.velocity = direction.normalized * thunderCasterSpeed;
+            Debug.Log(thunderCasterSpeed);
         }
         else if (comboList[0] == 1 && comboList[1] == 2 && comboList[2] == 3 && comboList[3] == 0 && comboList[4] == 0 && barraMana != null && barraMana.Mana >= ManaStorm) // q + e + r  StormArea
         {

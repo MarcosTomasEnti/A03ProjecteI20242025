@@ -24,22 +24,22 @@ public class Bounchball : MonoBehaviour
             if (Rebotes > 0)
             {
                 Rebotes--;
-                golpe += golpe * 1.25f;
+                golpe += 2.5f;
             }
             else
                 Destroy(gameObject.gameObject);
         }
         else if (collision.gameObject.CompareTag("MeleeEnemy"))
         {    
-            golpe += golpe * 5f;
-            collision.gameObject.GetComponent<MeleeEnemy>().RecibirGolpe(golpe);   
             
+            collision.gameObject.GetComponent<MeleeEnemy>().RecibirGolpe(golpe);
+            golpe +=  5;
         }
         else if (collision.gameObject.CompareTag("RangedEnemy"))
         {                
-            golpe += golpe + 5;
-            collision.gameObject.GetComponent<RangedEnemy>().RecibirGolpe(golpe);
             
+            collision.gameObject.GetComponent<RangedEnemy>().RecibirGolpe(golpe);
+            golpe += 5;
         }
     }
 }

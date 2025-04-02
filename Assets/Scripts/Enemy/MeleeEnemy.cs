@@ -22,6 +22,10 @@ public class MeleeEnemy : MonoBehaviour
     bool attacking = false;
     CircleCollider2D hitBox;
 
+    float stunTimer;
+    float stunDuration = 2;
+    int stunMultiplier = 1;
+
     SpriteRenderer sprite;
 
     BarraVida barraVida;
@@ -38,6 +42,8 @@ public class MeleeEnemy : MonoBehaviour
         hitBox.enabled = true;
 
         sprite = GetComponent<SpriteRenderer>();
+
+        stunTimer = stunDuration / 2;
     }
 
     // Update is called once per frame
@@ -77,13 +83,21 @@ public class MeleeEnemy : MonoBehaviour
 
 
 
+        stunTimer += Time.deltaTime;
+        if (stunTimer < stunDuration)
+            stunMultiplier = 0;
+        else
+            stunMultiplier = 1;
+        
+            
+
     }
 
     void FollowPlayer()
     {
         Vector2 fpos = Vector2.MoveTowards(transform.position, magician.transform.position, acceleration * Time.deltaTime);
         rb.velocity += fpos - (Vector2)transform.position;
-        rb.velocity *= stopOnAttack;
+        rb.velocity *= stopOnAttack * stunMultiplier;
         if (rb.velocity.x > maxSpeed)
         {
             rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
@@ -115,7 +129,7 @@ public class MeleeEnemy : MonoBehaviour
     public void efectoStun(float stun)
     {
 
-        acceleration = 0;
+        stunTimer = 0;
     }
 
 

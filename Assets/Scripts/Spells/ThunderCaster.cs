@@ -6,7 +6,7 @@ public class ThunderCaster : MonoBehaviour
 {
     public GameObject thunder;
 
-    public float castDelay = 0.25f;
+    public float castDelay = 0.1f;
 
     float time = 0;
     

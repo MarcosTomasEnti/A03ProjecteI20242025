@@ -333,7 +333,7 @@ MonoBehaviour:
   redBallSpeed: 20
   purpleBallSpeed: 20
   greenBallSpeed: 40
-  thunderCasterSpeed: 10
+  thunderCasterSpeed: 40
   barraMana: {fileID: 0}
 --- !u!1 &8786090729301043882
 GameObject:

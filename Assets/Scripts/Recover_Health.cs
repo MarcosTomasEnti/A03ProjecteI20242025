@@ -9,7 +9,7 @@ public class Recover_Health : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Choco");
+
         if (collision.gameObject.CompareTag("Player"))
         {
             // Funcion de Curar vida
