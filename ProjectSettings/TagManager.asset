@@ -23,8 +23,8 @@ TagManager:
   - Enemy
   - EnemyAttack
   - Wall
-  - Paredes
   - Suelo
+  - 
   - 
   - 
   - 
@@ -47,4 +47,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Suelo
+    uniqueID: 804910785
+    locked: 0
+  - name: Wall
+    uniqueID: 2480256343
+    locked: 0
+  - name: Jugador
+    uniqueID: 2939386949
+    locked: 0
+  - name: Ataques
+    uniqueID: 1475195365
+    locked: 0
+  - name: Enemigos
+    uniqueID: 3201595205
     locked: 0
