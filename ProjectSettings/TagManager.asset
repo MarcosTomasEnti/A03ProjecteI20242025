@@ -54,12 +54,15 @@ TagManager:
   - name: Wall
     uniqueID: 2480256343
     locked: 0
-  - name: Jugador
-    uniqueID: 2939386949
+  - name: Enemigos
+    uniqueID: 3201595205
     locked: 0
   - name: Ataques
     uniqueID: 1475195365
     locked: 0
-  - name: Enemigos
-    uniqueID: 3201595205
+  - name: Jugador
+    uniqueID: 2939386949
+    locked: 0
+  - name: UI
+    uniqueID: 2545002395
     locked: 0

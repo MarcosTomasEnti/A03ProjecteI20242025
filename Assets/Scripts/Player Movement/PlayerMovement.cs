@@ -32,7 +32,8 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer sprite;
     public Sprite deathSprite;
 
-
+    public AudioSource audioSource;
+    public AudioClip deathSound;
 
     // Start is called before the first frame update
     void Start()
@@ -80,7 +81,11 @@ public class PlayerMovement : MonoBehaviour
         for(int i = 0; i< transform.childCount; i++)
         {
             if(gameObject.transform.GetChild(i).gameObject.tag == "Player")
+            {
+                audioSource.PlayOneShot(deathSound, 10);
                 Destroy(gameObject.transform.GetChild(i).gameObject);
+                
+            }
         }
     }
 
