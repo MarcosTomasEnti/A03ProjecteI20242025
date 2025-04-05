@@ -250,7 +250,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1296878569, guid: 6519d60e801109045b5541601f945ba9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -330,10 +330,6 @@ MonoBehaviour:
   LaserBeam: {fileID: 5709584978494855754, guid: a0bd1d3f7c2256449a1cc7a235c07b39, type: 3}
   StormArea: {fileID: 0}
   StunBall: {fileID: 0}
-  redBallSpeed: 20
-  purpleBallSpeed: 20
-  greenBallSpeed: 40
-  thunderCasterSpeed: 40
   barraMana: {fileID: 0}
 --- !u!1 &8786090729301043882
 GameObject:
