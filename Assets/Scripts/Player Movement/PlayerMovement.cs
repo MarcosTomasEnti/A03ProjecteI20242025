@@ -82,7 +82,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if(gameObject.transform.GetChild(i).gameObject.tag == "Player")
             {
-                audioSource.PlayOneShot(deathSound, 10);
+                audioSource.clip = deathSound;
+                audioSource.Play();
                 Destroy(gameObject.transform.GetChild(i).gameObject);
                 
             }
