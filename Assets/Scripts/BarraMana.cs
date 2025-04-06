@@ -9,6 +9,8 @@ public class BarraMana : MonoBehaviour
     [SerializeField] private float mana = ManaMaximo;
     public float velocidadRegeneracion = 10f;
 
+    bool infiniteMana = false;
+
     public float Mana
     {
         get { return mana; }
@@ -27,6 +29,21 @@ public class BarraMana : MonoBehaviour
         visualMana.value = Mana;
 
         StartCoroutine(RegenerarMana());
+    }
+
+    private void Update()
+    {
+        
+        if(Input.GetKeyDown(KeyCode.F2))
+        {
+            infiniteMana = true;
+        }
+
+        if(infiniteMana)
+        {
+            Mana = 100;
+        }
+
     }
 
     private void ActualizarBarra()

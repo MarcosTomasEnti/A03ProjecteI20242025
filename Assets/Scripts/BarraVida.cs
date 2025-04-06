@@ -11,6 +11,8 @@ public class BarraVida : MonoBehaviour
     public float velocidadRegeneracion = 10f;
     public GameObject magician;
 
+    bool infiniteHealth = false;
+
     public float Health
     {
         get { return health; }
@@ -30,6 +32,20 @@ public class BarraVida : MonoBehaviour
         visualHealth.value = Health;
         
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            infiniteHealth = true;
+        }
+
+        if (infiniteHealth)
+        {
+            Health = 100;
+        }
+    }
+
 
     private void ActualizarBarra()
     {

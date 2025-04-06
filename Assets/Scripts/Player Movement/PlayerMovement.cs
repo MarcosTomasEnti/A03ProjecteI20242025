@@ -45,6 +45,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            speed += 10;
+        }
+        if (Input.GetKeyDown(KeyCode.F4) && speed > 10)
+        {
+            speed -= 10;
+        }
+
 
         if (alive)
         {
