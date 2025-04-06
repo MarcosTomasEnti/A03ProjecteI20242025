@@ -3,21 +3,28 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Suelo
+  - Coin
+  - Bullet
+  - Enemigo
+  - Obstaculos
+  - RangedEnemy
+  - MeleeEnemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstaculos
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - PlayerAttack
+  - Enemy
+  - EnemyAttack
+  - Wall
+  - Suelo
+  - Puerta
   - 
   - 
   - 
@@ -40,4 +47,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Suelo
+    uniqueID: 804910785
+    locked: 0
+  - name: Wall
+    uniqueID: 2480256343
+    locked: 0
+  - name: Enemigos
+    uniqueID: 3201595205
+    locked: 0
+  - name: Ataques
+    uniqueID: 1475195365
+    locked: 0
+  - name: Jugador
+    uniqueID: 2939386949
+    locked: 0
+  - name: UI
+    uniqueID: 2545002395
     locked: 0
