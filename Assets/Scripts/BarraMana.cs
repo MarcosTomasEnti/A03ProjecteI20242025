@@ -7,9 +7,15 @@ public class BarraMana : MonoBehaviour
     public Slider visualMana;
     private const float ManaMaximo = 100;
     [SerializeField] private float mana = ManaMaximo;
-    public float velocidadRegeneracion = 10f;
+
+    [SerializeField]
+    private float velocidadRegeneracion = 1f;
 
     bool infiniteMana = false;
+
+    private float deltaTimeMana = 0;
+    [SerializeField]
+    private float timeRestoreMana = 0.5f;
 
     public float Mana
     {
@@ -28,12 +34,18 @@ public class BarraMana : MonoBehaviour
         visualMana.maxValue = ManaMaximo;
         visualMana.value = Mana;
 
-        StartCoroutine(RegenerarMana());
     }
 
     private void Update()
     {
-        
+        deltaTimeMana += Time.deltaTime;
+
+        if(deltaTimeMana >= timeRestoreMana)
+        {
+            RegenerarMana();
+            deltaTimeMana = 0;
+        }
+
         if(Input.GetKeyDown(KeyCode.F2))
         {
             infiniteMana = true;
@@ -59,15 +71,12 @@ public class BarraMana : MonoBehaviour
         Mana -= cantidad;
     }
 
-    IEnumerator RegenerarMana()
+    private void RegenerarMana()
     {
-        while (true)
+        if (Mana < ManaMaximo)
         {
-            yield return new WaitForSeconds(0.1f);
-            if (Mana < ManaMaximo)
-            {
-                Mana += velocidadRegeneracion * Time.deltaTime * 50;
-            }
+            Mana += velocidadRegeneracion;
+            deltaTimeMana = 0;
         }
-    }
+    }     
 }
