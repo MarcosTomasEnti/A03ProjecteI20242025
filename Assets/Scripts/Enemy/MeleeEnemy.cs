@@ -7,6 +7,7 @@ public class MeleeEnemy : MonoBehaviour
 {
 
     public GameObject magician;
+    public GameObject Coin;
     public Rigidbody2D rb;
     public float vida = 100;
     public float damage = 20;
@@ -121,6 +122,11 @@ public class MeleeEnemy : MonoBehaviour
         vida -= golpe;
         if (vida <= 0)
         {
+            int randomCoin = Random.Range(0, 5);
+            if (randomCoin == 1)
+            {
+                GameObject coin = Instantiate(Coin.gameObject, transform.position, transform.rotation);
+            }
             Destroy(gameObject);
         }
         Debug.Log("Vida Restante: " + vida);

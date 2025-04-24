@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 7730077584136044997, guid: b2289bcb552fcf945812283b094a6383, type: 3}
+  Coin: {fileID: 6178069569445302517, guid: 6e0a35f6e7e32b8489ac3f9334c10a1b, type: 3}
   projectileSpeed: 15
   magician: {fileID: 0}
   rb: {fileID: 0}

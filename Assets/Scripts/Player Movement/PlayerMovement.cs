@@ -165,14 +165,10 @@ public class PlayerMovement : MonoBehaviour
             moving = false;
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void MonedaConseguida()
     {
-        if (collision.gameObject.CompareTag("Coin"))
-        {
-            totalCoins++;
-            Debug.Log("Monedas totales: " + totalCoins);
-        }
-
+        totalCoins++;
+        Debug.Log("Monedas totales: " + totalCoins);
     }
+   
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class RangedEnemy : MonoBehaviour
 {
     public GameObject projectile;
+    public GameObject Coin;
     public float projectileSpeed = 15;
 
     public GameObject magician;
@@ -128,6 +129,11 @@ public class RangedEnemy : MonoBehaviour
         vida -= golpe;
         if (vida <= 0)
         {
+            int randomCoin = Random.Range(0, 5);
+            if (randomCoin == 1)
+            {
+                GameObject coin = Instantiate(Coin.gameObject, transform.position, transform.rotation);
+            }
             Destroy(gameObject);
         }
         Debug.Log("Vida Restante: " + vida);

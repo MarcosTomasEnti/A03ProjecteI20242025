@@ -8,6 +8,7 @@ public class SurpriseBox : MonoBehaviour
     public GameObject meleeEnemy;
     public GameObject Heart;
     public GameObject rangedEnemy;
+    public GameObject Coin;
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -15,8 +16,8 @@ public class SurpriseBox : MonoBehaviour
 
          if (collision.gameObject.CompareTag("Bullet"))
         {
-            int goodLuck = Random.Range(0, 4);
-          
+            int goodLuck = Random.Range(0, 5);
+            Debug.Log(goodLuck);
 
             if (goodLuck == 1)
             {
@@ -31,6 +32,11 @@ public class SurpriseBox : MonoBehaviour
             else if(goodLuck == 3)
             {
                 GameObject enemy = Instantiate(rangedEnemy.gameObject, transform.position, transform.rotation);
+                Destroy(gameObject.gameObject);
+            }
+            else if ((goodLuck == 4))
+            {
+                GameObject coin = Instantiate(Coin.gameObject, transform.position, transform.rotation);
                 Destroy(gameObject.gameObject);
             }
             else
