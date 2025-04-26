@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip deathSound;
+    public CoinCounter coinCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -168,6 +169,7 @@ public class PlayerMovement : MonoBehaviour
     public void MonedaConseguida()
     {
         totalCoins++;
+        coinCounter.GetComponent<CoinCounter>().updateCount(totalCoins);
         Debug.Log("Monedas totales: " + totalCoins);
     }
    

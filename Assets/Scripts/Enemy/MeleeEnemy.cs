@@ -123,7 +123,7 @@ public class MeleeEnemy : MonoBehaviour
         if (vida <= 0)
         {
             int randomCoin = Random.Range(0, 5);
-            if (randomCoin == 1)
+            if (randomCoin <= 3)
             {
                 GameObject coin = Instantiate(Coin.gameObject, transform.position, transform.rotation);
             }
