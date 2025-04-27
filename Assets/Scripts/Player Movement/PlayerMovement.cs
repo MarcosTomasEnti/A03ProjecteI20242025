@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     //A partir de aquí se pueden poner las variables. NO ANTES.
     public bool alive = true;
     //Public permite que la variable sea accedida desde el editor de unity.
-    private int totalCoins = 0;
+    public int totalCoins = 0;
     //"RigidBody2D" es un componente de objeto de unity que proporciona físicas al objeto y se puede declarar en el editor para modificar
     //sus atributos.
     public Rigidbody2D rb;
