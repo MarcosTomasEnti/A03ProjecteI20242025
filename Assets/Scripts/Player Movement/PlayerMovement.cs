@@ -35,6 +35,13 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip deathSound;
     public CoinCounter coinCounter;
+    
+    public GameObject goldKeyHeld;
+    public GameObject darkKeyHeld;
+
+    public bool hasGoldKey = false;
+    public bool hasDarkKey = false;
+
 
     // Start is called before the first frame update
     void Start()

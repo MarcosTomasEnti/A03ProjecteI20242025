@@ -1453,6 +1453,7 @@ GameObject:
   - component: {fileID: 1628758929081052922}
   - component: {fileID: 5067774424449424601}
   - component: {fileID: 1931025157159206908}
+  - component: {fileID: 810190611792563736}
   m_Layer: 6
   m_Name: Magician
   m_TagString: Player
@@ -1476,7 +1477,7 @@ Transform:
   - {fileID: 2201473173567709521}
   - {fileID: 4440270064246684022}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &7284844200130849231
 Rigidbody2D:
@@ -1563,6 +1564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alive: 1
+  totalCoins: 0
   rb: {fileID: 7284844200130849231}
   pointAndClickMovement: 0
   speed: 10
@@ -1718,6 +1720,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &810190611792563736
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6641768816853848118}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cfdb679a5b3ea6647bd23f54cd14026f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6726434755600008609
 GameObject:
   m_ObjectHideFlags: 0
