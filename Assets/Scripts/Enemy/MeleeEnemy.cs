@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class MeleeEnemy : MonoBehaviour
 {
+    [SerializeField]
+    LayerMask includeLayers;
 
     public GameObject magician;
     public GameObject Coin;
@@ -55,7 +57,7 @@ public class MeleeEnemy : MonoBehaviour
 
         Vector2 playerDir = new Vector2(transform.position.x - magician.transform.position.x, transform.position.y - magician.transform.position.y).normalized;
         float playerDist = Vector2.Distance(transform.position, magician.transform.position);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -playerDir, Mathf.Infinity, ~LayerMask.GetMask("Enemy"));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -playerDir, Mathf.Infinity, includeLayers);
 
         if (hit.collider != null)
         {

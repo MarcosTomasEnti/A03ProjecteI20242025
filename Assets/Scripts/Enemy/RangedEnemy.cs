@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class RangedEnemy : MonoBehaviour
 {
+    [SerializeField]
+    LayerMask includeLayers;
+
     public GameObject projectile;
     public GameObject Coin;
     public float projectileSpeed = 15;
@@ -47,7 +50,7 @@ public class RangedEnemy : MonoBehaviour
         
         Vector2 playerDir = new Vector2(transform.position.x - magician.transform.position.x, transform.position.y - magician.transform.position.y).normalized;
         float playerDist = Vector2.Distance(transform.position, magician.transform.position);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -playerDir, visionRange, ~LayerMask.GetMask("Enemy"));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -playerDir, visionRange, includeLayers);
 
         if (hit.collider != null)
         {
