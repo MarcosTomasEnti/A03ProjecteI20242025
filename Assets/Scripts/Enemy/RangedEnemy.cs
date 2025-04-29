@@ -35,6 +35,7 @@ public class RangedEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         attackTimer = attackDelay;
         rb = GetComponent<Rigidbody2D>();
         magician = GameObject.FindGameObjectWithTag("Player");
