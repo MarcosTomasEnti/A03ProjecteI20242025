@@ -18,6 +18,8 @@ public class Door : MonoBehaviour
     public Sprite closeGoldDoor;
     public Sprite openDarkDoor;
     public Sprite closeDarkDoor;
+    public Sprite goldLock;
+    public Sprite darkLock;
 
     SpriteRenderer sprite;
     BoxCollider2D boxCollider;
@@ -36,9 +38,9 @@ public class Door : MonoBehaviour
             Destroy(keyLock);
 
         if (!lockType)
-            keyLock.GetComponent<SpriteRenderer>().color = new Color(1, 1, 0);
+            keyLock.GetComponent<SpriteRenderer>().sprite = goldLock;
         else
-            keyLock.GetComponent<SpriteRenderer>().color = new Color(1, 0, 1);
+            keyLock.GetComponent<SpriteRenderer>().sprite = darkLock;
 
         if (lockType)
             sprite.sprite = closeDarkDoor;

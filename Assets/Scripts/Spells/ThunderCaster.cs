@@ -30,7 +30,7 @@ public class ThunderCaster : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Suelo"))
+        if (collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Puerta"))
         {
             Destroy(gameObject);
         }

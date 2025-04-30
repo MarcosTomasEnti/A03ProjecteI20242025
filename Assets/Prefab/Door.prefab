@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7164791898728092289}
   - component: {fileID: 2522143259415748826}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6941676966815480133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.52, y: -0.33, z: 0}
-  m_LocalScale: {x: 0.46, y: 0.46, z: 0.46}
+  m_LocalPosition: {x: 0.53, y: -0.58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6972232348909887593}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -1355580347
   m_SortingLayer: 5
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 993565466, guid: 493a4406ecb3877468d76d850097a55e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,9 +98,9 @@ GameObject:
   - component: {fileID: 1898620621041808471}
   - component: {fileID: 3672019750267372562}
   - component: {fileID: -8812782555437068828}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Puerta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,6 +193,8 @@ MonoBehaviour:
   closeGoldDoor: {fileID: -1583452998, guid: 424b97ac719f7ea4dbb8ab91ac8cddad, type: 3}
   openDarkDoor: {fileID: -380466638, guid: 754c8a21ef82e1247aab0a773138673f, type: 3}
   closeDarkDoor: {fileID: -1698289977, guid: 754c8a21ef82e1247aab0a773138673f, type: 3}
+  goldLock: {fileID: 993565466, guid: 493a4406ecb3877468d76d850097a55e, type: 3}
+  darkLock: {fileID: -1166383043, guid: 493a4406ecb3877468d76d850097a55e, type: 3}
 --- !u!61 &1898620621041808471
 BoxCollider2D:
   m_ObjectHideFlags: 0

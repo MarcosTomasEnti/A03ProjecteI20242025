@@ -29,7 +29,7 @@ public class Great_FireBall : MonoBehaviour
             collision.gameObject.GetComponent<RangedEnemy>().RecibirGolpe(golpe);
             Destroy(gameObject);
         }
-        else if(collision.gameObject.CompareTag("Suelo"))
+        else if(collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Puerta"))
         {
             Destroy(gameObject);
         }
