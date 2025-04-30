@@ -31,7 +31,7 @@ public class Key : MonoBehaviour
     {
         if (following && Mathf.Abs((player.transform.localPosition - transform.localPosition).magnitude) > 3)
         {
-            transform.localPosition += (player.transform.position - transform.localPosition) / 250 * speed;
+            transform.localPosition += (player.transform.position - transform.localPosition) /  speed * 2 * Time.deltaTime;
         }
         if(player != null && keyType == false)
         { 
