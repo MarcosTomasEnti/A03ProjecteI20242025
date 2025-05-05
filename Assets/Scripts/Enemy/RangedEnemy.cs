@@ -48,7 +48,17 @@ public class RangedEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (sprite.color.a < 1)
+        {
+
+            sprite.color += new Color(0, 0, 0, 2 * Time.deltaTime);
+        }
+        else if (sprite.color.a > 1)
+        {
+            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1);
+        }
+
+
         Vector2 playerDir = new Vector2(transform.position.x - magician.transform.position.x, transform.position.y - magician.transform.position.y).normalized;
         float playerDist = Vector2.Distance(transform.position, magician.transform.position);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -playerDir, visionRange, includeLayers);
@@ -130,6 +140,8 @@ public class RangedEnemy : MonoBehaviour
 
     public void RecibirGolpe(float golpe)
     {
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
+
         vida -= golpe;
         if (vida <= 0)
         {

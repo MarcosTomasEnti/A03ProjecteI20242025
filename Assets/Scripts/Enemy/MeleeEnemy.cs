@@ -52,8 +52,17 @@ public class MeleeEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
 
+
+        if(sprite.color.a < 1)
+        {
+
+            sprite.color += new Color(0, 0, 0, 2*Time.deltaTime);
+        }
+        else if(sprite.color.a > 1)
+        {
+            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1);
+        }
 
         Vector2 playerDir = new Vector2(transform.position.x - magician.transform.position.x, transform.position.y - magician.transform.position.y).normalized;
         float playerDist = Vector2.Distance(transform.position, magician.transform.position);
@@ -122,6 +131,8 @@ public class MeleeEnemy : MonoBehaviour
     public void RecibirGolpe(float golpe)
     {
         vida -= golpe;
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
+
         if (vida <= 0)
         {
             int randomCoin = Random.Range(0, 5);
