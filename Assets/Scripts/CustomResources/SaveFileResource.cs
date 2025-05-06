@@ -9,7 +9,6 @@ public class SaveFileResource : ScriptableObject
     public int totalCoins;
     public bool unlockedGreatFireball;
     public bool unlockedLaserBeam;
-    public bool unlockedMagicCombo;
     public bool unlockedMeteor;
     public bool unlockedStormArea;
     public bool unlockedStunBall;
