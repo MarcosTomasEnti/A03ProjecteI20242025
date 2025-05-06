@@ -59,7 +59,6 @@ public class Door : MonoBehaviour
                 Destroy(collision.gameObject.GetComponent<PlayerMovement>().goldKeyHeld);
                 collision.gameObject.GetComponent<PlayerMovement>().goldKeyHeld = null;
                 locked = false;
-                
             }
             else if (lockType == true && collision.gameObject.GetComponent<PlayerMovement>().hasDarkKey)
             {
@@ -67,7 +66,6 @@ public class Door : MonoBehaviour
                 Destroy(collision.gameObject.GetComponent<PlayerMovement>().darkKeyHeld);
                 collision.gameObject.GetComponent<PlayerMovement>().darkKeyHeld = null;
                 locked = false;
-                
             }
             if(locked == false)
                 Destroy(keyLock);
