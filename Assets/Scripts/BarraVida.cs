@@ -35,6 +35,7 @@ public class BarraVida : MonoBehaviour
 
     private void Update()
     {
+       
         if (Input.GetKeyDown(KeyCode.F1))
         {
             infiniteHealth = true;
@@ -64,6 +65,10 @@ public class BarraVida : MonoBehaviour
     {
         if (Health >= cantidad)
         {
+            //GetComponent<SpriteRenderer>().HitEfect.color.a = 0;
+            if(cantidad >0)
+                magician.GetComponent<PlayerMovement>().hurtEffect();
+            
             Health -= cantidad;
         }
     }
