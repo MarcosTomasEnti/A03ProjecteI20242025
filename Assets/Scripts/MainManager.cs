@@ -9,7 +9,11 @@ public class MainManager : MonoBehaviour
         SceneManager.LoadScene("Tutorial");
     }   
     public void Options() 
-    { 
-    
+    {
+        SceneManager.LoadScene("MenúOptions");
+    }
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

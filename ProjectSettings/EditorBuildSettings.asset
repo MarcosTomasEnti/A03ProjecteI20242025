@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nivel_1.unity
     guid: 2025ad8a532282d4d8fc5075e05e8f2c
+  - enabled: 1
+    path: "Assets/Scenes/Men\xFAOptions.unity"
+    guid: df5ed53a9bace9647a258da706714a4c
   m_configObjects: {}
