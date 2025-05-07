@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     //A partir de aquí se pueden poner las variables. NO ANTES.
     public bool alive = true;
     //Public permite que la variable sea accedida desde el editor de unity.
-    public int totalCoins = 0;
     //"RigidBody2D" es un componente de objeto de unity que proporciona físicas al objeto y se puede declarar en el editor para modificar
     //sus atributos.
     public Rigidbody2D rb;
@@ -35,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip deathSound;
     public CoinCounter coinCounter;
+
+    public SaveFileResource saveFile;
     
     public GameObject goldKeyHeld;
     public GameObject darkKeyHeld;
@@ -175,9 +176,9 @@ public class PlayerMovement : MonoBehaviour
     }
     public void MonedaConseguida()
     {
-        totalCoins++;
-        coinCounter.GetComponent<CoinCounter>().updateCount(totalCoins);
-        Debug.Log("Monedas totales: " + totalCoins);
+        saveFile.totalCoins++;
+        coinCounter.GetComponent<CoinCounter>().updateCount(saveFile.totalCoins);
+        Debug.Log("Monedas totales: " + saveFile.totalCoins);
     }
    
 }

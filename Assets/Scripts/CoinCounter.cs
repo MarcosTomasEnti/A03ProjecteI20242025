@@ -11,7 +11,7 @@ public class CoinCounter : MonoBehaviour
     void Start()
     {
         text = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        text.text = ": 0";
+        text.text = ": " + GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().saveFile.totalCoins;
     }
 
     // Update is called once per frame
