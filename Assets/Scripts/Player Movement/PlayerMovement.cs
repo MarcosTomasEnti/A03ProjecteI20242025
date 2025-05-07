@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 //La clase sirve para declarar qué uso tendrá el script. En este caso es para dar instrucciones a un objeto en escena. Pero no es algo importante al 
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
     SpriteRenderer sprite;
     public Sprite deathSprite;
+    public Image hitEfect;
 
     public AudioSource audioSource;
     public AudioClip deathSound;
@@ -53,6 +55,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(hitEfect.color.a > 0)
+        {
+            hitEfect.color -= new Color(0, 0, 0, 2 * Time.deltaTime);
+        }
+            
+        
         if (Input.GetKeyDown(KeyCode.F3))
         {
             speed += 10;
@@ -179,5 +187,9 @@ public class PlayerMovement : MonoBehaviour
         coinCounter.GetComponent<CoinCounter>().updateCount(totalCoins);
         Debug.Log("Monedas totales: " + totalCoins);
     }
-   
+    
+    public void hurtEffect()
+    {
+        hitEfect.color = new Color(1, 1, 1, 1);
+    }
 }
