@@ -6,7 +6,6 @@ public class Key : MonoBehaviour
 {
     CircleCollider2D collider;
     bool following = false;
-    float diferencia;  //la diferencia de la segunda o demás llaves siguiendo al jugador
     float speed;
     GameObject player;
     GameObject followTarget;
@@ -52,7 +51,6 @@ public class Key : MonoBehaviour
             }
 
             collectedKeys.Add(gameObject);
-            diferencia = 15 * collectedKeys.Count;
 
             if (!keyType)
             {
@@ -76,7 +74,7 @@ public class Key : MonoBehaviour
             Vector3 direction = followTarget.transform.position - transform.position;
             if (direction.magnitude > 3f)
             {
-                transform.position += direction / speed * 2f * Time.deltaTime;
+                transform.position += direction / speed * 4 * Time.deltaTime;
             }
         }
         if (player != null && keyType == false)
