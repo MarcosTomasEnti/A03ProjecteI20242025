@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8636656850522570227}
   - component: {fileID: 6180952154881367535}
   - component: {fileID: 9000929562621344530}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SurpriseBox
   m_TagString: Obstaculos
   m_Icon: {fileID: 0}

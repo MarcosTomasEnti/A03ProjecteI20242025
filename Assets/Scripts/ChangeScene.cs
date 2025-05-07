@@ -20,6 +20,6 @@ public class ChangeScene : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
-            SceneManager.LoadScene("Nivel_1");
+            SceneManager.LoadScene("Nivel1");
     }
 }
