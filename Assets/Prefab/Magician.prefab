@@ -1899,6 +1899,7 @@ MonoBehaviour:
   visualMana: {fileID: 7703867011402851359}
   mana: 100
   velocidadRegeneracion: 10
+  timeRestoreMana: 0.5
 --- !u!1 &5999682398110607819
 GameObject:
   m_ObjectHideFlags: 0
@@ -2411,7 +2412,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3331056302350266584}
   - {fileID: 1535796447601513113}
@@ -2778,7 +2779,7 @@ MonoBehaviour:
   GreatFireBall: {fileID: 4882991844935192865, guid: 39237c95767fc2d45bc90bfe4199078b, type: 3}
   Meteoro: {fileID: 4267577373172771881, guid: e9642962174d21a4da95741359e30f76, type: 3}
   ThunderCaster: {fileID: 2743929431549729416, guid: 4abe490242f52d24898ea6420e021936, type: 3}
-  LaserBeam: {fileID: 5709584978494855754, guid: a0bd1d3f7c2256449a1cc7a235c07b39, type: 3}
+  LaserBeam: {fileID: 1024798916916735316, guid: a0bd1d3f7c2256449a1cc7a235c07b39, type: 3}
   StormArea: {fileID: 875953069531693848, guid: b50b206b19924174aad84ed37050b475, type: 3}
   StunBall: {fileID: 8346282766738621628, guid: 5b0a13648cc4eb346a4a57ca7b024b8e, type: 3}
   barraMana: {fileID: 0}
