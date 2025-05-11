@@ -38,12 +38,12 @@ public class PlayerMovement : MonoBehaviour
     public CoinCounter coinCounter;
 
     public SaveFileResource saveFile;
-    
-    public GameObject goldKeyHeld;
-    public GameObject darkKeyHeld;
 
-    public bool hasGoldKey = false;
-    public bool hasDarkKey = false;
+    public GameObject goldKeyHeld;
+      public GameObject darkKeyHeld;
+
+      public bool hasGoldKey = false;
+      public bool hasDarkKey = false;
 
 
     // Start is called before the first frame update

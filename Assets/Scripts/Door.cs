@@ -48,39 +48,44 @@ public class Door : MonoBehaviour
             sprite.sprite = closeGoldDoor;
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!open && locked && collision.CompareTag("Player"))
         {
-            if(lockType == false && collision.gameObject.GetComponent<PlayerMovement>().hasGoldKey)
+            var player = collision.gameObject.GetComponent<PlayerMovement>();
+            GameObject keyToDestroy = null;
+
+            if (!lockType && player.hasGoldKey)
             {
-                collision.gameObject.GetComponent<PlayerMovement>().hasGoldKey = false;
-                Destroy(collision.gameObject.GetComponent<PlayerMovement>().goldKeyHeld);
-                collision.gameObject.GetComponent<PlayerMovement>().goldKeyHeld = null;
+                keyToDestroy = player.goldKeyHeld;
+                player.hasGoldKey = false;
+                player.goldKeyHeld = null;
                 locked = false;
             }
-            else if (lockType == true && collision.gameObject.GetComponent<PlayerMovement>().hasDarkKey)
+            else if (lockType && player.hasDarkKey)
             {
-                collision.gameObject.GetComponent<PlayerMovement>().hasDarkKey = false;
-                Destroy(collision.gameObject.GetComponent<PlayerMovement>().darkKeyHeld);
-                collision.gameObject.GetComponent<PlayerMovement>().darkKeyHeld = null;
+                keyToDestroy = player.darkKeyHeld;
+                player.hasDarkKey = false;
+                player.darkKeyHeld = null;
                 locked = false;
             }
-            if(locked == false)
+
+            if (!open && !locked)
+            {
+                openTheDoor();
+                collisionStayCount++;
+                Debug.Log(collisionStayCount);
                 Destroy(keyLock);
+            }
+
+            if (keyToDestroy != null)
+            {
+                Key.collectedKeys.Remove(keyToDestroy);
+                Destroy(keyToDestroy);
+            }
         }
 
-        if (!open && !locked)
-        {
 
-            openTheDoor();
-            collisionStayCount++;
-            Debug.Log(collisionStayCount);
-        }
-        
-
-        
     }
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -110,7 +115,6 @@ public class Door : MonoBehaviour
         }
     }
 
-
     void openTheDoor()
     {
         if(lockType)
@@ -130,5 +134,20 @@ public class Door : MonoBehaviour
         boxCollider.enabled = true;
     }
 
+    void TransferFollowers(GameObject destroyedKey, GameObject player)
+    {
+        int destroyedIndex = Key.collectedKeys.IndexOf(destroyedKey);
+        if (destroyedIndex >= 0)
+        {
+            // Si hay una llave detrás de la destruida, actualiza su objetivo de seguimiento
+            if (destroyedIndex + 1 < Key.collectedKeys.Count)
+            {
+                GameObject newLeader = destroyedIndex == 0 ? player : Key.collectedKeys[destroyedIndex - 1];
+                Key.collectedKeys[destroyedIndex + 1].GetComponent<Key>().followTarget = newLeader.transform;
+            }
 
+            // Eliminar la llave destruida de la lista general
+            Key.collectedKeys.RemoveAt(destroyedIndex);
+        }
+    }
 }
