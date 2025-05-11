@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemigos : MonoBehaviour
 {
-
+    public GameObject BubbleDamage;
     public GameObject magician;
     public Rigidbody2D rb;
     public float vida = 100;

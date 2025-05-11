@@ -7,7 +7,7 @@ public class RangedEnemy : MonoBehaviour
 {
     [SerializeField]
     LayerMask includeLayers;
-
+    public GameObject BubbleDamage;
     public GameObject projectile;
     public GameObject Coin;
     public float projectileSpeed = 15;

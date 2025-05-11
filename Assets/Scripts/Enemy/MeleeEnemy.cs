@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Principal;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
+
 
 public class MeleeEnemy : MonoBehaviour
 {
@@ -132,7 +135,7 @@ public class MeleeEnemy : MonoBehaviour
     {
         vida -= golpe;
         sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
-
+    
         if (vida <= 0)
         {
             int randomCoin = Random.Range(0, 5);
