@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class inputGuide : MonoBehaviour
 {
+    public GameObject bounceBallText;
+    public GameObject greatFireballText;
+    public GameObject meteorText;
+    public GameObject stunballText;
+    public GameObject frostStormText;
+    public GameObject thunderText;
+    public GameObject laserBeamText;
+
     bool active = false;
     bool isRotating = false;
+    GameObject magician;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        magician = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -65,6 +74,40 @@ public class inputGuide : MonoBehaviour
         else if(active && !isRotating)
         {
             transform.eulerAngles = Vector3.zero;
+        }
+
+        if(active)
+        {
+            if(magician.GetComponent<PlayerMovement>().saveFile.unlockedBounceBall)
+            {
+
+            }
+            if(magician.GetComponent<PlayerMovement>().saveFile.unlockedGreatFireball)
+            {
+
+            }
+            if (magician.GetComponent<PlayerMovement>().saveFile.unlockedThunderCaster)
+            {
+
+            }
+            if (magician.GetComponent<PlayerMovement>().saveFile.unlockedLaserBeam)
+            {
+
+            }
+            if (magician.GetComponent<PlayerMovement>().saveFile.unlockedThunderCaster)
+            {
+
+            }
+            if (magician.GetComponent<PlayerMovement>().saveFile.unlockedStormArea)
+            {
+
+            }
+            if (magician.GetComponent<PlayerMovement>().saveFile.unlockedMeteor)
+            {
+
+            }
+
+
         }
 
     }
