@@ -8,32 +8,26 @@ public class Key : MonoBehaviour
     bool following = false;
     float speed;
     GameObject player;
-    GameObject followTarget;
+    public Transform followTarget;
     public static List<GameObject> collectedKeys = new List<GameObject>();
 
     [Tooltip("False = golden. True = dark")]
     public bool keyType = false;
 
-    // Start is called before the first frame update
-
     private void Start()
     {
         if (keyType)
         {
-            GetComponent<SpriteRenderer>().color = new Color(56/255, 0,1);
+            GetComponent<SpriteRenderer>().color = new Color(56f / 255f, 0, 1f);
         }
 
         collider = GetComponent<CircleCollider2D>();
-        speed = Random.Range(1,2);
+        speed = Random.Range(1f, 2f);
     }
-
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         LlavesSeguir();
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !following)
@@ -41,56 +35,47 @@ public class Key : MonoBehaviour
             following = true;
             player = collision.gameObject;
 
-            if (collectedKeys.Count == 0)
-            {
-                followTarget = player;
-            }
-            else
-            {
-                followTarget = collectedKeys[collectedKeys.Count - 1];
-            }
+            followTarget = collectedKeys.Count == 0 ? player.transform : collectedKeys[collectedKeys.Count - 1].transform;
 
             collectedKeys.Add(gameObject);
+            collider.enabled = false;
 
+            var playerMovement = player.GetComponent<PlayerMovement>();
             if (!keyType)
             {
-                player.GetComponent<PlayerMovement>().hasGoldKey = true;
-                player.GetComponent<PlayerMovement>().goldKeyHeld = gameObject;
+                playerMovement.hasGoldKey = true;
+                playerMovement.goldKeyHeld = gameObject;
             }
             else
             {
-                player.GetComponent<PlayerMovement>().hasDarkKey = true;
-                player.GetComponent<PlayerMovement>().darkKeyHeld = gameObject;
+                playerMovement.hasDarkKey = true;
+                playerMovement.darkKeyHeld = gameObject;
             }
-
-            collider.enabled = false;
         }
     }
-
     private void LlavesSeguir()
     {
         if (following && followTarget != null)
         {
-            Vector3 direction = followTarget.transform.position - transform.position;
+            Vector3 direction = followTarget.position - transform.position;
             if (direction.magnitude > 3f)
             {
                 transform.position += direction / speed * 4 * Time.deltaTime;
             }
         }
-        if (player != null && keyType == false)
+
+        if (player != null)
         {
-            if (player.GetComponent<PlayerMovement>().hasGoldKey == false)
+            var playerMovement = player.GetComponent<PlayerMovement>();
+            if (!keyType && playerMovement.hasGoldKey == false)
             {
-                player.GetComponent<PlayerMovement>().hasGoldKey = true;
-                player.GetComponent<PlayerMovement>().goldKeyHeld = gameObject;
+                playerMovement.hasGoldKey = true;
+                playerMovement.goldKeyHeld = gameObject;
             }
-        }
-        else if (player != null && keyType == true)
-        {
-            if (player.GetComponent<PlayerMovement>().hasDarkKey == false)
+            else if (keyType && playerMovement.hasDarkKey == false)
             {
-                player.GetComponent<PlayerMovement>().hasDarkKey = true;
-                player.GetComponent<PlayerMovement>().darkKeyHeld = gameObject;
+                playerMovement.hasDarkKey = true;
+                playerMovement.darkKeyHeld = gameObject;
             }
         }
     }
