@@ -34,10 +34,7 @@ public class BarraMana : MonoBehaviour
         visualMana.maxValue = ManaMaximo;
         visualMana.value = Mana;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> main
     }
 
     private void Update()
@@ -76,7 +73,7 @@ public class BarraMana : MonoBehaviour
         Mana -= cantidad;
     }
 
-<<<<<<< HEAD
+
     void regenerarMana()
     {
         if (mana < ManaMaximo)
@@ -86,7 +83,7 @@ public class BarraMana : MonoBehaviour
     }
 
         
-=======
+
     private void RegenerarMana()
     {
         if (Mana < ManaMaximo)
@@ -95,5 +92,5 @@ public class BarraMana : MonoBehaviour
             deltaTimeMana = 0;
         }
     }     
->>>>>>> main
+
 }
