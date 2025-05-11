@@ -25,7 +25,10 @@ public class StormArea : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-
+        if (collision.gameObject.CompareTag("TrainEnemy"))
+        {
+            collision.gameObject.GetComponent<TrainEnemy>().RecibirGolpe();
+        }
         if (collision.gameObject.CompareTag("MeleeEnemy"))
         {
             collision.gameObject.GetComponent<MeleeEnemy>().RecibirGolpe(golpe * Time.deltaTime);

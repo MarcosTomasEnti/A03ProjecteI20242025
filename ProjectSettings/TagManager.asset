@@ -12,6 +12,7 @@ TagManager:
   - RangedEnemy
   - MeleeEnemy
   - Puerta
+  - TrainEnemy
   layers:
   - Default
   - TransparentFX

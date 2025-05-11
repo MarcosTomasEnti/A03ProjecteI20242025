@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 40da07ffd0b316d418ed9ba52e18cbfa
+  - enabled: 1
+    path: Assets/Scenes/Sound Options.unity
+    guid: b8a1620dde86864408e7622fca4bbccd
   m_configObjects: {}

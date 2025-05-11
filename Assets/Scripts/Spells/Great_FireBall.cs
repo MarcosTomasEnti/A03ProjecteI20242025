@@ -24,16 +24,21 @@ public class Great_FireBall : MonoBehaviour
             collision.gameObject.GetComponent<MeleeEnemy>().RecibirGolpe(golpe);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("RangedEnemy"))
+        if (collision.gameObject.CompareTag("TrainEnemy"))
+        {
+            collision.gameObject.GetComponent<TrainEnemy>().RecibirGolpe();
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("RangedEnemy"))
         {
             collision.gameObject.GetComponent<RangedEnemy>().RecibirGolpe(golpe);
             Destroy(gameObject);
         }
-        else if(collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Puerta"))
+        if(collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Puerta"))
         {
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("Obstaculos"))
+        if (collision.gameObject.CompareTag("Obstaculos"))
         {
             Destroy(gameObject);
         }

@@ -20,7 +20,10 @@ public class StunBall : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.gameObject.CompareTag("TrainEnemy"))
+        {
+            collision.gameObject.GetComponent<TrainEnemy>().RecibirGolpe();
+        }
         if (collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Puerta"))
         {
             Destroy(gameObject);
