@@ -6,6 +6,8 @@ public class TrainEnemy : MonoBehaviour
 {
     private CircleCollider2D hitBox;
     SpriteRenderer sprite;
+    public GameObject damageOutput;
+
     // Start is called before the first frame update
    void Start()
     {
@@ -26,8 +28,11 @@ public class TrainEnemy : MonoBehaviour
             sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1);
         }
     }
-    public void RecibirGolpe()
+    public void RecibirGolpe(float golpe)
     {
         sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
+        GameObject damageText = damageOutput;
+        Instantiate(damageText, transform.position, transform.rotation);
+        damageText.GetComponent<DamageOutput>().getNumber(golpe);
     }
 }

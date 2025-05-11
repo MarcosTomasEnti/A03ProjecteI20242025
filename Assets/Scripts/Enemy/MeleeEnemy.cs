@@ -11,6 +11,8 @@ public class MeleeEnemy : MonoBehaviour
     [SerializeField]
     LayerMask includeLayers;
 
+    public GameObject damageOutput;
+
     public GameObject magician;
     public GameObject Coin;
     public Rigidbody2D rb;
@@ -18,6 +20,8 @@ public class MeleeEnemy : MonoBehaviour
     public float damage = 20;
     public float attackDelay = 2;
     public float activeAttackTime = 0.5f;
+    
+
     float attackTimer;
     int stopOnAttack = 1;
     
@@ -135,7 +139,10 @@ public class MeleeEnemy : MonoBehaviour
     {
         vida -= golpe;
         sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
-    
+        GameObject damageText = damageOutput;
+        Instantiate(damageText, transform.position, transform.rotation);
+        damageText.GetComponent<DamageOutput>().getNumber(golpe);
+
         if (vida <= 0)
         {
             int randomCoin = Random.Range(0, 5);
@@ -146,6 +153,8 @@ public class MeleeEnemy : MonoBehaviour
             Destroy(gameObject);
         }
         Debug.Log("Vida Restante: " + vida);
+
+        
     }
 
     public void efectoStun(float stun)

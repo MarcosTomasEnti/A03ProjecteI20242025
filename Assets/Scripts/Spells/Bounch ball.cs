@@ -37,7 +37,7 @@ public class Bounchball : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("TrainEnemy"))
         {
-            collision.gameObject.GetComponent<TrainEnemy>().RecibirGolpe();
+            collision.gameObject.GetComponent<TrainEnemy>().RecibirGolpe(golpe);
         }
         else if (collision.gameObject.CompareTag("RangedEnemy"))
         {                

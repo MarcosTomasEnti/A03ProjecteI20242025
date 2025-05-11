@@ -7,6 +7,9 @@ public class RangedEnemy : MonoBehaviour
 {
     [SerializeField]
     LayerMask includeLayers;
+
+    public GameObject damageOutput;
+
     public GameObject BubbleDamage;
     public GameObject projectile;
     public GameObject Coin;
@@ -143,6 +146,11 @@ public class RangedEnemy : MonoBehaviour
         sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
 
         vida -= golpe;
+
+        GameObject damageText = damageOutput;
+        Instantiate(damageText, transform.position, transform.rotation);
+        damageText.GetComponent<DamageOutput>().getNumber(golpe);
+
         if (vida <= 0)
         {
             int randomCoin = Random.Range(0, 5);

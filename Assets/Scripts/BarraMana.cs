@@ -28,7 +28,7 @@ public class BarraMana : MonoBehaviour
         visualMana.maxValue = ManaMaximo;
         visualMana.value = Mana;
 
-        StartCoroutine(RegenerarMana());
+
     }
 
     private void Update()
@@ -43,6 +43,7 @@ public class BarraMana : MonoBehaviour
         {
             Mana = 100;
         }
+        regenerarMana();
 
     }
 
@@ -59,15 +60,13 @@ public class BarraMana : MonoBehaviour
         Mana -= cantidad;
     }
 
-    IEnumerator RegenerarMana()
+    void regenerarMana()
     {
-        while (true)
+        if (mana < ManaMaximo)
         {
-            yield return new WaitForSeconds(0.1f);
-            if (Mana < ManaMaximo)
-            {
-                Mana += velocidadRegeneracion * Time.deltaTime * 50;
-            }
+            Mana += velocidadRegeneracion * Time.deltaTime *0.75f;
         }
     }
+
+        
 }

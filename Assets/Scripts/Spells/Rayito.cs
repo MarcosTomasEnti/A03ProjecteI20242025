@@ -39,7 +39,7 @@ public class Rayito : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("TrainEnemy"))
         {
-            collision.gameObject.GetComponent<TrainEnemy>().RecibirGolpe();
+            collision.gameObject.GetComponent<TrainEnemy>().RecibirGolpe(golpe);
         }
     }
  
