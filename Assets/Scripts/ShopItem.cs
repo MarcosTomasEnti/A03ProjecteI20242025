@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopItem : MonoBehaviour
 {
     public enum ItemType
     {
-        HealingHeart, GreatFireball, StunBall, Meteor, ThunderCaster, StormArea, LaserBeam
+        HealingHeart, BounceBall, GreatFireball, StunBall, Meteor, ThunderCaster, StormArea, LaserBeam
     }
 
     public ItemType itemType;
@@ -18,6 +19,16 @@ public class ShopItem : MonoBehaviour
     CircleCollider2D circleCollider;
     SpriteRenderer sprite;
     TextMeshPro text;
+    
+
+    [SerializeField] Sprite heartSprite;
+    [SerializeField] Sprite bounceBallSprite;
+    [SerializeField] Sprite greatFireballSprite;
+    [SerializeField] Sprite meteorSprite;
+    [SerializeField] Sprite thunderCasterSprite;
+    [SerializeField] Sprite stormAreaSprite;
+    [SerializeField] Sprite stunBallSprite;
+    [SerializeField] Sprite laserBeam;
 
 
     [SerializeField]
@@ -27,11 +38,50 @@ public class ShopItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+
+
         player = GameObject.FindGameObjectWithTag("Player");
         circleCollider = GetComponent<CircleCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         text = GetComponentInChildren<TextMeshPro>();
         text.text = "$" + value;
+
+        switch (itemType)
+        {
+            case ItemType.HealingHeart:
+                sprite.sprite = heartSprite;
+                break;
+
+            case ItemType.BounceBall:
+                sprite.sprite = bounceBallSprite;
+                break;
+
+            case ItemType.GreatFireball:
+                sprite.sprite = greatFireballSprite;
+                break;
+
+            case ItemType.StunBall:
+                sprite.sprite = stunBallSprite;
+                break;
+
+            case ItemType.Meteor:
+                sprite.sprite = meteorSprite;
+                break;
+
+            case ItemType.ThunderCaster:
+                sprite.sprite = thunderCasterSprite;
+                break;
+
+            case ItemType.StormArea:
+                sprite.sprite = stormAreaSprite;
+                break;
+
+            case ItemType.LaserBeam:
+                sprite.sprite = laserBeam;
+                break;
+
+        }
     }
 
     private void Update()
@@ -73,6 +123,10 @@ public class ShopItem : MonoBehaviour
         {
             case ItemType.HealingHeart:
                 FindObjectOfType<BarraVida>().VidaConsumida(-100);
+            break;
+
+            case ItemType.BounceBall:
+                player.GetComponent<PlayerMovement>().saveFile.unlockedBounceBall = true;
             break;
 
             case ItemType.GreatFireball:

@@ -7,6 +7,7 @@ using UnityEngine;
 public class SaveFileResource : ScriptableObject
 {
     public int totalCoins;
+    public bool unlockedBounceBall;
     public bool unlockedGreatFireball;
     public bool unlockedLaserBeam;
     public bool unlockedMeteor;

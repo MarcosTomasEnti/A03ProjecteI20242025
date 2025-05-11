@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 7483970170089994947}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6332482918460038365
 SpriteRenderer:
@@ -99,6 +99,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1950990636ffab34e97d803812110c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 0
+  heartSprite: {fileID: 21300000, guid: 3cc3695d26d361948a34b1ef9b0abca9, type: 3}
+  bounceBallSprite: {fileID: 21300000, guid: bc5027b7db1d1b44184bcd0120cba1d3, type: 3}
+  greatFireballSprite: {fileID: 21300000, guid: 02805cbe24bf45f4aa96729938e9f63f, type: 3}
+  meteorSprite: {fileID: 21300000, guid: 246baf143c04b544ba62fd4768088667, type: 3}
+  thunderCasterSprite: {fileID: 21300000, guid: 72924414e4238f441ba9437c99b3b3f7, type: 3}
+  stormAreaSprite: {fileID: 0}
+  stunBallSprite: {fileID: 21300000, guid: 37d70ab39fa5a2d49814ee2ef894f4c4, type: 3}
+  laserBeam: {fileID: 21300000, guid: ed3dbc4ebe5eeea48bb029321e19160f, type: 3}
   value: 0
 --- !u!58 &148865214244146458
 CircleCollider2D:

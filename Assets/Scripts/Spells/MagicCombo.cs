@@ -117,7 +117,7 @@ public class MagicCombo : MonoBehaviour
                 firerb.velocity = direction.normalized * redBallSpeed;
             }
         }
-        else if (comboList[0] == 2 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0 && barraMana != null && barraMana.Mana >= ManaBounceBall) // e boncy ball
+        else if (comboList[0] == 2 && comboList[1] == 0 && comboList[2] == 0 && comboList[3] == 0 && comboList[4] == 0 && barraMana != null && barraMana.Mana >= ManaBounceBall && player.GetComponent<PlayerMovement>().saveFile.unlockedBounceBall) // e boncy ball
         {
             barraMana.ManaConsumida(ManaBounceBall);
             GameObject bounchBall = Instantiate(BouncyBall.gameObject, transform.position, Quaternion.identity);
