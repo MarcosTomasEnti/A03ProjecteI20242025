@@ -70,8 +70,18 @@ public class PlayerMovement : MonoBehaviour
         {
             speed -= 10;
         }
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            saveFile.unlockedMeteor = true;
+            saveFile.unlockedGreatFireball = true;
+            saveFile.unlockedBounceBall = true;
+            saveFile.unlockedThunderCaster = true;
+            saveFile.unlockedLaserBeam = true;
+            saveFile.unlockedStunBall = true;
+            saveFile.unlockedStormArea = true;
+        }
 
-        if(Input.GetKeyDown(KeyCode.Escape)) 
+        if (Input.GetKeyDown(KeyCode.Escape)) 
             Application.Quit();
 
 
