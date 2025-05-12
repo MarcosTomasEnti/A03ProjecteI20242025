@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LaserBeam : MonoBehaviour
 {
     public float golpe = 25;
     Vector2 playerPos;
-    public BarraMana barraMana;
+    
+    public LayerMask collisionLayer;
 
     public float manaCost = 100;
+
+    BarraMana barraMana;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +32,21 @@ public class LaserBeam : MonoBehaviour
 
         Vector3 direction = new Vector2(mousePos.x - playerPos.x, mousePos.y - playerPos.y);
 
-        transform.up = direction;
+        float distance = Mathf.Sqrt(Mathf.Pow(playerPos.x - mousePos.x, 2) + Mathf.Pow(playerPos.y - mousePos.y, 2));
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, collisionLayer);
+        if (hit.collider != null)
+        {
+            mousePos = hit.point;
+            
+
+        }
+
+            transform.up = direction;
         transform.localScale = new Vector3(1, Vector3.Distance(playerPos, mousePos) / 2, 0);
         transform.position = new Vector2((playerPos.x + mousePos.x) / 2, (playerPos.y + mousePos.y) / 2);
 
-        if (Input.GetMouseButtonUp(0) || barraMana.Mana <= 0)
+        if (Input.GetMouseButtonUp(0) || barraMana.Mana <= 1)
         {
             Destroy(gameObject);
         }
