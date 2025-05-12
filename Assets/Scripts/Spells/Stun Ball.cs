@@ -23,6 +23,7 @@ public class StunBall : MonoBehaviour
         if (collision.gameObject.CompareTag("TrainEnemy"))
         {
             collision.gameObject.GetComponent<TrainEnemy>().RecibirGolpe(golpe);
+            Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Puerta"))
         {

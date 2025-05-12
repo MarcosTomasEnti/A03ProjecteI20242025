@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3f4ea77fbde60d4183a77acc287841f, type: 3}
   m_Name: SaveFile
   m_EditorClassIdentifier: 
-  totalCoins: 14
+  totalCoins: 47
   unlockedBounceBall: 1
   unlockedGreatFireball: 1
   unlockedLaserBeam: 1
