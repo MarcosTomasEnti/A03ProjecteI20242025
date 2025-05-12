@@ -10,7 +10,7 @@ public class Recover_Mana : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Funcion de Curar mana
-            Destroy(gameObject.gameObject);¡
+            Destroy(gameObject.gameObject);
             FindObjectOfType<BarraMana>().ManaRestaurar(recoverMana);
         }
     }
