@@ -4,6 +4,7 @@ using System.Security.Principal;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.UIElements;
 
 
 public class MeleeEnemy : MonoBehaviour
@@ -40,6 +41,8 @@ public class MeleeEnemy : MonoBehaviour
 
     BarraVida barraVida;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,19 +57,27 @@ public class MeleeEnemy : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
 
         stunTimer = stunDuration / 2;
+      
     }
 
     // Update is called once per frame
     void Update()
     {
 
-
-        if(sprite.color.a < 1)
+        if(magician.transform.position.x > transform.position.x)
+        {
+            sprite.flipX=true;
+        }
+        else
+        {
+            sprite.flipX = false;
+        }
+        if (sprite.color.a < 1)
         {
 
-            sprite.color += new Color(0, 0, 0, 2*Time.deltaTime);
+            sprite.color += new Color(0, 0, 0, 2 * Time.deltaTime);
         }
-        else if(sprite.color.a > 1)
+        else if (sprite.color.a > 1)
         {
             sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1);
         }
@@ -107,8 +118,8 @@ public class MeleeEnemy : MonoBehaviour
             stunMultiplier = 0;
         else
             stunMultiplier = 1;
-        
-            
+
+
 
     }
 

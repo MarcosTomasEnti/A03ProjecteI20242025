@@ -51,6 +51,14 @@ public class RangedEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (magician.transform.position.x > transform.position.x)
+        {
+            sprite.flipX = true;
+        }
+        else
+        {
+            sprite.flipX = false;
+        }
         if (sprite.color.a < 1)
         {
 
