@@ -13,7 +13,7 @@ public class BarraMana : MonoBehaviour
 
     bool infiniteMana = false;
 
-    private float deltaTimeMana = 0;
+
     [SerializeField]
     private float timeRestoreMana = 0.5f;
 
@@ -39,13 +39,7 @@ public class BarraMana : MonoBehaviour
 
     private void Update()
     {
-        deltaTimeMana += Time.deltaTime;
 
-        if(deltaTimeMana >= timeRestoreMana)
-        {
-            RegenerarMana();
-            deltaTimeMana = 0;
-        }
 
         if(Input.GetKeyDown(KeyCode.F2))
         {
@@ -84,13 +78,6 @@ public class BarraMana : MonoBehaviour
 
         
 
-    private void RegenerarMana()
-    {
-        if (Mana < ManaMaximo)
-        {
-            Mana += velocidadRegeneracion;
-            deltaTimeMana = 0;
-        }
-    }     
+    
 
 }
