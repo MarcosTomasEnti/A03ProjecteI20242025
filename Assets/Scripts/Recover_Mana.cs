@@ -10,14 +10,8 @@ public class Recover_Mana : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Funcion de Curar mana
-            Destroy(gameObject.gameObject);
-            //FindObjectOfType<BarraMana>().GetMaxMana(recoverMana);
-            recoverMana = (recoverMana/100) * 25;
-            FindObjectOfType<BarraMana>().ManaConsumida(-recoverMana);
+            Destroy(gameObject.gameObject);¡
+            FindObjectOfType<BarraMana>().ManaRestaurar(recoverMana);
         }
     }
 }
-/*    float GetMaxMana(float manaCura)
-    {
-        manaCura = ManaMaximo;
-    }  */

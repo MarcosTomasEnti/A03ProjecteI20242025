@@ -67,6 +67,11 @@ public class BarraMana : MonoBehaviour
         Mana -= cantidad;
     }
 
+    public void ManaRestaurar(float cantidad)
+    {
+        Mana += cantidad;
+    }
+
 
     void regenerarMana()
     {
@@ -75,9 +80,4 @@ public class BarraMana : MonoBehaviour
             Mana += velocidadRegeneracion * Time.deltaTime *0.75f;
         }
     }
-
-        
-
-    
-
 }
