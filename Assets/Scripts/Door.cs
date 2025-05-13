@@ -55,16 +55,24 @@ public class Door : MonoBehaviour
         {
             if (lockType == false && collision.gameObject.GetComponent<PlayerMovement>().hasGoldKey)
             {
+                GameObject key = collision.gameObject.GetComponent<PlayerMovement>().goldKeyHeld;
+
                 collision.gameObject.GetComponent<PlayerMovement>().hasGoldKey = false;
-                Destroy(collision.gameObject.GetComponent<PlayerMovement>().goldKeyHeld);
                 collision.gameObject.GetComponent<PlayerMovement>().goldKeyHeld = null;
+
+                Key.collectedKeys.Remove(key);
+                Destroy(key);
                 locked = false;
             }
             else if (lockType == true && collision.gameObject.GetComponent<PlayerMovement>().hasDarkKey)
             {
+                GameObject key = collision.gameObject.GetComponent<PlayerMovement>().darkKeyHeld;
+
                 collision.gameObject.GetComponent<PlayerMovement>().hasDarkKey = false;
-                Destroy(collision.gameObject.GetComponent<PlayerMovement>().darkKeyHeld);
                 collision.gameObject.GetComponent<PlayerMovement>().darkKeyHeld = null;
+
+                Key.collectedKeys.Remove(key);
+                Destroy(key);
                 locked = false;
             }
             if (locked == false)
