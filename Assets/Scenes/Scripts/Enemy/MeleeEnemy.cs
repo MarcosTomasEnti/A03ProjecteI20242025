@@ -185,9 +185,6 @@ public class MeleeEnemy : MonoBehaviour
                 Debug.Log("hitPlayer!");
                 barraVida.VidaConsumida(damage);
                 stopOnAttack = 0;
-
-
-
             }
         }
         else if(collision.CompareTag("Player") && attacking == false)
