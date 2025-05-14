@@ -40,10 +40,10 @@ public class PlayerMovement : MonoBehaviour
     public SaveFileResource saveFile;
 
     public GameObject goldKeyHeld;
-      public GameObject darkKeyHeld;
+    public GameObject darkKeyHeld;
 
-      public bool hasGoldKey = false;
-      public bool hasDarkKey = false;
+    public bool hasGoldKey = false;
+    public bool hasDarkKey = false;
 
 
     // Start is called before the first frame update
@@ -56,12 +56,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hitEfect.color.a > 0)
+        if (hitEfect.color.a > 0)
         {
             hitEfect.color -= new Color(0, 0, 0, 2 * Time.deltaTime);
         }
-            
-        
+
+
         if (Input.GetKeyDown(KeyCode.F3))
         {
             speed += 10;
@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
             saveFile.unlockedStormArea = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape)) 
+        if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
 
 
@@ -109,22 +109,22 @@ public class PlayerMovement : MonoBehaviour
         {
 
             sprite.sprite = deathSprite;
-            sprite.color -= new Color(0,0,0,2*Time.deltaTime);
+            sprite.color -= new Color(0, 0, 0, 2 * Time.deltaTime);
         }
-        
+
 
     }
 
     public void destroyChildren()
     {
-        for(int i = 0; i< transform.childCount; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
-            if(gameObject.transform.GetChild(i).gameObject.tag == "Player")
+            if (gameObject.transform.GetChild(i).gameObject.tag == "Player")
             {
                 audioSource.clip = deathSound;
                 audioSource.Play();
                 Destroy(gameObject.transform.GetChild(i).gameObject);
-                
+
             }
         }
     }
@@ -198,7 +198,7 @@ public class PlayerMovement : MonoBehaviour
         coinCounter.GetComponent<CoinCounter>().updateCount(saveFile.totalCoins);
         Debug.Log("Monedas totales: " + saveFile.totalCoins);
     }
-    
+
     public void hurtEffect()
     {
         hitEfect.color = new Color(1, 1, 1, 1);
