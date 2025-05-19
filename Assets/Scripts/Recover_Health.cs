@@ -16,5 +16,4 @@ public class Recover_Health : MonoBehaviour
             FindObjectOfType<BarraVida>().VidaConsumida(-health);
         }
     }
-    // Update is called once per frame
 }

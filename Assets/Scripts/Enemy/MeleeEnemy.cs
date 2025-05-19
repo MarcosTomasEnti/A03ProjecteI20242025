@@ -118,9 +118,6 @@ public class MeleeEnemy : MonoBehaviour
             stunMultiplier = 0;
         else
             stunMultiplier = 1;
-
-
-
     }
 
     void FollowPlayer()
@@ -186,11 +183,6 @@ public class MeleeEnemy : MonoBehaviour
                 barraVida.VidaConsumida(damage);
                 stopOnAttack = 0;
             }
-        }
-        else if(collision.CompareTag("Player") && attacking == false)
-        {
-
-
         }
         if (collision.CompareTag("Player"))
         {
