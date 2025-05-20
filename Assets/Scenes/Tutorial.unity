@@ -1360,11 +1360,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1694410794598973201, guid: e747a137da9406d4b8d78e7ca965406b, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
-      value: 128
+      value: 192
       objectReference: {fileID: 0}
     - target: {fileID: 1720184235585188795, guid: e747a137da9406d4b8d78e7ca965406b, type: 3}
       propertyPath: m_Name
       value: TrainEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720184235585188795, guid: e747a137da9406d4b8d78e7ca965406b, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237258325238412933, guid: e747a137da9406d4b8d78e7ca965406b, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5197873873723382691, guid: e747a137da9406d4b8d78e7ca965406b, type: 3}
       propertyPath: m_RootOrder
