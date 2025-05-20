@@ -31,6 +31,7 @@ public class Meteor : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("TrainEnemy"))
         {
+            Debug.Log("Entra en el Meteorito");
             collision.gameObject.GetComponent<TrainEnemy>().RecibirGolpe(golpe);
         }
         if (collision.gameObject.CompareTag("MeleeEnemy"))

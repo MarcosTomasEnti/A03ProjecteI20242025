@@ -12,11 +12,7 @@ public class Great_FireBall : MonoBehaviour
         Destroy(gameObject, 6f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if ( collision.gameObject.CompareTag("MeleeEnemy"))

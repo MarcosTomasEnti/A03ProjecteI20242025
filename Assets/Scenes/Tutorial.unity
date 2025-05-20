@@ -1354,6 +1354,14 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1694410794598973201, guid: e747a137da9406d4b8d78e7ca965406b, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694410794598973201, guid: e747a137da9406d4b8d78e7ca965406b, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 1720184235585188795, guid: e747a137da9406d4b8d78e7ca965406b, type: 3}
       propertyPath: m_Name
       value: TrainEnemy

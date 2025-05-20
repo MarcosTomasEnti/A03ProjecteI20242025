@@ -27,7 +27,7 @@ public class StormArea : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("TrainEnemy"))
         {
-            collision.gameObject.GetComponent<TrainEnemy>().RecibirGolpe(golpe);
+            collision.gameObject.GetComponent<TrainEnemy>().RecibirGolpe(golpe * Time.deltaTime);
         }
         if (collision.gameObject.CompareTag("MeleeEnemy"))
         {
