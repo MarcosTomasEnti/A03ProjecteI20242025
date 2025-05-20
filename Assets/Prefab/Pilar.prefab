@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9033562899716684793}
   - component: {fileID: 7722833769689075104}
   - component: {fileID: 8964231126251412261}
+  - component: {fileID: 7995898897125394812}
   m_Layer: 0
   m_Name: Pilar
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9033562899716684793
 SpriteRenderer:
@@ -135,4 +136,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activado: 0
   tiempoActivo: 10
-  puertaVinculada: {fileID: 0}
+  puertaVinculada: {fileID: 827185313094878007, guid: 202a7c56f82dd474e8a68c4347b153c6, type: 3}
+--- !u!50 &7995898897125394812
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776396092921339826}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
