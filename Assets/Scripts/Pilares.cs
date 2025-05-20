@@ -9,7 +9,7 @@ public class Pilares : MonoBehaviour
     public float tiempoActivo = 10f; // tiempo máximo activado
     private float tiempoRestante = 0f;
 
-    public MagicDoor puertaVinculada;
+    public GameObject puertaVinculada;
 
     private void Update()
     {
@@ -20,10 +20,11 @@ public class Pilares : MonoBehaviour
             if (tiempoRestante <= 0f)
             {
                 activado = false;
-                puertaVinculada.CerrarPuertaMagica();
+                puertaVinculada.GetComponent<MagicDoor>().CerrarPuertaMagica();
             }
         }
     }
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -32,8 +33,20 @@ public class Pilares : MonoBehaviour
             activado = true;
             tiempoRestante = tiempoActivo;
 
-            puertaVinculada.AbrirPuertaMagica();
+            puertaVinculada.GetComponent<MagicDoor>().AbrirPuertaMagica();
             Destroy(collision.gameObject);
         }
-    }    
+        
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            activado = true;
+            tiempoRestante = tiempoActivo;
+
+            puertaVinculada.GetComponent<MagicDoor>().AbrirPuertaMagica();
+            Destroy(collision.gameObject);
+        }
+    }
 }
