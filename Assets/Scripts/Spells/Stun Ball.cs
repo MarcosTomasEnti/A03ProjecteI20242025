@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class StunBall : MonoBehaviour
 {
-    int golpe = 10;
-    float stun = 1f;
+    public int golpe = 10;
+    public float stun = 1f;
 
     // Start is called before the first frame update
     void Start()

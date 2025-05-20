@@ -79,36 +79,41 @@ public class inputGuide : MonoBehaviour
         if(active)
         {
             if(magician.GetComponent<PlayerMovement>().saveFile.unlockedBounceBall)
-            {
+                bounceBallText.SetActive(true);
+            else
+                bounceBallText.SetActive(false);
 
-            }
-            if(magician.GetComponent<PlayerMovement>().saveFile.unlockedGreatFireball)
-            {
+            if (magician.GetComponent<PlayerMovement>().saveFile.unlockedGreatFireball)
+                greatFireballText.SetActive(true);
+            else
+                greatFireballText.SetActive(false);
 
-            }
             if (magician.GetComponent<PlayerMovement>().saveFile.unlockedThunderCaster)
-            {
+                thunderText.SetActive(true);
+            else
+                thunderText.SetActive(false);
 
-            }
             if (magician.GetComponent<PlayerMovement>().saveFile.unlockedLaserBeam)
-            {
+                laserBeamText.SetActive(true);
+            else
+                laserBeamText.SetActive(false);
 
-            }
-            if (magician.GetComponent<PlayerMovement>().saveFile.unlockedThunderCaster)
-            {
+            if (magician.GetComponent<PlayerMovement>().saveFile.unlockedStunBall)
+                stunballText.SetActive(true);
+            else
+                stunballText.SetActive(false);
 
-            }
             if (magician.GetComponent<PlayerMovement>().saveFile.unlockedStormArea)
-            {
+                frostStormText.SetActive(true);
+            else
+                frostStormText.SetActive(false);
 
-            }
             if (magician.GetComponent<PlayerMovement>().saveFile.unlockedMeteor)
-            {
+                meteorText.SetActive(true);
+            else    
+                meteorText.SetActive(false);
 
-            }
-
-
+            
         }
-
     }
 }
