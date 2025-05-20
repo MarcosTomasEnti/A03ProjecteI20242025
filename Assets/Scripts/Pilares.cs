@@ -9,7 +9,7 @@ public class Pilares : MonoBehaviour
     public float tiempoActivo = 10f; // tiempo máximo activado
     private float tiempoRestante = 0f;
 
-    public MagicDoor puertaVinculada; // Asignar en el inspector
+    public MagicDoor puertaVinculada;
 
     private void Update()
     {

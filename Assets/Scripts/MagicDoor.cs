@@ -16,13 +16,11 @@ public class MagicDoor : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
-
     public void AbrirPuertaMagica()
     {
         sprite.sprite = openGoldDoor;
         boxCollider.enabled = false;
     }
-
     public void CerrarPuertaMagica()
     {
         sprite.sprite = closeGoldDoor;
