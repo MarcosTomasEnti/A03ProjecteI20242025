@@ -72,7 +72,6 @@ public class BarraMana : MonoBehaviour
         Mana += cantidad;
     }
 
-
     void regenerarMana()
     {
         if (mana < ManaMaximo)
