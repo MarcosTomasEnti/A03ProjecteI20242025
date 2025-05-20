@@ -6,7 +6,7 @@ public class Meteor : MonoBehaviour
 {
     Vector2 mousePos;
 
-    int golpe = 80;
+    public int golpe = 80;
     // Start is called before the first frame update
     void Start()
     {
