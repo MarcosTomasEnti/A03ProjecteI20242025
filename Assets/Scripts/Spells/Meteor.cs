@@ -6,7 +6,7 @@ public class Meteor : MonoBehaviour
 {
     Vector2 mousePos;
 
-    int golpe = 80;
+    public int golpe = 80;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +31,7 @@ public class Meteor : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("TrainEnemy"))
         {
+            Debug.Log("Entra en el Meteorito");
             collision.gameObject.GetComponent<TrainEnemy>().RecibirGolpe(golpe);
         }
         if (collision.gameObject.CompareTag("MeleeEnemy"))

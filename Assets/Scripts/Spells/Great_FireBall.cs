@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Great_FireBall : MonoBehaviour
 {
-    int golpe = 60;
+    public int golpe = 60;
     public Vector3 direction;
     // Start is called before the first frame update
     void Start()
@@ -12,11 +12,7 @@ public class Great_FireBall : MonoBehaviour
         Destroy(gameObject, 6f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if ( collision.gameObject.CompareTag("MeleeEnemy"))

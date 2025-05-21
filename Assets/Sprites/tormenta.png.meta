@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fdfd588e6d43a8e4a9a18a2b5c5f5bf4
+guid: 2a887b414b870654fa5977a96e43d241
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 75
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -134,112 +134,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: MunecoEntrenamientoAnim_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 21
-        width: 195
-        height: 491
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b3607ea8f8f148498ecbf56f4d117ad
-      internalID: -550013606
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MunecoEntrenamientoAnim_1
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 21
-        width: 194
-        height: 491
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a74070232de2b8745a8c790b520c0e1b
-      internalID: 258416548
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MunecoEntrenamientoAnim_2
-      rect:
-        serializedVersion: 2
-        x: 387
-        y: 21
-        width: 198
-        height: 491
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eaacdc63ea3f8504a8a48c11d4a727f7
-      internalID: -2001730521
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MunecoEntrenamientoAnim_3
-      rect:
-        serializedVersion: 2
-        x: 584
-        y: 21
-        width: 199
-        height: 491
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7dd455305ad26fa45b8bd34d7245a6ae
-      internalID: 1802192960
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "Mu\xF1ecoEntrenamientoAnim_0"
-      rect:
-        serializedVersion: 2
-        x: 784
-        y: 22
-        width: 193
-        height: 490
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 48, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e252fa49cee561047bf5dd47e6627e64
-      internalID: -2055055121
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -250,12 +145,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      MunecoEntrenamientoAnim_0: -550013606
-      MunecoEntrenamientoAnim_1: 258416548
-      MunecoEntrenamientoAnim_2: -2001730521
-      MunecoEntrenamientoAnim_3: 1802192960
-      "Mu\xF1ecoEntrenamientoAnim_0": -2055055121
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

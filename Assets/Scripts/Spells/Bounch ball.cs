@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bounchball : MonoBehaviour
 {
     public int Rebotes = 2;
-    float golpe = 10;
+    public float golpe = 10;
     // Start is called before the first frame update
     void Start()
     {
