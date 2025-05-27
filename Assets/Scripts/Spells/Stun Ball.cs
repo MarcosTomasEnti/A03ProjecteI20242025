@@ -43,6 +43,11 @@ public class StunBall : MonoBehaviour
         {
             Destroy(gameObject.gameObject);
         }
+        else if (collision.gameObject.CompareTag("GolemEnemy"))
+        {
+            collision.gameObject.GetComponent<Golem_script>().efectoStun(stun);
+            Destroy(gameObject.gameObject);
+        }
     }
 
 }
