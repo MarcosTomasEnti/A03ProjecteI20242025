@@ -183,7 +183,7 @@ public class Golem_script : MonoBehaviour
     }
 
 
-
+    
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(attacking == true)
@@ -200,7 +200,7 @@ public class Golem_script : MonoBehaviour
                 attacking = false;
                 Debug.Log("hitPlayer!");
                 Instantiate(firehit, transform.position, transform.rotation); 
-                //barraVida.VidaConsumida(damage);
+                barraVida.VidaConsumida(damage);
                 stopOnAttack = 0;
             }
         }
