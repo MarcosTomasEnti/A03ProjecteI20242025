@@ -6,8 +6,7 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UIElements;
 
-
-public class MeleeEnemy : MonoBehaviour
+public class Golem_script : MonoBehaviour
 {
     [SerializeField]
     LayerMask includeLayers;
@@ -17,15 +16,15 @@ public class MeleeEnemy : MonoBehaviour
     public GameObject magician;
     public GameObject Coin;
     public Rigidbody2D rb;
-    public float vida = 100;
-    public float damage = 20;
+    public float vida = 1000;
+    public float damage = 40;
     public float attackDelay = 2;
     public float activeAttackTime = 0.5f;
-    
+
 
     float attackTimer;
     int stopOnAttack = 1;
-    
+
     public float acceleration = 5;
     public float maxSpeed = 10;
     public float sightDistance = 25;
@@ -41,7 +40,7 @@ public class MeleeEnemy : MonoBehaviour
 
     BarraVida barraVida;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -57,16 +56,16 @@ public class MeleeEnemy : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
 
         stunTimer = stunDuration / 2;
-      
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if(magician.transform.position.x > transform.position.x)
+        if (magician.transform.position.x > transform.position.x)
         {
-            sprite.flipX=true;
+            sprite.flipX = true;
         }
         else
         {
@@ -88,7 +87,7 @@ public class MeleeEnemy : MonoBehaviour
 
         if (hit.collider != null)
         {
-            if(hit.collider.CompareTag("Player") && playerDist < sightDistance)
+            if (hit.collider.CompareTag("Player") && playerDist < sightDistance)
             {
                 FollowPlayer();
                 playerDetected = true;
@@ -101,12 +100,12 @@ public class MeleeEnemy : MonoBehaviour
         }
 
         attackTimer += Time.deltaTime;
-        if(playerDetected && playerDist < hitBox.radius && attackTimer > attackDelay)
+        if (playerDetected && playerDist < hitBox.radius && attackTimer > attackDelay)
         {
             attackTimer = 0;
             attacking = true;
         }
-        if(attackTimer > activeAttackTime && attackTimer <= attackDelay)
+        if (attackTimer > activeAttackTime && attackTimer <= attackDelay)
         {
             attacking = false;
         }
@@ -162,7 +161,7 @@ public class MeleeEnemy : MonoBehaviour
         }
         Debug.Log("Vida Restante: " + vida);
 
-        
+
     }
 
     public void efectoStun(float stun)
@@ -178,7 +177,7 @@ public class MeleeEnemy : MonoBehaviour
         if (collision.CompareTag("Player") && attacking == true)
         {
             {
-                attacking = false;  
+                attacking = false;
                 Debug.Log("hitPlayer!");
                 barraVida.VidaConsumida(damage);
                 stopOnAttack = 0;
@@ -188,12 +187,12 @@ public class MeleeEnemy : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + (Time.deltaTime * 1500));
         }
-        
+
 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") )
+        if (collision.CompareTag("Player"))
         {
             {
                 Debug.Log("PlayerLeft");
@@ -202,5 +201,4 @@ public class MeleeEnemy : MonoBehaviour
             }
         }
     }
-
 }

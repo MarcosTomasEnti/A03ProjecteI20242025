@@ -37,5 +37,9 @@ public class StormArea : MonoBehaviour
         {
             collision.gameObject.GetComponent<RangedEnemy>().RecibirGolpe(golpe * Time.deltaTime);
         }
+        if (collision.gameObject.CompareTag("GolemEnemy"))
+        {
+            collision.gameObject.GetComponent<Golem_script>().RecibirGolpe(golpe* Time.deltaTime);
+        }
     }
 }

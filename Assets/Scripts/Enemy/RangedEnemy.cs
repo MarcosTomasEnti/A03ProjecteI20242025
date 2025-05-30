@@ -151,7 +151,7 @@ public class RangedEnemy : MonoBehaviour
 
     public void RecibirGolpe(float golpe)
     {
-        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0);
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0.33333f);
 
         vida -= golpe;
 

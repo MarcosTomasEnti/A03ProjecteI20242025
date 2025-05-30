@@ -45,5 +45,16 @@ public class Bounchball : MonoBehaviour
             collision.gameObject.GetComponent<RangedEnemy>().RecibirGolpe(golpe);
             golpe += 5;
         }
+        else if (collision.gameObject.CompareTag("RangedEnemy"))
+        {
+
+            collision.gameObject.GetComponent<RangedEnemy>().RecibirGolpe(golpe);
+            golpe += 5;
+        }
+        else if (collision.gameObject.CompareTag("GolemEnemy"))
+        {
+            collision.gameObject.GetComponent<Golem_script>().RecibirGolpe(golpe);
+            golpe += 5;
+        }
     }
 }

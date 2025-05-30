@@ -38,5 +38,10 @@ public class Great_FireBall : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("GolemEnemy"))
+        {
+            collision.gameObject.GetComponent<Golem_script>().RecibirGolpe(golpe);
+            Destroy(gameObject.gameObject);
+        }
     }
 }

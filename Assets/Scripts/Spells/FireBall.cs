@@ -43,5 +43,10 @@ public class FireBall : MonoBehaviour
         {
             Destroy(gameObject.gameObject);
         }
+        else if (collision.gameObject.CompareTag("GolemEnemy"))
+        {
+            collision.gameObject.GetComponent<Golem_script>().RecibirGolpe(golpe);
+            Destroy(gameObject.gameObject);
+        }
     }
 }

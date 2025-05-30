@@ -42,5 +42,9 @@ public class Meteor : MonoBehaviour
         {
             collision.gameObject.GetComponent<RangedEnemy>().RecibirGolpe(golpe);
         }
+        if (collision.gameObject.CompareTag("GolemEnemy"))
+        {
+            collision.gameObject.GetComponent<Golem_script>().RecibirGolpe(golpe);
+        }
     }
 }
