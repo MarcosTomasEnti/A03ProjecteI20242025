@@ -64,13 +64,12 @@ public class BarraVida : MonoBehaviour
 
     public void VidaConsumida(float cantidad)
     {
-        if (Health >= cantidad)
+        if (cantidad > 0)
+            magician.GetComponent<PlayerMovement>().hurtEffect();
+        Health -= cantidad;
+        if (Health < 0)
         {
-            //GetComponent<SpriteRenderer>().HitEfect.color.a = 0;
-            if(cantidad >0)
-                magician.GetComponent<PlayerMovement>().hurtEffect();
-            
-            Health -= cantidad;
+            Health = 0;
         }
     }
 

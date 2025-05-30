@@ -10,7 +10,7 @@ public class Golem_script : MonoBehaviour
 {
     [SerializeField]
     LayerMask includeLayers;
-
+    [SerializeField] private Animator animator_p;
     public GameObject damageOutput;
 
     public GameObject magician;
@@ -30,6 +30,7 @@ public class Golem_script : MonoBehaviour
     public float sightDistance = 25;
     bool playerDetected = false;
     bool attacking = false;
+    bool dead = false;
     CircleCollider2D hitBox;
 
     float stunTimer;
@@ -62,14 +63,19 @@ public class Golem_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (dead)
+        {
+            animator_p.SetBool("IsDead", true);
+            rb.velocity = new Vector2(0, 0);
+            Destroy(gameObject, 1.5f);
+        }
         if (magician.transform.position.x > transform.position.x)
         {
-            sprite.flipX = true;
+            sprite.flipX = false;
         }
         else
         {
-            sprite.flipX = false;
+            sprite.flipX = true;
         }
         if (sprite.color.a < 1)
         {
@@ -80,36 +86,39 @@ public class Golem_script : MonoBehaviour
         {
             sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1);
         }
-
-        Vector2 playerDir = new Vector2(transform.position.x - magician.transform.position.x, transform.position.y - magician.transform.position.y).normalized;
-        float playerDist = Vector2.Distance(transform.position, magician.transform.position);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -playerDir, Mathf.Infinity, includeLayers);
-
-        if (hit.collider != null)
+        if (!dead)
         {
-            if (hit.collider.CompareTag("Player") && playerDist < sightDistance)
-            {
-                FollowPlayer();
-                playerDetected = true;
-            }
-            else
-            {
-                rb.velocity *= new Vector2(0.999f, 0.999f);
-                playerDetected = false;
-            }
-        }
+            Vector2 playerDir = new Vector2(transform.position.x - magician.transform.position.x, transform.position.y - magician.transform.position.y).normalized;
+            float playerDist = Vector2.Distance(transform.position, magician.transform.position);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, -playerDir, Mathf.Infinity, includeLayers);
 
+            if (hit.collider != null && !dead)
+            {
+                if (hit.collider.CompareTag("Player") && playerDist < sightDistance)
+                {
+                    FollowPlayer();
+                    playerDetected = true;
+                }
+                else
+                {
+                    rb.velocity *= new Vector2(0.999f, 0.999f);
+                    playerDetected = false;
+                }
+            }
+        
         attackTimer += Time.deltaTime;
         if (playerDetected && playerDist < hitBox.radius && attackTimer > attackDelay)
         {
             attackTimer = 0;
             attacking = true;
+
         }
         if (attackTimer > activeAttackTime && attackTimer <= attackDelay)
         {
             attacking = false;
-        }
 
+        }
+    }
 
 
         stunTimer += Time.deltaTime;
@@ -157,7 +166,8 @@ public class Golem_script : MonoBehaviour
             {
                 GameObject coin = Instantiate(Coin.gameObject, transform.position, transform.rotation);
             }
-            Destroy(gameObject);
+            dead = true;
+           
         }
         Debug.Log("Vida Restante: " + vida);
 
@@ -174,6 +184,10 @@ public class Golem_script : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if(attacking == true)
+        animator_p.SetBool("attack", true);
+        else
+            animator_p.SetBool("attack", false);
         if (collision.CompareTag("Player") && attacking == true)
         {
             {
@@ -183,15 +197,14 @@ public class Golem_script : MonoBehaviour
                 stopOnAttack = 0;
             }
         }
-        if (collision.CompareTag("Player"))
-        {
-            transform.rotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + (Time.deltaTime * 1500));
-        }
+       
 
 
     }
+   
     private void OnTriggerExit2D(Collider2D collision)
     {
+
         if (collision.CompareTag("Player"))
         {
             {
@@ -201,4 +214,5 @@ public class Golem_script : MonoBehaviour
             }
         }
     }
+
 }
