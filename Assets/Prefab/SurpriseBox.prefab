@@ -176,3 +176,4 @@ MonoBehaviour:
   rangedEnemy: {fileID: 6018062439068763828, guid: c370a6f4053c4bf4bb6bf95d2f1ce5fd, type: 3}
   Coin: {fileID: 6178069569445302517, guid: 6e0a35f6e7e32b8489ac3f9334c10a1b, type: 3}
   PotionMana: {fileID: 5893201122935511640, guid: 843fad9324b84964f9535c2ff4cf9201, type: 3}
+  Fly: {fileID: 1073761860947025371, guid: 8f9484a26f6157b4ebbb3280e29dd8d1, type: 3}

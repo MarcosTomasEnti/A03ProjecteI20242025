@@ -10,6 +10,7 @@ public class SurpriseBox : MonoBehaviour
     public GameObject rangedEnemy;
     public GameObject Coin;
     public GameObject PotionMana;
+    public GameObject Fly;
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -17,7 +18,7 @@ public class SurpriseBox : MonoBehaviour
 
          if (collision.gameObject.CompareTag("Bullet"))
         {
-            int goodLuck = Random.Range(0, 6);
+            int goodLuck = Random.Range(0, 7);
             Debug.Log(goodLuck);
 
             if (goodLuck == 1)
@@ -45,6 +46,15 @@ public class SurpriseBox : MonoBehaviour
                 GameObject potionMana = Instantiate(PotionMana.gameObject, transform.position, transform.rotation);
                 Destroy(gameObject.gameObject);
             }
+            else if ((goodLuck == 6))
+            {
+                int flyChance = Random.Range(1, 6);
+                for (int i = 0; i < flyChance; i++)
+                {
+                    GameObject fly = Instantiate(Fly.gameObject, transform.position, transform.rotation);
+                }
+                Destroy(gameObject.gameObject);
+            }
             else
             {
                 Destroy(gameObject.gameObject);
@@ -54,12 +64,12 @@ public class SurpriseBox : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
+
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            int goodLuck = Random.Range(0, 3);
-           
-          
+            int goodLuck = Random.Range(0, 7);
+            Debug.Log(goodLuck);
+
             if (goodLuck == 1)
             {
                 GameObject enemy = Instantiate(meleeEnemy.gameObject, transform.position, transform.rotation);
@@ -68,6 +78,30 @@ public class SurpriseBox : MonoBehaviour
             else if (goodLuck == 2)
             {
                 GameObject heart = Instantiate(Heart.gameObject, transform.position, transform.rotation);
+                Destroy(gameObject.gameObject);
+            }
+            else if (goodLuck == 3)
+            {
+                GameObject enemy = Instantiate(rangedEnemy.gameObject, transform.position, transform.rotation);
+                Destroy(gameObject.gameObject);
+            }
+            else if ((goodLuck == 4))
+            {
+                GameObject coin = Instantiate(Coin.gameObject, transform.position, transform.rotation);
+                Destroy(gameObject.gameObject);
+            }
+            else if ((goodLuck == 5))
+            {
+                GameObject potionMana = Instantiate(PotionMana.gameObject, transform.position, transform.rotation);
+                Destroy(gameObject.gameObject);
+            }
+            else if ((goodLuck == 6))
+            {
+                int flyChance = Random.Range(1, 6);
+                for (int i = 0; i < flyChance; i++)
+                {
+                    GameObject fly = Instantiate(Fly.gameObject, transform.position, transform.rotation);
+                }
                 Destroy(gameObject.gameObject);
             }
             else

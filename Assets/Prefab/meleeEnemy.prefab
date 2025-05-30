@@ -175,7 +175,7 @@ MonoBehaviour:
   attackDelay: 2
   activeAttackTime: 0.5
   acceleration: 10
-  maxSpeed: 15
+  maxSpeed: 7.5
   sightDistance: 50
 --- !u!95 &3994395976814144576
 Animator:
@@ -213,7 +213,7 @@ BoxCollider2D:
     m_Bits: 1152
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 832
+    m_Bits: 576
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
