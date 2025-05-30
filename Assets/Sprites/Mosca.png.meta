@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Mosca_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1011
+        width: 559
+        height: 474
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3e6e013b5ef9146a936fa5d307feca
+      internalID: -2108237164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mosca_1
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 1010
+        width: 478
+        height: 475
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbfccc1921695f24e9d54704af1505c3
+      internalID: 1018668625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mosca_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 515
+        width: 489
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f66cc6f8b2a32a40858658f3d2cb7f0
+      internalID: -752464229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mosca_4
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 515
+        width: 537
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a69a68ebb06874aba2c3ba51dd1e7f
+      internalID: 1413815363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mosca_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 583
+        height: 515
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b487d268f4b7a4c829ba6e84fe8906
+      internalID: -55877898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mosca_6
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 0
+        width: 528
+        height: 515
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76b5a03d3e0a9fe4989487187150bbaf
+      internalID: -612657750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +245,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mosca_0: -2108237164
+      Mosca_1: 1018668625
+      Mosca_2: -1765030456
+      Mosca_3: -752464229
+      Mosca_4: 1413815363
+      Mosca_5: -55877898
+      Mosca_6: -612657750
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -12,7 +12,8 @@ public class Golem_script : MonoBehaviour
     LayerMask includeLayers;
     [SerializeField] private Animator animator_p;
     public GameObject damageOutput;
-
+    [SerializedField] 
+    public GameObject firehit;
     public GameObject magician;
     public GameObject Coin;
     public Rigidbody2D rb;
@@ -47,7 +48,6 @@ public class Golem_script : MonoBehaviour
     void Start()
     {
         barraVida = FindObjectOfType<BarraVida>();
-
         attackTimer = attackDelay;
         rb = GetComponent<Rigidbody2D>();
         magician = GameObject.FindGameObjectWithTag("Player");
@@ -71,10 +71,12 @@ public class Golem_script : MonoBehaviour
         }
         if (magician.transform.position.x > transform.position.x)
         {
+           
             sprite.flipX = false;
         }
         else
         {
+           
             sprite.flipX = true;
         }
         if (sprite.color.a < 1)
@@ -185,15 +187,20 @@ public class Golem_script : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(attacking == true)
-        animator_p.SetBool("attack", true);
+        {
+            animator_p.SetBool("attack", true);
+        }
         else
+        {
             animator_p.SetBool("attack", false);
+        }    
         if (collision.CompareTag("Player") && attacking == true)
         {
             {
                 attacking = false;
                 Debug.Log("hitPlayer!");
-                barraVida.VidaConsumida(damage);
+                Instantiate(firehit, transform.position, transform.rotation); 
+                //barraVida.VidaConsumida(damage);
                 stopOnAttack = 0;
             }
         }

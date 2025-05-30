@@ -168,6 +168,7 @@ MonoBehaviour:
     m_Bits: 1096
   animator_p: {fileID: 71741513152058926}
   damageOutput: {fileID: 3004886742506992272, guid: 891aa32f3e3046e4196cab7c063714a4, type: 3}
+  firehit: {fileID: 5614019275711201022, guid: 7134752ad8b6da9488e6f4d564f76dc3, type: 3}
   magician: {fileID: 0}
   Coin: {fileID: 6178069569445302517, guid: 6e0a35f6e7e32b8489ac3f9334c10a1b, type: 3}
   rb: {fileID: 0}
