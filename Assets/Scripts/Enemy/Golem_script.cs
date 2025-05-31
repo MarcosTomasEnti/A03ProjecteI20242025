@@ -14,6 +14,10 @@ public class Golem_script : MonoBehaviour
     public GameObject damageOutput;
     [SerializedField] 
     public GameObject firehit;
+    [SerializeField]
+    CapsuleCollider2D capsuleCol;
+    [SerializeField]
+    CircleCollider2D circleCol;
     public GameObject magician;
     public GameObject Coin;
     public Rigidbody2D rb;
@@ -21,6 +25,8 @@ public class Golem_script : MonoBehaviour
     public float damage = 40;
     public float attackDelay = 2;
     public float activeAttackTime = 0.5f;
+    float attackRadius = 3;
+    
 
 
     float attackTimer;
@@ -32,7 +38,7 @@ public class Golem_script : MonoBehaviour
     bool playerDetected = false;
     bool attacking = false;
     bool dead = false;
-    CircleCollider2D hitBox;
+    
 
     float stunTimer;
     float stunDuration = 2;
@@ -51,9 +57,8 @@ public class Golem_script : MonoBehaviour
         attackTimer = attackDelay;
         rb = GetComponent<Rigidbody2D>();
         magician = GameObject.FindGameObjectWithTag("Player");
-        hitBox = GetComponent<CircleCollider2D>();
-        hitBox.enabled = true;
-
+        
+        
         sprite = GetComponent<SpriteRenderer>();
 
         stunTimer = stunDuration / 2;
@@ -63,16 +68,20 @@ public class Golem_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (dead)
         {
             animator_p.SetBool("attack", false);
             animator_p.SetBool("IsDead", true);
             rb.velocity = new Vector2(0, 0);
             Destroy(gameObject, 1.5f);
+            capsuleCol.enabled = false;
+            circleCol.enabled = false;
         }
         if (magician.transform.position.x > transform.position.x)
         {
-           
+            
             sprite.flipX = false;
         }
         else
@@ -94,8 +103,8 @@ public class Golem_script : MonoBehaviour
             Vector2 playerDir = new Vector2(transform.position.x - magician.transform.position.x, transform.position.y - magician.transform.position.y).normalized;
             float playerDist = Vector2.Distance(transform.position, magician.transform.position);
             RaycastHit2D hit = Physics2D.Raycast(transform.position, -playerDir, Mathf.Infinity, includeLayers);
-
-            if (hit.collider != null && !dead)
+            
+            if (hit.collider != null)
             {
                 if (hit.collider.CompareTag("Player") && playerDist < sightDistance)
                 {
@@ -109,19 +118,19 @@ public class Golem_script : MonoBehaviour
                 }
             }
         
-        attackTimer += Time.deltaTime;
-        if (playerDetected && playerDist < hitBox.radius && attackTimer > attackDelay)
-        {
-            attackTimer = 0;
-            attacking = true;
+            attackTimer += Time.deltaTime;
+            if (playerDetected && playerDist < attackRadius && attackTimer > attackDelay)
+            {
+                attackTimer = 0;
+                attacking = true;
 
-        }
-        if (attackTimer > activeAttackTime && attackTimer <= attackDelay)
-        {
-            attacking = false;
+            }
+            if (attackTimer > activeAttackTime && attackTimer <= attackDelay)
+            {
+                attacking = false;
 
+            }
         }
-    }
 
 
         stunTimer += Time.deltaTime;
@@ -187,26 +196,27 @@ public class Golem_script : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(attacking == true)
+        
+        
+        if (collision.CompareTag("Player") && attacking == true)
         {
             animator_p.SetBool("attack", true);
+
+            attacking = false;
+            Debug.Log("hitPlayer!");
+            if(sprite.flipX == false)
+                Instantiate(firehit, transform.position + new Vector3(2, 0, 0), transform.rotation);
+            else
+                Instantiate(firehit, transform.position - new Vector3(2, 0, 0), transform.rotation);
+            
+            //barraVida.VidaConsumida(damage);
+            stopOnAttack = 0;
+            
         }
         else
         {
             animator_p.SetBool("attack", false);
-        }    
-        if (collision.CompareTag("Player") && attacking == true)
-        {
-            {
-                attacking = false;
-                Debug.Log("hitPlayer!");
-                Instantiate(firehit, transform.position, transform.rotation); 
-                //barraVida.VidaConsumida(damage);
-                stopOnAttack = 0;
-            }
         }
-       
-
 
     }
    
