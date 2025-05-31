@@ -65,6 +65,7 @@ public class Golem_script : MonoBehaviour
     {
         if (dead)
         {
+            animator_p.SetBool("attack", false);
             animator_p.SetBool("IsDead", true);
             rb.velocity = new Vector2(0, 0);
             Destroy(gameObject, 1.5f);
@@ -200,7 +201,7 @@ public class Golem_script : MonoBehaviour
                 attacking = false;
                 Debug.Log("hitPlayer!");
                 Instantiate(firehit, transform.position, transform.rotation); 
-                barraVida.VidaConsumida(damage);
+                //barraVida.VidaConsumida(damage);
                 stopOnAttack = 0;
             }
         }
