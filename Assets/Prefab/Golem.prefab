@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: -1093372091
   m_SortingLayer: 3
   m_SortingOrder: 1000
-  m_Sprite: {fileID: -1119330918, guid: 70f89c4fc7e83cd499075b64a6f35470, type: 3}
+  m_Sprite: {fileID: -1466305317, guid: 38775fef73caf504b8071457d265defe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,10 +169,12 @@ MonoBehaviour:
   animator_p: {fileID: 71741513152058926}
   damageOutput: {fileID: 3004886742506992272, guid: 891aa32f3e3046e4196cab7c063714a4, type: 3}
   firehit: {fileID: 5614019275711201022, guid: 7134752ad8b6da9488e6f4d564f76dc3, type: 3}
+  capsuleCol: {fileID: 2364570898152562562}
+  circleCol: {fileID: 6022243246923233192}
   magician: {fileID: 0}
   Coin: {fileID: 6178069569445302517, guid: 6e0a35f6e7e32b8489ac3f9334c10a1b, type: 3}
   rb: {fileID: 0}
-  vida: 1
+  vida: 200
   damage: 40
   attackDelay: 2
   activeAttackTime: 0.5
