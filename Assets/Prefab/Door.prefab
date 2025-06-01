@@ -189,6 +189,7 @@ MonoBehaviour:
   locked: 0
   lockType: 0
   magician: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 79cff060a1f252b4695bb761cfafe535, type: 3}
   openGoldDoor: {fileID: -746535294, guid: 424b97ac719f7ea4dbb8ab91ac8cddad, type: 3}
   closeGoldDoor: {fileID: -1583452998, guid: 424b97ac719f7ea4dbb8ab91ac8cddad, type: 3}
   openDarkDoor: {fileID: -380466638, guid: 754c8a21ef82e1247aab0a773138673f, type: 3}

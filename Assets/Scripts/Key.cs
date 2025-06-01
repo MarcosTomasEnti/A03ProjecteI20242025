@@ -11,8 +11,9 @@ public class Key : MonoBehaviour
     GameObject player;
     GameObject followTarget;
     public static List<GameObject> collectedKeys = new List<GameObject>();
-
+    
     [Tooltip("False = golden. True = dark")]
+    public AudioSource audioSource;
     public bool keyType = false;
 
     private void Start()
@@ -20,6 +21,9 @@ public class Key : MonoBehaviour
         if (keyType)
         {
             GetComponent<SpriteRenderer>().color = new Color(56 / 255, 0, 1);
+            audioSource.GetComponent<AudioSource>();
+            
+            
         }
 
         collider = GetComponent<CircleCollider2D>();
@@ -27,13 +31,18 @@ public class Key : MonoBehaviour
     }
     void Update()
     {
+        
         LlavesSeguir();
+       
+            
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !following)
         {
+            audioSource.Play();
             following = true;
             player = collision.gameObject;
 

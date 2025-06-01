@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1950990636ffab34e97d803812110c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: cb57292274885b94f9d267c62109c733, type: 3}
   itemType: 0
   heartSprite: {fileID: 21300000, guid: 3cc3695d26d361948a34b1ef9b0abca9, type: 3}
   bounceBallSprite: {fileID: 21300000, guid: bc5027b7db1d1b44184bcd0120cba1d3, type: 3}
