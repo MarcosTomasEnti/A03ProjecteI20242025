@@ -144,3 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recoverMana: 60
+  audioClip: {fileID: 8300000, guid: 76013b8b3f3cbd14887c7d17af208851, type: 3}

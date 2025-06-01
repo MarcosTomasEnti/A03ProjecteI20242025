@@ -12,7 +12,7 @@ public class Door : MonoBehaviour
     int collisionStayCount = 0;
     [HideInInspector]
     public GameObject magician;
-
+    [SerializeField] private AudioClip audioClip;
     public Sprite openGoldDoor;
     public Sprite closeGoldDoor;
     public Sprite openDarkDoor;
@@ -81,6 +81,7 @@ public class Door : MonoBehaviour
 
         if (!open && !locked)
         {
+            
             openTheDoor();
             collisionStayCount++;
             Debug.Log(collisionStayCount);
@@ -117,6 +118,7 @@ public class Door : MonoBehaviour
 
     void openTheDoor()
     {
+        AudioManager.Instance.PlayAudioClip(audioClip);
         if (lockType)
             sprite.sprite = openDarkDoor;
         else

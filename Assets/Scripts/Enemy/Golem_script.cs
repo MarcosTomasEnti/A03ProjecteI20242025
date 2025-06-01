@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 
 public class Golem_script : MonoBehaviour
 {
+    [SerializeField] private AudioSource audio;
     [SerializeField]
     LayerMask includeLayers;
     [SerializeField] private Animator animator_p;
@@ -26,7 +27,9 @@ public class Golem_script : MonoBehaviour
     public float attackDelay = 2;
     public float activeAttackTime = 0.5f;
     float attackRadius = 3;
-    
+    float delaySound = 3f;
+    float getTime = 0;
+    float getTimeSound = 0;
 
 
     float attackTimer;
@@ -68,7 +71,15 @@ public class Golem_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (playerDetected)
+        {
+            getTime += Time.deltaTime;
+        }
+        if (getTime - getTimeSound >= delaySound)
+        {
+            getTimeSound = getTime;
+            audio.Play();
+        }
 
         if (dead)
         {

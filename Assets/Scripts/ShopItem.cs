@@ -11,7 +11,7 @@ public class ShopItem : MonoBehaviour
     {
         HealingHeart, BounceBall, GreatFireball, StunBall, Meteor, ThunderCaster, StormArea, LaserBeam
     }
-
+    [SerializeField] private AudioClip audioClip;
     public ItemType itemType;
 
     GameObject player;
@@ -119,6 +119,7 @@ public class ShopItem : MonoBehaviour
 
     void activateItem()
     {
+        AudioManager.Instance.PlayAudioClip(audioClip);
         switch (itemType)
         {
             case ItemType.HealingHeart:

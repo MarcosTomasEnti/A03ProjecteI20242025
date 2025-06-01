@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Sp_Coin : MonoBehaviour
 {
-    
+    [SerializeField] private AudioClip audioClip;
+
+   
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,6 +14,7 @@ public class Sp_Coin : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Sumar una moneda al jugador
+            AudioManager.Instance.PlayAudioClip(audioClip);
             FindObjectOfType<PlayerMovement>().MonedaConseguida();
             Destroy(gameObject.gameObject);
         }
