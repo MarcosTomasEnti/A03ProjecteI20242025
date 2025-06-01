@@ -80,6 +80,7 @@ public class Golem_script : MonoBehaviour
             getTimeSound = getTime;
             audio.Play();
         }
+       
 
         if (dead)
         {
@@ -121,6 +122,7 @@ public class Golem_script : MonoBehaviour
                 {
                     FollowPlayer();
                     playerDetected = true;
+                    animator_p.SetBool("Detected", true);
                 }
                 else
                 {
@@ -141,6 +143,7 @@ public class Golem_script : MonoBehaviour
                 attacking = false;
 
             }
+           
         }
 
 
@@ -207,13 +210,14 @@ public class Golem_script : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D collision)
     {
-        
+     
         
         if (collision.CompareTag("Player") && attacking == true)
         {
             animator_p.SetBool("attack", true);
 
             attacking = false;
+            
             Debug.Log("hitPlayer!");
             if(sprite.flipX == false)
                 Instantiate(firehit, transform.position + new Vector3(2, 0, 0), transform.rotation);

@@ -30,13 +30,13 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 15;
 
     SpriteRenderer sprite;
-    public Sprite deathSprite;
+  
     public Image hitEfect;
 
     public AudioSource audioSource;
     public AudioClip deathSound;
     public CoinCounter coinCounter;
-
+    public Animator Animation;
     public SaveFileResource saveFile;
 
     public GameObject goldKeyHeld;
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
-
+        Animation = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -59,6 +59,11 @@ public class PlayerMovement : MonoBehaviour
         if (hitEfect.color.a > 0)
         {
             hitEfect.color -= new Color(0, 0, 0, 2 * Time.deltaTime);
+            
+        }
+        else
+        {
+            Animation.SetBool("Golpeado", false);
         }
 
 
@@ -108,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
 
-            sprite.sprite = deathSprite;
+            Animation.SetBool("IsDead", true);
             sprite.color -= new Color(0, 0, 0, 2 * Time.deltaTime);
         }
 
@@ -202,5 +207,6 @@ public class PlayerMovement : MonoBehaviour
     public void hurtEffect()
     {
         hitEfect.color = new Color(1, 1, 1, 1);
+        Animation.SetBool("Golpeado", true);
     }
 }

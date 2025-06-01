@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,448 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MagoNEW_0
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 5413
+        width: 473
+        height: 633
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07bd7efab2e854440925a10e50646adc
+      internalID: -872694010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_2
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 5419
+        width: 491
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c1721351d932a4e8f5df16048a397f
+      internalID: -1394022449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_4
+      rect:
+        serializedVersion: 2
+        x: 2262
+        y: 5418
+        width: 536
+        height: 596
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc4f74acf76fc041adf8f9ec289af5c
+      internalID: -970519240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_6
+      rect:
+        serializedVersion: 2
+        x: 3277
+        y: 5403
+        width: 524
+        height: 591
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee1db71c4994304982527c7423ac653
+      internalID: -1908114499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_8
+      rect:
+        serializedVersion: 2
+        x: 4281
+        y: 5416
+        width: 643
+        height: 606
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8b97bf8958cb6419f0e86ba11cd9f9
+      internalID: 727655903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_10
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 4141
+        width: 475
+        height: 631
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dccaf9b719305a848842035ea21b627a
+      internalID: 446772858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_12
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 4141
+        width: 463
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c369226813ab304a8aa6bba5cb60f45
+      internalID: -859785201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_13
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 4141
+        width: 462
+        height: 606
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccef3b5771c5b624faa515def75e77d4
+      internalID: -2119483873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_15
+      rect:
+        serializedVersion: 2
+        x: 3274
+        y: 4148
+        width: 382
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14e465adc957f5146a6364bcd976898e
+      internalID: 59301602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_16
+      rect:
+        serializedVersion: 2
+        x: 4284
+        y: 4163
+        width: 357
+        height: 566
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d2520e733042e43b088930934b6979
+      internalID: 1440128392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_17
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 2886
+        width: 404
+        height: 565
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4d8548f212d284792493628020f37c
+      internalID: -183253282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_18
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 2892
+        width: 675
+        height: 544
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0727a5b28a5094f89c0426fb3778f3
+      internalID: -704717350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_20
+      rect:
+        serializedVersion: 2
+        x: 2258
+        y: 2867
+        width: 477
+        height: 634
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e27bfafa22a4ab4c8b9d65e18a16785
+      internalID: 869271661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_22
+      rect:
+        serializedVersion: 2
+        x: 3262
+        y: 2873
+        width: 608
+        height: 619
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b5e58eb47e8084e92a7d04325e3034
+      internalID: -1392580259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_24
+      rect:
+        serializedVersion: 2
+        x: 4234
+        y: 2870
+        width: 623
+        height: 569
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a290fa61816f3a46817d5774d004ae1
+      internalID: 1236288240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_26
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 1587
+        width: 467
+        height: 559
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb049a709e7efc49b2cfe1b1caef4e0
+      internalID: -1600616193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_28
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 1593
+        width: 484
+        height: 652
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37849e55d83e932409f1252231965dfb
+      internalID: -2144225143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_29
+      rect:
+        serializedVersion: 2
+        x: 2271
+        y: 1604
+        width: 563
+        height: 554
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba63ac621aef3246af0a1efff01f288
+      internalID: 643249863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_31
+      rect:
+        serializedVersion: 2
+        x: 3246
+        y: 1618
+        width: 665
+        height: 522
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57c23ebde8fa2f4298cf7d0b87650ff
+      internalID: -378746065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_33
+      rect:
+        serializedVersion: 2
+        x: 4181
+        y: 1595
+        width: 618
+        height: 629
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 466d750938476384fa051fbd9986dcca
+      internalID: 802347821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagoNEW_35
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 322
+        width: 418
+        height: 631
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcf0107f2a6906a4a8bb69d07b1e73b4
+      internalID: -282954864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +560,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MagoNEW_0: -872694010
+      MagoNEW_1: -181931216
+      MagoNEW_10: 446772858
+      MagoNEW_11: -972320403
+      MagoNEW_12: -859785201
+      MagoNEW_13: -2119483873
+      MagoNEW_14: -71143247
+      MagoNEW_15: 59301602
+      MagoNEW_16: 1440128392
+      MagoNEW_17: -183253282
+      MagoNEW_18: -704717350
+      MagoNEW_19: -102150699
+      MagoNEW_2: -1394022449
+      MagoNEW_20: 869271661
+      MagoNEW_21: 1181578506
+      MagoNEW_22: -1392580259
+      MagoNEW_23: 1882859004
+      MagoNEW_24: 1236288240
+      MagoNEW_25: 1524172503
+      MagoNEW_26: -1600616193
+      MagoNEW_27: 1911894255
+      MagoNEW_28: -2144225143
+      MagoNEW_29: 643249863
+      MagoNEW_3: 175548487
+      MagoNEW_30: -2127525945
+      MagoNEW_31: -378746065
+      MagoNEW_32: -2032135143
+      MagoNEW_33: 802347821
+      MagoNEW_34: 1108955591
+      MagoNEW_35: -282954864
+      MagoNEW_4: -970519240
+      MagoNEW_5: -865472788
+      MagoNEW_6: -1908114499
+      MagoNEW_7: -1124417212
+      MagoNEW_8: 727655903
+      MagoNEW_9: 84468094
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
