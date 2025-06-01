@@ -49,14 +49,14 @@ public class WandAim : MonoBehaviour
             //Cambiamos la posici�n ligeramente para que se de la vuelta correctamente
             transform.localPosition = new Vector3(-1.5f, -1, 0);
             //le damos la vuelta al sprite en el eje x
-            sprite.flipX = false;
+            sprite.flipX = true;
         }
         else
         {
             //Cambiamos la posici�n ligeramente para que se de la vuelta correctamente
             transform.localPosition = new Vector3(1.5f, -1, 0);
             //le damos la vuelta al sprite en el eje x
-            sprite.flipX = true;
+            sprite.flipX = false;
         }
 
     }
