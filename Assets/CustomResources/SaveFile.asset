@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3f4ea77fbde60d4183a77acc287841f, type: 3}
   m_Name: SaveFile
   m_EditorClassIdentifier: 
-  totalCoins: 0
-  unlockedBounceBall: 0
-  unlockedGreatFireball: 0
-  unlockedLaserBeam: 0
-  unlockedMeteor: 0
-  unlockedStormArea: 0
-  unlockedStunBall: 0
-  unlockedThunderCaster: 0
+  totalCoins: 4
+  unlockedBounceBall: 1
+  unlockedGreatFireball: 1
+  unlockedLaserBeam: 1
+  unlockedMeteor: 1
+  unlockedStormArea: 1
+  unlockedStunBall: 1
+  unlockedThunderCaster: 1
