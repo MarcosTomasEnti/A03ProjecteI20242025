@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 15;
 
     SpriteRenderer sprite;
-  
+    [SerializeField] private AudioSource audio;
     public Image hitEfect;
 
     public AudioSource audioSource;
@@ -44,13 +44,14 @@ public class PlayerMovement : MonoBehaviour
 
     public bool hasGoldKey = false;
     public bool hasDarkKey = false;
-
+    bool SoundDead = false;
 
     // Start is called before the first frame update
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
         Animation = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -126,11 +127,17 @@ public class PlayerMovement : MonoBehaviour
         {
             if (gameObject.transform.GetChild(i).gameObject.tag == "Player")
             {
-                audioSource.clip = deathSound;
-                audioSource.Play();
+                
                 Destroy(gameObject.transform.GetChild(i).gameObject);
 
             }
+        }
+        if (!SoundDead)
+        {
+            audioSource.clip = deathSound;
+            audioSource.Play();
+            SoundDead = true;
+            Debug.Log("Sonido de muerte reproducido");
         }
     }
 
@@ -208,5 +215,6 @@ public class PlayerMovement : MonoBehaviour
     {
         hitEfect.color = new Color(1, 1, 1, 1);
         Animation.SetBool("Golpeado", true);
+        audio.Play(); 
     }
 }

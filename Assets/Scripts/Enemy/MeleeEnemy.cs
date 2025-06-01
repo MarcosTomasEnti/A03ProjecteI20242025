@@ -99,18 +99,19 @@ public class MeleeEnemy : MonoBehaviour
                 playerDetected = false;
             }
         }
-
-        attackTimer += Time.deltaTime;
-        if(playerDetected && playerDist < hitBox.radius && attackTimer > attackDelay)
+        if (magician.GetComponent<PlayerMovement>().alive)
         {
-            attackTimer = 0;
-            attacking = true;
+            attackTimer += Time.deltaTime;
+            if (playerDetected && playerDist < hitBox.radius && attackTimer > attackDelay)
+            {
+                attackTimer = 0;
+                attacking = true;
+            }
+            if (attackTimer > activeAttackTime && attackTimer <= attackDelay)
+            {
+                attacking = false;
+            }
         }
-        if(attackTimer > activeAttackTime && attackTimer <= attackDelay)
-        {
-            attacking = false;
-        }
-
 
 
         stunTimer += Time.deltaTime;
@@ -184,9 +185,12 @@ public class MeleeEnemy : MonoBehaviour
                 stopOnAttack = 0;
             }
         }
-        if (collision.CompareTag("Player"))
+        if (magician.GetComponent<PlayerMovement>().alive)
         {
-            transform.rotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + (Time.deltaTime * 1500));
+            if (collision.CompareTag("Player"))
+            {
+                transform.rotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + (Time.deltaTime * 1500));
+            }
         }
         
 

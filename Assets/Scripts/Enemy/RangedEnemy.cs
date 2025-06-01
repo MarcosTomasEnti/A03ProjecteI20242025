@@ -103,18 +103,20 @@ public class RangedEnemy : MonoBehaviour
 
         if(playerDetected && !inRange)
         {
-            
-            attackTimer += Time.deltaTime;
-            if (attackTimer > attackDelay)
+            if (magician.GetComponent<PlayerMovement>().alive)
             {
-                attackTimer = 0;
-                GameObject Projectile = Instantiate(projectile.gameObject, transform.position, transform.rotation);
-                Vector2 shotDir = new Vector2(magician.transform.position.x - transform.position.x, magician.transform.position.y - transform.position.y).normalized;
-                Rigidbody2D shotRB = projectile.GetComponent<Rigidbody2D>();
-                shotRB.velocity = new Vector2(shotDir.x * projectileSpeed, shotDir.y * projectileSpeed);
-                
-                projectile.GetComponent<EnemyProjectile>().setDamage(damage);
+                attackTimer += Time.deltaTime;
+                if (attackTimer > attackDelay)
+                {
+                    attackTimer = 0;
+                    GameObject Projectile = Instantiate(projectile.gameObject, transform.position, transform.rotation);
+                    Vector2 shotDir = new Vector2(magician.transform.position.x - transform.position.x, magician.transform.position.y - transform.position.y).normalized;
+                    Rigidbody2D shotRB = projectile.GetComponent<Rigidbody2D>();
+                    shotRB.velocity = new Vector2(shotDir.x * projectileSpeed, shotDir.y * projectileSpeed);
 
+                    projectile.GetComponent<EnemyProjectile>().setDamage(damage);
+
+                }
             }
         }
 

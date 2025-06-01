@@ -10,7 +10,7 @@ public class BarraVida : MonoBehaviour
     [SerializeField] private float health = VidaMaxima;
     public float velocidadRegeneracion = 10f;
     public GameObject magician;
-    
+    bool isDead = false;
     bool infiniteHealth = false;
 
     public float Health
@@ -50,26 +50,32 @@ public class BarraVida : MonoBehaviour
 
 
     private void ActualizarBarra()
-    {
-        if (visualHealth != null)
+    {  if (!isDead)
         {
-            visualHealth.value = Health;
-        }
-        if(Health <= 0) 
-        {
-            magician.GetComponent<PlayerMovement>().alive = false;
-            magician.GetComponent<PlayerMovement>().destroyChildren();
+            if (visualHealth != null)
+            {
+                visualHealth.value = Health;
+            }
+            if (Health <= 0)
+            {
+                magician.GetComponent<PlayerMovement>().alive = false;
+                magician.GetComponent<PlayerMovement>().destroyChildren();
+            }
         }
     }
 
     public void VidaConsumida(float cantidad)
     {
-        if (cantidad > 0)
-            magician.GetComponent<PlayerMovement>().hurtEffect();
-        Health -= cantidad;
-        if (Health < 0)
-        {
-            Health = 0;
+        if (!isDead)
+        { 
+            if (cantidad > 0)
+                magician.GetComponent<PlayerMovement>().hurtEffect();
+            Health -= cantidad;
+            if (Health < 0)
+            {
+                Health = 0;
+                isDead = true;
+            }
         }
     }
 

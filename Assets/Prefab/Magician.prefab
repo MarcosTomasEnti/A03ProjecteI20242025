@@ -3502,7 +3502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.1}
   m_AnchorMax: {x: 0.28100002, y: 0.5}
-  m_AnchoredPosition: {x: -2.5796204, y: -0.7589109}
+  m_AnchoredPosition: {x: -2.5796204, y: -0.7589108}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: -0.246, y: 0.28}
 --- !u!1 &3268257338358946418
@@ -7172,6 +7172,7 @@ MonoBehaviour:
   rb: {fileID: 7284844200130849231}
   pointAndClickMovement: 0
   speed: 10
+  audio: {fileID: 1931025157159206908}
   hitEfect: {fileID: 5894967166753903747}
   audioSource: {fileID: 1931025157159206908}
   deathSound: {fileID: 8300000, guid: 77095c7ea18b4204789dadd78f370060, type: 3}
@@ -7244,7 +7245,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3dcc83cb799311644b12adaa615e230e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1

@@ -130,18 +130,20 @@ public class Golem_script : MonoBehaviour
                     playerDetected = false;
                 }
             }
-        
-            attackTimer += Time.deltaTime;
-            if (playerDetected && playerDist < attackRadius && attackTimer > attackDelay)
+            if (magician.GetComponent<PlayerMovement>().alive)
             {
-                attackTimer = 0;
-                attacking = true;
+                attackTimer += Time.deltaTime;
+                if (playerDetected && playerDist < attackRadius && attackTimer > attackDelay)
+                {
+                    attackTimer = 0;
+                    attacking = true;
 
-            }
-            if (attackTimer > activeAttackTime && attackTimer <= attackDelay)
-            {
-                attacking = false;
+                }
+                if (attackTimer > activeAttackTime && attackTimer <= attackDelay)
+                {
+                    attacking = false;
 
+                }
             }
            
         }
