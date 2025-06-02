@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Pilares : MonoBehaviour
 {
+    [SerializeField]
+    Sprite pilarOn;
+    [SerializeField]
+    Sprite pilarOff;
 
     public bool activado = false;
     public float tiempoActivo = 10f; // tiempo máximo activado

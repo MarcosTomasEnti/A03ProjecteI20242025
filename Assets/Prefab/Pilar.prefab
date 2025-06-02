@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7995898897125394812}
   m_Layer: 10
   m_Name: Pilar
-  m_TagString: Untagged
+  m_TagString: Obstaculos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 1776396092921339826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.479132, y: -43.045704, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fe0480d06a41c884b9fd16cd2f6402be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,8 +119,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -0.034893036, y: -0.05815506}
+  m_Size: {x: 2.9307137, y: 7.0477753}
   m_Direction: 0
 --- !u!114 &8964231126251412261
 MonoBehaviour:
@@ -134,6 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0da48ff79e33324da7bf09be9208e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pilarOn: {fileID: 21300000, guid: 9620811eb7499d343875ae050e89629c, type: 3}
+  pilarOff: {fileID: 21300000, guid: fe0480d06a41c884b9fd16cd2f6402be, type: 3}
   activado: 0
   tiempoActivo: 10
   puertaVinculada: {fileID: 827185313094878007, guid: 202a7c56f82dd474e8a68c4347b153c6, type: 3}
