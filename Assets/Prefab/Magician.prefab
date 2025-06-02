@@ -2183,7 +2183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 473f25ada9f0c194f80560ae0dc43ae6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14d70536d7a1a77408ece7646e0b193b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3503,7 +3503,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.1}
   m_AnchorMax: {x: 0.28100002, y: 0.5}
-  m_AnchoredPosition: {x: -2.5796204, y: -0.7589108}
+  m_AnchoredPosition: {x: -2.5796204, y: -0.75891066}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: -0.246, y: 0.28}
 --- !u!1 &3268257338358946418
@@ -7367,6 +7367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 253b6b2976a3f2a448850f7561d9a6be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!1 &6654697312087259466
 GameObject:
   m_ObjectHideFlags: 0
@@ -9065,6 +9066,7 @@ MonoBehaviour:
   StormArea: {fileID: 875953069531693848, guid: b50b206b19924174aad84ed37050b475, type: 3}
   StunBall: {fileID: 8346282766738621628, guid: 5b0a13648cc4eb346a4a57ca7b024b8e, type: 3}
   barraMana: {fileID: 0}
+  pressedKeys: 0
 --- !u!1 &8366848615834843139
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class PauseManager : MonoBehaviour
     public GameObject manuPausa;
     public GameObject Magician;
     public GameObject menuOptions;
+
     public bool juegoPausado = false;
     public bool Options = false;
     private void OnEnable()
