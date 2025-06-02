@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireBall : MonoBehaviour
 {
     public int golpe = 40;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,17 @@ public class FireBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.rotation = Quaternion.Euler(45, 0, 0); // Rota 45° en Z
+    }
+    public class RotarSprite : MonoBehaviour
+    {
+        public float velocidadRotacion = 90f; // grados por segundo
+
+        void Update()
+        {
+            // Rota el objeto alrededor del eje Z
+            transform.Rotate(velocidadRotacion * Time.deltaTime, 0, 0);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
