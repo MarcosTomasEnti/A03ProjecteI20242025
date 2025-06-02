@@ -118,7 +118,7 @@ public class Door : MonoBehaviour
 
     void openTheDoor()
     {
-        AudioManager.Instance.PlayAudioClip(audioClip);
+        AudioManager.Instance.PlayAudioClip(audioClip, AudioManager.AudioType.Ambience);
         if (lockType)
             sprite.sprite = openDarkDoor;
         else

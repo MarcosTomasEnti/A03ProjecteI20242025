@@ -12,7 +12,7 @@ public class Recover_Health : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Funcion de Curar vida
-            AudioManager.Instance.PlayAudioClip(audioClip);
+            AudioManager.Instance.PlayAudioClip(audioClip, AudioManager.AudioType.Items);
             Destroy(gameObject.gameObject);
             FindObjectOfType<BarraVida>().VidaConsumida(-health);
         }
