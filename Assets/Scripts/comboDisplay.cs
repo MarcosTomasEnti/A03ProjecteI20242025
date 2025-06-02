@@ -13,6 +13,7 @@ public class comboDisplay : MonoBehaviour
     public Sprite R;
     public Sprite F;
     public GameObject[] runeGameObject;
+    public GameObject pausa;
 
 
     // Start is called before the first frame update
@@ -23,34 +24,37 @@ public class comboDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) //Q = Melee
+        if (!pausa.GetComponent<PauseManager>().juegoPausado)
         {
-            runeGameObject[pressedKeys].GetComponent<SpriteRenderer>().sprite = Q;
-            pressedKeys++;
-        }
-        else if (Input.GetKeyDown(KeyCode.E)) //E = Projectile
-        {
-            runeGameObject[pressedKeys].GetComponent<SpriteRenderer>().sprite = E;
-            pressedKeys++;
-        }
-        else if (Input.GetKeyDown(KeyCode.R)) // R = Fisicas
-        {
-            runeGameObject[pressedKeys].GetComponent<SpriteRenderer>().sprite = R;
-            pressedKeys++;
-        }
-        else if (Input.GetKeyDown(KeyCode.F)) // F = Elemental
-        {
-            runeGameObject[pressedKeys].GetComponent<SpriteRenderer>().sprite = F;
-            pressedKeys++;
-        }
-
-        if (Input.GetMouseButtonDown(0) || pressedKeys >= 5)
-        {
-            pressedKeys = 0;
-            for (int i = 0; i < comboList.Length; i++)
+            if (Input.GetKeyDown(KeyCode.Q)) //Q = Melee
             {
-                runeGameObject[i].GetComponent<SpriteRenderer>().sprite = null;
-                comboList[i] = 0;
+                runeGameObject[pressedKeys].GetComponent<SpriteRenderer>().sprite = Q;
+                pressedKeys++;
+            }
+            else if (Input.GetKeyDown(KeyCode.E)) //E = Projectile
+            {
+                runeGameObject[pressedKeys].GetComponent<SpriteRenderer>().sprite = E;
+                pressedKeys++;
+            }
+            else if (Input.GetKeyDown(KeyCode.R)) // R = Fisicas
+            {
+                runeGameObject[pressedKeys].GetComponent<SpriteRenderer>().sprite = R;
+                pressedKeys++;
+            }
+            else if (Input.GetKeyDown(KeyCode.F)) // F = Elemental
+            {
+                runeGameObject[pressedKeys].GetComponent<SpriteRenderer>().sprite = F;
+                pressedKeys++;
+            }
+
+            if (Input.GetMouseButtonDown(0) || pressedKeys >= 5)
+            {
+                pressedKeys = 0;
+                for (int i = 0; i < comboList.Length; i++)
+                {
+                    runeGameObject[i].GetComponent<SpriteRenderer>().sprite = null;
+                    comboList[i] = 0;
+                }
             }
         }
 
