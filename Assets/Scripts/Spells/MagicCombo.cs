@@ -41,7 +41,7 @@ public class MagicCombo : MonoBehaviour
 
 
     int[] comboList = new int[5] {0,0,0,0,0};
-    int pressedKeys = 0;
+    public int pressedKeys = 0;
 
 
 
