@@ -37,11 +37,13 @@ public class MagicCombo : MonoBehaviour
     int ManaStun = 25;
     float ManaLaserBeam = 20;
 
+    GameObject animManager;
 
+    //animManager.GetComponent<AnimManager>().ataque1 = true;
 
 
     int[] comboList = new int[5] {0,0,0,0,0};
-    public int pressedKeys = 0;
+    int pressedKeys = 0;
 
 
 

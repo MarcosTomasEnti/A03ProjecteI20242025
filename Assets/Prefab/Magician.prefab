@@ -7367,6 +7367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 253b6b2976a3f2a448850f7561d9a6be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 810190611792563736}
 --- !u!1 &6654697312087259466
 GameObject:
   m_ObjectHideFlags: 0
@@ -9065,6 +9066,7 @@ MonoBehaviour:
   StormArea: {fileID: 875953069531693848, guid: b50b206b19924174aad84ed37050b475, type: 3}
   StunBall: {fileID: 8346282766738621628, guid: 5b0a13648cc4eb346a4a57ca7b024b8e, type: 3}
   barraMana: {fileID: 0}
+  pressedKeys: 0
 --- !u!1 &8366848615834843139
 GameObject:
   m_ObjectHideFlags: 0

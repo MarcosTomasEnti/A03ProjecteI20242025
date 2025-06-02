@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class AnimManager : MonoBehaviour
 {
-    public Animator animator;
-   GameObject MagicCom;
+   public Animator animator;
+   public bool ataque1 = false;
+   public bool ataque2 = false;
+   public bool ataque3 = false;
 
 
     void Update()
     {
-        if (MagicCom.GetComponent<MagicCombo>().pressedKeys > 0)
-        {
-            if (MagicCom.GetComponent<MagicCombo>().pressedKeys == 1)
+            if (ataque1)
             {
                 animator.SetBool("Ataque1", true);
             }
@@ -21,7 +21,7 @@ public class AnimManager : MonoBehaviour
                 animator.SetBool("Ataque1", false);
             }
 
-            if (MagicCom.GetComponent<MagicCombo>().pressedKeys == 2)
+            if (ataque2)
             {
                 animator.SetBool("Ataque2", true);
             }
@@ -30,7 +30,7 @@ public class AnimManager : MonoBehaviour
                 animator.SetBool("Ataque2", false);
             }
 
-            if (MagicCom.GetComponent<MagicCombo>().pressedKeys >= 3)
+            if (ataque3)
             {
                 animator.SetBool("Ataque3", true);
             }
@@ -38,7 +38,8 @@ public class AnimManager : MonoBehaviour
             {
                 animator.SetBool("Ataque3", false);
             }
-
-        }
+        ataque1 = false;
+        ataque2 = false;
+        ataque3 = false;
     }
 }
