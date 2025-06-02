@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 125
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,8 +113,8 @@ TextureImporter:
       name: MagoNEW_0
       rect:
         serializedVersion: 2
-        x: 259
-        y: 5413
+        x: 85
+        y: 5422
         width: 675
         height: 652
       alignment: 0
@@ -134,8 +134,8 @@ TextureImporter:
       name: MagoNEW_2
       rect:
         serializedVersion: 2
-        x: 1273
-        y: 5419
+        x: 1143
+        y: 5428
         width: 675
         height: 652
       alignment: 0
@@ -155,9 +155,9 @@ TextureImporter:
       name: MagoNEW_4
       rect:
         serializedVersion: 2
-        x: 2262
+        x: 2066
         y: 5418
-        width: 675
+        width: 792
         height: 652
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -176,9 +176,9 @@ TextureImporter:
       name: MagoNEW_6
       rect:
         serializedVersion: 2
-        x: 3277
-        y: 5403
-        width: 675
+        x: 3053
+        y: 5393
+        width: 782
         height: 652
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -197,9 +197,9 @@ TextureImporter:
       name: MagoNEW_8
       rect:
         serializedVersion: 2
-        x: 4281
+        x: 4132
         y: 5416
-        width: 675
+        width: 829
         height: 652
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -218,8 +218,8 @@ TextureImporter:
       name: MagoNEW_10
       rect:
         serializedVersion: 2
-        x: 259
-        y: 4141
+        x: 91
+        y: 4132
         width: 675
         height: 652
       alignment: 0
@@ -239,8 +239,8 @@ TextureImporter:
       name: MagoNEW_12
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 4141
+        x: 1086
+        y: 4132
         width: 675
         height: 652
       alignment: 0
@@ -260,8 +260,8 @@ TextureImporter:
       name: MagoNEW_13
       rect:
         serializedVersion: 2
-        x: 2255
-        y: 4141
+        x: 2134
+        y: 4132
         width: 675
         height: 652
       alignment: 0
@@ -281,8 +281,8 @@ TextureImporter:
       name: MagoNEW_15
       rect:
         serializedVersion: 2
-        x: 3274
-        y: 4148
+        x: 3144
+        y: 4139
         width: 675
         height: 652
       alignment: 0
@@ -302,9 +302,9 @@ TextureImporter:
       name: MagoNEW_16
       rect:
         serializedVersion: 2
-        x: 4284
-        y: 4163
-        width: 675
+        x: 4059
+        y: 4135
+        width: 751
         height: 652
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -323,8 +323,8 @@ TextureImporter:
       name: MagoNEW_17
       rect:
         serializedVersion: 2
-        x: 278
-        y: 2886
+        x: 101
+        y: 2877
         width: 675
         height: 652
       alignment: 0
@@ -344,9 +344,9 @@ TextureImporter:
       name: MagoNEW_18
       rect:
         serializedVersion: 2
-        x: 1248
-        y: 2892
-        width: 675
+        x: 1100
+        y: 2882
+        width: 828
         height: 652
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -365,8 +365,8 @@ TextureImporter:
       name: MagoNEW_20
       rect:
         serializedVersion: 2
-        x: 2258
-        y: 2867
+        x: 2137
+        y: 2886
         width: 675
         height: 652
       alignment: 0
@@ -386,9 +386,9 @@ TextureImporter:
       name: MagoNEW_22
       rect:
         serializedVersion: 2
-        x: 3262
+        x: 3113
         y: 2873
-        width: 675
+        width: 759
         height: 652
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -428,8 +428,8 @@ TextureImporter:
       name: MagoNEW_26
       rect:
         serializedVersion: 2
-        x: 278
-        y: 1587
+        x: 120
+        y: 1578
         width: 675
         height: 652
       alignment: 0
@@ -449,9 +449,9 @@ TextureImporter:
       name: MagoNEW_28
       rect:
         serializedVersion: 2
-        x: 1242
+        x: 1081
         y: 1593
-        width: 675
+        width: 687
         height: 652
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -470,9 +470,9 @@ TextureImporter:
       name: MagoNEW_29
       rect:
         serializedVersion: 2
-        x: 2271
-        y: 1604
-        width: 675
+        x: 2113
+        y: 1613
+        width: 764
         height: 652
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -491,9 +491,9 @@ TextureImporter:
       name: MagoNEW_31
       rect:
         serializedVersion: 2
-        x: 3246
-        y: 1618
-        width: 675
+        x: 3078
+        y: 1581
+        width: 860
         height: 652
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -512,7 +512,7 @@ TextureImporter:
       name: MagoNEW_33
       rect:
         serializedVersion: 2
-        x: 4181
+        x: 4134
         y: 1595
         width: 675
         height: 652
@@ -533,7 +533,7 @@ TextureImporter:
       name: MagoNEW_35
       rect:
         serializedVersion: 2
-        x: 258
+        x: 53
         y: 322
         width: 675
         height: 652
