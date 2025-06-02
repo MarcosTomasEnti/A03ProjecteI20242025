@@ -155,5 +155,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e3cb00817d3b9428f9faccef8869d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  golpe: 80
+  golpe: 50
   animator: {fileID: 0}

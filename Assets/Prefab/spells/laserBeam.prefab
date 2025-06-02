@@ -101,12 +101,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e9dd6b0d5b4cb4eb8fb96aee497d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  golpe: 27.5
+  golpe: 20
   animator: {fileID: 0}
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1032
-  manaCost: 50
+  manaCost: 20
 --- !u!70 &5623027394621521295
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

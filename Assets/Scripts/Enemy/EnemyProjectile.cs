@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour
 {
     public float projectileSpeed = 15;
-    float damage = 10;
+    public float damage = 10;
     Rigidbody2D shotRB;
 
     BarraVida barraVida;

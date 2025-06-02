@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de64646b7c4ad964e8044146494a83c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  golpe: 60
+  golpe: 30
   direction: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
 --- !u!82 &2713861497822115510

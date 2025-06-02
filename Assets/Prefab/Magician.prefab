@@ -3503,7 +3503,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.1}
   m_AnchorMax: {x: 0.28100002, y: 0.5}
-  m_AnchoredPosition: {x: -2.5796204, y: -0.75891066}
+  m_AnchoredPosition: {x: -2.5796204, y: -0.75891113}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: -0.246, y: 0.28}
 --- !u!1 &3268257338358946418
@@ -7060,7 +7060,6 @@ GameObject:
   - component: {fileID: 5067774424449424601}
   - component: {fileID: 1931025157159206908}
   - component: {fileID: 810190611792563736}
-  - component: {fileID: 5119468751991594870}
   m_Layer: 6
   m_Name: Magician
   m_TagString: Player
@@ -7173,7 +7172,7 @@ MonoBehaviour:
   alive: 1
   rb: {fileID: 7284844200130849231}
   pointAndClickMovement: 0
-  speed: 10
+  speed: 15
   PauseMenu: {fileID: 7182537843512574272, guid: d8d56d54920923041862a2634135d123, type: 3}
   audio: {fileID: 1931025157159206908}
   hitEfect: {fileID: 5894967166753903747}
@@ -7355,19 +7354,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5119468751991594870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6641768816853848118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 253b6b2976a3f2a448850f7561d9a6be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!1 &6654697312087259466
 GameObject:
   m_ObjectHideFlags: 0
@@ -9066,7 +9052,16 @@ MonoBehaviour:
   StormArea: {fileID: 875953069531693848, guid: b50b206b19924174aad84ed37050b475, type: 3}
   StunBall: {fileID: 8346282766738621628, guid: 5b0a13648cc4eb346a4a57ca7b024b8e, type: 3}
   barraMana: {fileID: 0}
-  pressedKeys: 0
+  ManaFireBall: 5
+  ManaGreatFireBall: 20
+  ManaBounceBall: 5
+  ManaMeteor: 30
+  ManaThunder: 30
+  ManaStorm: 25
+  ManaStun: 25
+  ManaLaserBeam: 20
+  ManaDash: 15
+  comboList: 0000000000000000000000000000000000000000
 --- !u!1 &8366848615834843139
 GameObject:
   m_ObjectHideFlags: 0

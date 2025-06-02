@@ -208,8 +208,8 @@ MonoBehaviour:
   projectileSpeed: 15
   magician: {fileID: 0}
   rb: {fileID: 0}
-  vida: 100
-  damage: 10
+  vida: 40
+  damage: 25
   attackDelay: 1.5
   visionRange: 50
   acceleration: 5

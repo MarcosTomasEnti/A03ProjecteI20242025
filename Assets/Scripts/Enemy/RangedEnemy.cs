@@ -18,7 +18,7 @@ public class RangedEnemy : MonoBehaviour
     public GameObject magician;
     public Rigidbody2D rb;
     public float vida = 100;
-    public float damage = 10;
+    public float damage;
     public float attackDelay = 5;
     public float visionRange = 50;
 

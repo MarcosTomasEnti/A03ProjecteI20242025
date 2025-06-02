@@ -47,6 +47,11 @@ public class PlayerMovement : MonoBehaviour
     public bool hasDarkKey = false;
     bool SoundDead = false;
 
+    float dashTimer = 100;
+    float dashTimerCap = 0.5f;
+    float dashSpeed = 35;
+    float originalSpeed = 15;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +63,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dashTimer < dashTimerCap)
+        {
+            dashTimer += Time.deltaTime;
+            if(dashTimer >= dashTimerCap)
+            {
+                speed = originalSpeed;
+            }
+        }
+
         if (hitEfect.color.a > 0)
         {
             hitEfect.color -= new Color(0, 0, 0, 2 * Time.deltaTime);
@@ -73,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
         {
             speed += 10;
         }
-        if (Input.GetKeyDown(KeyCode.F4) && speed > 10)
+        if (Input.GetKeyDown(KeyCode.F4) && speed > 15)
         {
             speed -= 10;
         }
@@ -212,6 +226,12 @@ public class PlayerMovement : MonoBehaviour
         saveFile.totalCoins++;
         coinCounter.GetComponent<CoinCounter>().updateCount(saveFile.totalCoins);
         Debug.Log("Monedas totales: " + saveFile.totalCoins);
+    }
+
+    public void dash()
+    {
+        speed = dashSpeed;
+        dashTimer = 0;
     }
 
     public void hurtEffect()
