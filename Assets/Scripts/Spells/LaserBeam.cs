@@ -7,7 +7,8 @@ public class LaserBeam : MonoBehaviour
 {
     public float golpe = 25;
     Vector2 playerPos;
-    
+    public Animator animator;
+
     public LayerMask collisionLayer;
 
     public float manaCost = 100;
@@ -43,7 +44,7 @@ public class LaserBeam : MonoBehaviour
         }
 
             transform.up = direction;
-        transform.localScale = new Vector3(1, Vector3.Distance(playerPos, mousePos) / 2, 0);
+        transform.localScale = new Vector3(3, Vector3.Distance(playerPos, mousePos) / 2, 0);
         transform.position = new Vector2((playerPos.x + mousePos.x) / 2, (playerPos.y + mousePos.y) / 2);
 
         if (Input.GetMouseButtonUp(0) || barraMana.Mana <= 1)
