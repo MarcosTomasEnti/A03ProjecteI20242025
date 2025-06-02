@@ -7,7 +7,7 @@ using UnityEngine;
 public class MagicCombo : MonoBehaviour
 {
     GameObject player;
-
+    public GameObject pausa;
     public GameObject fireBall;
     public GameObject BouncyBall;
     public GameObject GreatFireBall;
@@ -62,13 +62,14 @@ public class MagicCombo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!pausa.GetComponent<PauseManager>().juegoPausado)
+        { 
         if (Input.GetKeyDown(KeyCode.Q)) //Q = Melee
         {
             comboList[pressedKeys] = 1;
             pressedKeys++;
         }
-        else if(Input.GetKeyDown(KeyCode.E)) //E = Projectile
+        else if (Input.GetKeyDown(KeyCode.E)) //E = Projectile
         {
             comboList[pressedKeys] = 2;
             pressedKeys++;
@@ -83,12 +84,13 @@ public class MagicCombo : MonoBehaviour
             comboList[pressedKeys] = 4;
             pressedKeys++;
         }
-        
-        if(Input.GetMouseButtonDown(0) || pressedKeys >= 5)
+
+        if (Input.GetMouseButtonDown(0) || pressedKeys >= 5)
         {
 
             getSpell();
             pressedKeys = 0;
+        }
         }
     }
 

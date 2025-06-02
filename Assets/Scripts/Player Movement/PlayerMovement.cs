@@ -87,7 +87,8 @@ public class PlayerMovement : MonoBehaviour
             saveFile.unlockedStunBall = true;
             saveFile.unlockedStormArea = true;
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        if (Input.GetKeyDown(KeyCode.Escape)&& PauseMenu.GetComponent<PauseManager>().Options == false)
         {
             PauseMenu.SetActive(true);
             

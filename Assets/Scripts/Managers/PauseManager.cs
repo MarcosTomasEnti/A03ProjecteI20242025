@@ -7,33 +7,41 @@ public class PauseManager : MonoBehaviour
     // Start is called before the first frame update
     public GameObject manuPausa;
     public GameObject Magician;
+    public GameObject menuOptions;
     public bool juegoPausado = false;
-
+    public bool Options = false;
     private void OnEnable()
     {
         PausarJuego();
+        
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (!Options)
         {
-            if(juegoPausado)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                ReanudarJuego();
-            }
-            else
-            {
-                PausarJuego();
+                if (juegoPausado)
+                {
+                    ReanudarJuego();
+                }
+                else
+                {
+                    PausarJuego();
+                }
             }
         }
     }
 
    public void ReanudarJuego()
     {
-        Magician.GetComponent<WandAim>().Pausa = false;
-        juegoPausado = false;
-        manuPausa.SetActive(false);
-        Time.timeScale = 1.0f;
+        if (!Options)
+        {
+            Magician.GetComponent<WandAim>().Pausa = false;
+            juegoPausado = false;
+            manuPausa.SetActive(false);
+            Time.timeScale = 1.0f;
+        }
     }
 
     public void PausarJuego()
@@ -42,5 +50,17 @@ public class PauseManager : MonoBehaviour
         juegoPausado = true;
         manuPausa.SetActive(true);
         Time.timeScale = 0.0f;
+    }
+
+    public void Opciones()
+    {
+        manuPausa.SetActive(false);
+        menuOptions.SetActive(true);
+        Options = true;
+    }
+
+    public void ReturnPause()
+    {
+        Options = false;
     }
 }
