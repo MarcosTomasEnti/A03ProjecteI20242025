@@ -7172,6 +7172,8 @@ MonoBehaviour:
   rb: {fileID: 7284844200130849231}
   pointAndClickMovement: 0
   speed: 10
+  PauseMenu: {fileID: 7182537843512574272, guid: d8d56d54920923041862a2634135d123, type: 3}
+  MoveMenu: 0
   audio: {fileID: 1931025157159206908}
   hitEfect: {fileID: 5894967166753903747}
   audioSource: {fileID: 1931025157159206908}

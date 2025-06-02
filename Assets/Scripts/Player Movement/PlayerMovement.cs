@@ -28,7 +28,8 @@ public class PlayerMovement : MonoBehaviour
     float verticalMove = 0f;
     //Velocidad del jugador. Si se altera puede proporcionar una velocidad diferente. En negativo le hará ir al revés.
     public float speed = 15;
-
+    public GameObject PauseMenu;
+    
     SpriteRenderer sprite;
     [SerializeField] private AudioSource audio;
     public Image hitEfect;
@@ -86,12 +87,13 @@ public class PlayerMovement : MonoBehaviour
             saveFile.unlockedStunBall = true;
             saveFile.unlockedStormArea = true;
         }
-
         if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
-
-
-        if (alive)
+        {
+            PauseMenu.SetActive(true);
+            
+        }
+       
+            if (alive)
         {
             //asignamos el input de movimiento físico usando los ejes de movimiento vertical y horizontal a los floats anteriormente declarados.
             horizontalMove = Input.GetAxisRaw("Horizontal");
