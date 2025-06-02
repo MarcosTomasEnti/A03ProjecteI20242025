@@ -139,12 +139,12 @@ TextureImporter:
       name: basico_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 474
-        width: 1736
-        height: 240
+        x: 403
+        y: 5750
+        width: 240
+        height: 1736
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: basico_1
       rect:
         serializedVersion: 2
-        x: 2065
-        y: 474
-        width: 1736
-        height: 240
+        x: 369
+        y: 3790
+        width: 240
+        height: 1736
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: basico_2
       rect:
         serializedVersion: 2
-        x: 3800
-        y: 474
-        width: 1736
-        height: 240
+        x: 370
+        y: 2065
+        width: 240
+        height: 1736
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,12 +202,12 @@ TextureImporter:
       name: basico_3
       rect:
         serializedVersion: 2
-        x: 5780
-        y: 474
-        width: 1736
-        height: 240
+        x: 366
+        y: 40
+        width: 240
+        height: 1736
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

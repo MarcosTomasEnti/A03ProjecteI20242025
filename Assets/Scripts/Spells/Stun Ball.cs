@@ -6,6 +6,7 @@ public class StunBall : MonoBehaviour
 {
     public int golpe = 10;
     public float stun = 1f;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()

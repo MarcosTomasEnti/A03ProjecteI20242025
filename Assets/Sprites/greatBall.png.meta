@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 450
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,10 +139,10 @@ TextureImporter:
       name: greatBall_1
       rect:
         serializedVersion: 2
-        x: 289
-        y: 378
-        width: 871
-        height: 376
+        x: 331
+        y: 6134
+        width: 380
+        height: 787
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: greatBall_2
       rect:
         serializedVersion: 2
-        x: 2243
-        y: 383
-        width: 839
-        height: 366
+        x: 312
+        y: 4203
+        width: 399
+        height: 815
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: greatBall_3
       rect:
         serializedVersion: 2
-        x: 4203
-        y: 369
-        width: 815
-        height: 399
+        x: 331
+        y: 2243
+        width: 366
+        height: 839
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +202,10 @@ TextureImporter:
       name: greatBall_4
       rect:
         serializedVersion: 2
-        x: 6134
-        y: 369
-        width: 787
-        height: 380
+        x: 326
+        y: 289
+        width: 376
+        height: 871
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,13 +220,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: greatBall_5
+      name: greatBall_0
       rect:
         serializedVersion: 2
-        x: 8041
-        y: 387
-        width: 788
-        height: 367
+        x: 326
+        y: 8041
+        width: 367
+        height: 788
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,8 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5a576eb3f316f94ca852aa33316afc9
-      internalID: -202944898
+      spriteID: 8fa89fd25a20bb345ad1a8a14f732347
+      internalID: -2062070950
       vertices: []
       indices: 
       edges: []
