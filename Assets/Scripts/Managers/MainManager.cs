@@ -7,7 +7,7 @@ public class MainManager : MonoBehaviour
     public void OnStartClick()
     {
         AudioManager.levelMusic();
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Tutorial Vf2");
         
     }   
     public void Options() 

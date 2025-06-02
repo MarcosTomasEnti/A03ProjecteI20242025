@@ -14,13 +14,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/PruebaSala.unity
     guid: 60386f642db2fec4cb4719e36627d1a3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorial.unity
     guid: e0d6cbba03f44b34898515fcba70d5f9
   - enabled: 0
     path: Assets/Scenes/Nivel_1[discarded].unity
     guid: 2025ad8a532282d4d8fc5075e05e8f2c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Nivel1.unity
     guid: 2c8c19fb59a6d8e44a38961021c5aaa2
   - enabled: 1
@@ -32,4 +32,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sound Options.unity
     guid: b8a1620dde86864408e7622fca4bbccd
+  - enabled: 1
+    path: Assets/Scenes/VF LVLS/Tutorial Vf2.unity
+    guid: 8746265000f42304fb4b1d9224b3946a
+  - enabled: 1
+    path: Assets/Scenes/VF LVLS/LVL1.unity
+    guid: 448f34fd915e78d418eaf08f92620411
+  - enabled: 1
+    path: Assets/Scenes/VF LVLS/LVL 3.unity
+    guid: 13975f8a7d92b4446a9cb75325dfc7dd
+  - enabled: 1
+    path: Assets/Scenes/VF LVLS/LVL4 F.unity
+    guid: ef3b828bcc0619b48864e360237cebe5
+  - enabled: 1
+    path: Assets/Scenes/VF LVLS/LVL2.unity
+    guid: 568ef2ab16a7da8488c95346ca403f46
   m_configObjects: {}
