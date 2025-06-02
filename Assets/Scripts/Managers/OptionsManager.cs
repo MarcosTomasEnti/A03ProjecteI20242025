@@ -18,4 +18,9 @@ public class OptionsManager : MonoBehaviour
         SceneManager.LoadScene("Credits");
     }
 
+    public void ReturnOptions()
+    {
+        SceneManager.LoadScene("MenúOptions");
+    }
+
 }
