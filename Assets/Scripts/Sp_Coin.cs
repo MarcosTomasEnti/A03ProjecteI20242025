@@ -14,7 +14,7 @@ public class Sp_Coin : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Sumar una moneda al jugador
-            AudioManager.Instance.PlayAudioClip(audioClip);
+            AudioManager.Instance.PlayAudioClip(audioClip, AudioManager.AudioType.Items);
             FindObjectOfType<PlayerMovement>().MonedaConseguida();
             Destroy(gameObject.gameObject);
         }

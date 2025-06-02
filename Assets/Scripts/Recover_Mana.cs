@@ -11,7 +11,7 @@ public class Recover_Mana : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Funcion de Curar mana
-            AudioManager.Instance.PlayAudioClip(audioClip);
+            AudioManager.Instance.PlayAudioClip(audioClip, AudioManager.AudioType.Items);
             Destroy(gameObject.gameObject);
             FindObjectOfType<BarraMana>().ManaRestaurar(recoverMana);
         }

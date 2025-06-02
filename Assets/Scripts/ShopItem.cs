@@ -119,7 +119,7 @@ public class ShopItem : MonoBehaviour
 
     void activateItem()
     {
-        AudioManager.Instance.PlayAudioClip(audioClip);
+        AudioManager.Instance.PlayAudioClip(audioClip, AudioManager.AudioType.Items);
         switch (itemType)
         {
             case ItemType.HealingHeart:
