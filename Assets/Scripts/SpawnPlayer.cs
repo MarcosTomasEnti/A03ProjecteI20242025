@@ -40,13 +40,25 @@ public class SpawnPlayer : MonoBehaviour
     {
         if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().alive == false)
         {
-            if (SceneManager.GetActiveScene().name == "Tutorial")
+            if (SceneManager.GetActiveScene().name == "Tutorial Vf2")
             {
-                SceneManager.LoadScene("Tutorial");
+                SceneManager.LoadScene("Tutorial Vf2");
             }
-            else if (SceneManager.GetActiveScene().name == "Nivel1")
+            else if (SceneManager.GetActiveScene().name == "LVL1")
             {
-                SceneManager.LoadScene("Nivel1");
+                SceneManager.LoadScene("LVL1");
+            }
+            else if (SceneManager.GetActiveScene().name == "LVL2")
+            {
+                SceneManager.LoadScene("LVL2");
+            }
+            else if (SceneManager.GetActiveScene().name == "LVL 3")
+            {
+                SceneManager.LoadScene("LVL 3");
+            }
+            else if (SceneManager.GetActiveScene().name == "LVL4 F")
+            {
+                SceneManager.LoadScene("LVL4 F");
             }
         }
     }

@@ -19,7 +19,26 @@ public class ChangeScene : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
-            SceneManager.LoadScene("Nivel1");
+        if (collision.CompareTag("Player"))
+        {
+
+            if (SceneManager.GetActiveScene().name == "Tutorial Vf2")
+            {
+                SceneManager.LoadScene("LVL1");
+            }
+            else if (SceneManager.GetActiveScene().name == "LVL1")
+            {
+                SceneManager.LoadScene("LVL2");
+            }
+            else if (SceneManager.GetActiveScene().name == "LVL2")
+            {
+                SceneManager.LoadScene("LVL 3");
+            }
+            else if (SceneManager.GetActiveScene().name == "LVL 3")
+            {
+                SceneManager.LoadScene("LVL 4");
+            }
+            
+        }
     }
 }
