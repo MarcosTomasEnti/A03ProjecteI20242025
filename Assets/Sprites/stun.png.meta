@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,10 +139,10 @@ TextureImporter:
       name: stun_0
       rect:
         serializedVersion: 2
-        x: 69
-        y: 291
-        width: 1091
-        height: 519
+        x: 263
+        y: 3900
+        width: 503
+        height: 1084
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,13 +157,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stun_1
+      name: stun_6
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 294
-        width: 1091
-        height: 519
+        x: 280
+        y: 2000
+        width: 506
+        height: 1084
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0208417f0d424f4489df63074f0476f
-      internalID: -1147363442
+      spriteID: 7136d3059131e1e47a43281f275f720e
+      internalID: 595736851
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stun_3
+      name: stun_10
       rect:
         serializedVersion: 2
-        x: 3910
-        y: 314
-        width: 1091
-        height: 519
+        x: 277
+        y: 76
+        width: 512
+        height: 1084
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1d721874bc7a8b40bed6bdd97500581
-      internalID: -341395402
+      spriteID: b616acfcfecdbd643bc51295a4f818f2
+      internalID: 488175097
       vertices: []
       indices: 
       edges: []

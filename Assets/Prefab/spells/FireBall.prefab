@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 1475195365
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 4d308b493ec8ada48bda4bcec17fd29f, type: 3}
+  m_Sprite: {fileID: 2016524168, guid: 0f8512470d02d874baaedff18e1ff383, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -164,7 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   golpe: 40
-  animator: {fileID: 281355648155212548}
 --- !u!95 &281355648155212548
 Animator:
   serializedVersion: 5
@@ -175,7 +174,7 @@ Animator:
   m_GameObject: {fileID: 8741792494347870157}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b0bbfaf8084a71a4e8142c32f5a4272a, type: 2}
+  m_Controller: {fileID: 9100000, guid: d7a0a9ed0348a6140a39e211d2120e02, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 public class StormArea : MonoBehaviour
 {
     Vector2 mousePos;
+    public Animator animator;
 
     public int golpe = 20;
    

@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -144,7 +144,7 @@ TextureImporter:
         width: 1623
         height: 734
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,7 +157,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gas_3
+      name: gas_1
       rect:
         serializedVersion: 2
         x: 2013
@@ -165,7 +165,7 @@ TextureImporter:
         width: 1623
         height: 734
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,7 +178,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gas_7
+      name: gas_3
       rect:
         serializedVersion: 2
         x: 5812
@@ -186,7 +186,7 @@ TextureImporter:
         width: 1623
         height: 734
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,7 +199,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gas_8
+      name: gas_2
       rect:
         serializedVersion: 2
         x: 3980
@@ -207,7 +207,7 @@ TextureImporter:
         width: 1623
         height: 734
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,7 +220,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gas_11
+      name: gas_4
       rect:
         serializedVersion: 2
         x: 7793
@@ -228,7 +228,7 @@ TextureImporter:
         width: 1623
         height: 734
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,18 +252,15 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       gas_0: 580031283
-      gas_1: -93419201
+      gas_1: -33914987
       gas_10: 294702244
-      gas_11: 318098113
       gas_12: 1764059437
       gas_13: -302210765
-      gas_2: -1665762148
-      gas_3: -33914987
-      gas_4: 1657990069
+      gas_2: -592750109
+      gas_3: 1352993594
+      gas_4: 318098113
       gas_5: -2060169414
       gas_6: -1538739994
-      gas_7: 1352993594
-      gas_8: -592750109
       gas_9: 261321948
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

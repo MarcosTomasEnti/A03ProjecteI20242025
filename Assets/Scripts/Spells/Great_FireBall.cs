@@ -6,6 +6,7 @@ public class Great_FireBall : MonoBehaviour
 {
     public int golpe = 60;
     public Vector3 direction;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
