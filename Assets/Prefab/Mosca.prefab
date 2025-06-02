@@ -35,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5626644865158891467
 SpriteRenderer:
@@ -166,6 +166,7 @@ MonoBehaviour:
   includeLayers:
     serializedVersion: 2
     m_Bits: 1096
+  attack: {fileID: 7321538296738152636, guid: 4cc49bbb2d965e84fbc345f279193877, type: 3}
   damageOutput: {fileID: 3004886742506992272, guid: 891aa32f3e3046e4196cab7c063714a4, type: 3}
   magician: {fileID: 0}
   Coin: {fileID: 6178069569445302517, guid: 6e0a35f6e7e32b8489ac3f9334c10a1b, type: 3}

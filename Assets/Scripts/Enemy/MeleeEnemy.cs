@@ -11,7 +11,7 @@ public class MeleeEnemy : MonoBehaviour
 {
     [SerializeField]
     LayerMask includeLayers;
-
+    public GameObject attack;
     public GameObject damageOutput;
 
     public GameObject magician;
@@ -181,6 +181,10 @@ public class MeleeEnemy : MonoBehaviour
             {
                 attacking = false;  
                 Debug.Log("hitPlayer!");
+                if (sprite.flipX == true)
+                    Instantiate(attack, transform.position + new Vector3(2, 0, 0), transform.rotation);
+                else
+                    Instantiate(attack, transform.position - new Vector3(2, 0, 0), transform.rotation);
                 barraVida.VidaConsumida(damage);
                 stopOnAttack = 0;
             }
@@ -189,7 +193,7 @@ public class MeleeEnemy : MonoBehaviour
         {
             if (collision.CompareTag("Player"))
             {
-                transform.rotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + (Time.deltaTime * 1500));
+               // transform.rotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + (Time.deltaTime * 1500));
             }
         }
         
@@ -202,7 +206,7 @@ public class MeleeEnemy : MonoBehaviour
             {
                 Debug.Log("PlayerLeft");
                 stopOnAttack = 1;
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+              //  transform.rotation = Quaternion.Euler(0, 0, 0);
             }
         }
     }
