@@ -2709,6 +2709,7 @@ MonoBehaviour:
   - {fileID: 5155237191010726639}
   - {fileID: 7330819280708568302}
   - {fileID: 2515160176821481750}
+  pausa: {fileID: 0}
 --- !u!1 &2279987564103539120
 GameObject:
   m_ObjectHideFlags: 0
@@ -7059,6 +7060,7 @@ GameObject:
   - component: {fileID: 5067774424449424601}
   - component: {fileID: 1931025157159206908}
   - component: {fileID: 810190611792563736}
+  - component: {fileID: 5119468751991594870}
   m_Layer: 6
   m_Name: Magician
   m_TagString: Player
@@ -7173,7 +7175,6 @@ MonoBehaviour:
   pointAndClickMovement: 0
   speed: 10
   PauseMenu: {fileID: 7182537843512574272, guid: d8d56d54920923041862a2634135d123, type: 3}
-  MoveMenu: 0
   audio: {fileID: 1931025157159206908}
   hitEfect: {fileID: 5894967166753903747}
   audioSource: {fileID: 1931025157159206908}
@@ -7354,6 +7355,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5119468751991594870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6641768816853848118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253b6b2976a3f2a448850f7561d9a6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6654697312087259466
 GameObject:
   m_ObjectHideFlags: 0
@@ -9028,6 +9041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 1355970379274232967}
+  Pausa: 0
   firePoint: {fileID: 0}
 --- !u!114 &6562601436217012621
 MonoBehaviour:
@@ -9041,6 +9055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b6c3074c0ed7ca48a11fadaeaa75477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pausa: {fileID: 0}
   fireBall: {fileID: 8741792494347870157, guid: 3a8a6d8f1cabe1b44a655ba2df7151a8, type: 3}
   BouncyBall: {fileID: 6349586281818467478, guid: 70553640febdb9d40b2b3a3fd51ab186, type: 3}
   GreatFireBall: {fileID: 4882991844935192865, guid: 39237c95767fc2d45bc90bfe4199078b, type: 3}
