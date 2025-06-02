@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "explosi\xF3n_1"
+      name: "explosi\xF3n_3"
       rect:
         serializedVersion: 2
         x: 3120
@@ -144,7 +144,7 @@ TextureImporter:
         width: 788
         height: 566
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,7 +157,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "explosi\xF3n_2"
+      name: "explosi\xF3n_4"
       rect:
         serializedVersion: 2
         x: 4091
@@ -165,7 +165,7 @@ TextureImporter:
         width: 788
         height: 567
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,28 +178,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "explosi\xF3n_3"
-      rect:
-        serializedVersion: 2
-        x: 5157
-        y: 204
-        width: 788
-        height: 567
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8937efac6380eff4d94664db12dd05aa
-      internalID: 2124178958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "explosi\xF3n_5"
+      name: "explosi\xF3n_0"
       rect:
         serializedVersion: 2
         x: 110
@@ -207,7 +186,7 @@ TextureImporter:
         width: 788
         height: 567
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,15 +199,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "explosi\xF3n_6"
+      name: "explosi\xF3n_1"
       rect:
         serializedVersion: 2
-        x: 1137
-        y: 204
+        x: 1144
+        y: 211
         width: 788
         height: 567
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,32 +220,32 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "explosi\xF3n_23"
+      name: "explosi\xF3n_2"
       rect:
         serializedVersion: 2
-        x: 5842
-        y: 346
-        width: 6
-        height: 9
+        x: 2130
+        y: 204
+        width: 788
+        height: 567
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1c34e2af487c004bbb6371219faac16
-      internalID: 1045976890
+      spriteID: 968988f8cb1d3dc479cad1126890fe9e
+      internalID: -215558436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "explosi\xF3n_0"
+      name: "explosi\xF3n_5"
       rect:
         serializedVersion: 2
-        x: 2130
-        y: 204
+        x: 5120
+        y: 201
         width: 788
         height: 567
       alignment: 0
@@ -276,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 968988f8cb1d3dc479cad1126890fe9e
-      internalID: -215558436
+      spriteID: eecc533c0dcbe2c4dbcb718188986898
+      internalID: 2124178958
       vertices: []
       indices: 
       edges: []
@@ -293,10 +272,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "explosi\xF3n_0": -215558436
-      "explosi\xF3n_1": -1720052286
-      "explosi\xF3n_10": -1753826276
-      "explosi\xF3n_11": 743515536
+      "explosi\xF3n_0": -1867422018
+      "explosi\xF3n_1": -462291805
       "explosi\xF3n_12": 315943208
       "explosi\xF3n_13": 256241193
       "explosi\xF3n_14": -1223064472
@@ -305,19 +282,17 @@ TextureImporter:
       "explosi\xF3n_17": 971102464
       "explosi\xF3n_18": -1402500045
       "explosi\xF3n_19": 944573249
-      "explosi\xF3n_2": -863268340
+      "explosi\xF3n_2": -215558436
       "explosi\xF3n_20": -806218357
       "explosi\xF3n_21": 221858542
       "explosi\xF3n_22": 1285285716
       "explosi\xF3n_23": 1045976890
       "explosi\xF3n_24": 559390766
-      "explosi\xF3n_3": 2124178958
-      "explosi\xF3n_4": 458727564
-      "explosi\xF3n_5": -1867422018
-      "explosi\xF3n_6": -462291805
+      "explosi\xF3n_3": -1720052286
+      "explosi\xF3n_4": -863268340
+      "explosi\xF3n_5": 2124178958
       "explosi\xF3n_7": 1384595854
       "explosi\xF3n_8": 1396893231
-      "explosi\xF3n_9": -493934381
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
