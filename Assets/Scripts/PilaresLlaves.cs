@@ -8,7 +8,16 @@ public class PilaresLlaves : MonoBehaviour
     public bool activado = false;
     public GameObject llaves;
 
- 
+    [SerializeField]
+    Sprite pilarOn;
+    [SerializeField]
+    Sprite pilarOff;
+
+    private void Start()
+    {
+        
+    }
+
 
 
     private void OnCollisionEnter2D(Collision2D collision)
